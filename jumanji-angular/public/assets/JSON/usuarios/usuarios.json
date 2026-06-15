@@ -1,0 +1,51 @@
+{
+    "admin": [
+        {
+            "id": 1,
+            "nombre": "Administrador",
+            "email": "admin@jumanjigames.cl",
+            "contrasena": "123456789987654321",
+            "rol": "admin"
+        }
+    ],
+
+    "usuarios": [
+
+        {
+            "id": 2,
+            "nombre": "Antonio",
+            "appat": "González",
+            "apmat": "Pérez",
+            "email": "antonio.gon@gmail.cl",
+            "contrasena": "123456789987654321",
+            "r_contrasena": "123456789987654321",
+            "direccion": "Av. República 4520, Condominio Santa María, Depto 12B, Santiago, Chile",
+            "rol": "user"
+        },
+
+        {
+            "id": 3,
+            "nombre": "Juan",
+            "appat": "Ramírez",
+            "apmat": "López",
+            "email": "juan.ramirez@mail.com",
+            "contrasena": "juan12345",
+            "r_contrasena": "juan12345",
+            "direccion": "Los Aromos 1284, Villa El Sol, Rancagua, Chile",
+            "rol": "user"
+        },
+
+        {
+            "id": 4,
+            "nombre": "María",
+            "appat": "Fernández",
+            "apmat": "Soto",
+            "email": "maria.fernandez@mail.com",
+            "contrasena": "maria987",
+            "r_contrasena": "maria987",
+            "direccion": "Los Carrera 778, Condominio Los Jardines, Depto 5C, Valparaíso, Chile",
+            "rol": "user"
+        }
+        
+    ]
+}

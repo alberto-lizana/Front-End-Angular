@@ -1,0 +1,51 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    perspective: 1400px;
+    z-index: 9999;
+}
+
+.modal-overlay.activo{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carta-scene {
+    transform-style: preserve-3d;
+}
+
+.carta-juego {
+    width: 550px;
+    max-width: 92%;
+    background: linear-gradient(145deg, rgba(0,0,0,0.85), rgba(20,20,20,0.95));
+    border: 2px solid var(--destacar-primario);
+    border-radius: 18px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.8), 0 0 25px var(--destacar-primario);
+    color: var(--texto-blanco);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: 
+        translateY(-180px) 
+        translateZ(-200px) 
+        rotateX(75deg) 
+        scale(0.6);
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(.2,.9,.2,1), opacity 0.6s ease;
+}
+
+.modal-overlay.activo .carta-juego {
+    transform:
+        translateY(0px)
+        translateZ(0px)
+        rotateX(0deg)
+        scale(1);
+    opacity: 1;
+}
+

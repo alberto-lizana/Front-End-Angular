@@ -1,0 +1,31 @@
+<form class="carta-body-juego" [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="mb-4">
+        <label for="nombre" class="form-label letra-normal letra-normal-bold">Nombre*</label>
+        <input type="text" formControlName="nombre" class="input-transparente letra-normal w-100" placeholder="Nombre" required>
+    </div>
+
+    <div class="mb-4 row">
+        <div class="col-12">
+            <label for="appat" class="form-label letra-normal letra-normal-bold">Apellido Paterno*</label>
+            <input type="text" formControlName="appat" class="input-transparente letra-normal w-100" placeholder="Apellido Paterno" required>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label for="email" class="form-label letra-normal letra-normal-bold">Email*</label>
+        <input type="email" formControlName="email" class="input-transparente letra-normal w-100 m-1" placeholder="tuemail@correo.com" required>
+    </div>
+
+    <div class="row-12 text-center mb-3">
+        <button type="submit" class="btn-bd-primary letra-normal p-2 w-100 d-block text-center">
+            Recuperar
+        </button>
+    </div>
+
+    <div class="row-12 text-center mb-3">
+        <button class="btn-bd-primary letra-normal p-2 w-100 text-center d-block" type="button" (click)="cerrar()">
+            Cerrar
+        </button>
+    </div>
+</form>

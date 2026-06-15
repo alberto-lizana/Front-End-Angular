@@ -1,0 +1,14 @@
+
+{
+    "id": 4,
+    "nombre": "Pandemic",
+    "imagen": "pandemic.jpg",
+    "descripcion": "Un juego cooperativo donde los jugadores trabajan juntos para detener enfermedades y salvar al mundo.",
+    "categoria": "Cooperativo",
+    "precio": 48000,
+    "descuento": 0.10,
+    "precio_final": null, 
+    "cant_jugadores": "2-4",
+    "duracion": "45-60 MIN",
+    "dificultad": 4
+}

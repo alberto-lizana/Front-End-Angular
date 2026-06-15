@@ -1,0 +1,21 @@
+<!-- CREAR USUARIO FORM -->
+<section>
+    <div class="modal-overlay" 
+        [class.activo]="isOpen">
+        
+        <div class="carta-juego p-3">
+            
+            <!-- CABEZERA CARTA -->
+            <div class="carta-header-juego text-center mt-3">
+                <div class="letra-especial"> {{ titulo }} </div>
+                <div class="letra-normal"> {{ comentario }}</div>
+            </div>
+
+            <!-- FORMULARIO DINÁMICO-->
+            <div class="carta-body-juego">
+                <ng-content></ng-content>
+            </div>
+
+        </div>
+    </div>
+</section>

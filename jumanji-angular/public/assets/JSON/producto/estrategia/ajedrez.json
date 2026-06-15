@@ -1,0 +1,14 @@
+
+{
+    "id": 2,
+    "nombre": "Ajedrez",
+    "imagen": "ajedrez.jpg",
+    "descripcion": "El clásico juego de estrategia donde dos jugadores compiten usando táctica, lógica y planificación.",
+    "categoria": "Estrategia",
+    "precio": 25000,
+    "descuento": 0.20,
+    "precio_final": null, 
+    "cant_jugadores": "2",
+    "duracion": "∞",
+    "dificultad": 4
+}

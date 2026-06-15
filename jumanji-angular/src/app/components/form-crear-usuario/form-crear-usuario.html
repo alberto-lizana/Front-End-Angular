@@ -1,0 +1,104 @@
+<form class="carta-body-juego" [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="mb-4">
+        <label class="form-label letra-normal letra-normal-bold">Nombre*</label>
+        <input type="text" formControlName="nombre" class="input-transparente letra-normal w-100" placeholder="Nombre">
+    </div>
+
+    <div class="mb-4 row">
+
+        <div class="col-6">
+            <label class="form-label letra-normal letra-normal-bold">Apellido Paterno*</label>
+            <input type="text" formControlName="appat" class="input-transparente letra-normal w-100" placeholder="Apellido">
+        </div>
+
+        <div class="col-6">
+            <label class="form-label letra-normal letra-normal-bold">Apellido Materno</label>
+            <input type="text" formControlName="apmat" class="input-transparente letra-normal w-100 p-10" placeholder="Apellido">   
+        </div>
+
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label letra-normal letra-normal-bold">Email*</label>
+        <input type="email" formControlName="email" class="input-transparente letra-normal w-100 m-1" placeholder="tuemail@correo.com">
+    </div>
+
+    <div class="mb-4">
+
+        <label class="form-label letra-normal letra-normal-bold">Dirección*</label>
+        <input type="text" formControlName="direccion" class="input-transparente letra-normal w-100" placeholder="Dirección" >
+    </div>
+
+    <div class="row mb-4">
+
+        <div class="col-6">
+            <label class="form-label letra-normal letra-normal-bold">Contraseña*</label>
+            <input type="password" formControlName="contrasena" class="input-transparente letra-normal w-100" placeholder="••••••••">
+        </div>
+
+        <div class="col-6">
+            <label class="form-label letra-normal letra-normal-bold">Repetir*</label>
+            <input type="password" formControlName="r_contrasena" class="input-transparente letra-normal w-100" placeholder="••••••••">         
+        </div>
+
+    </div>
+
+    <div class="col-12">
+        <ul>
+            <!-- NOMBRE -->
+            @if (form.get('nombre')?.invalid && form.get('nombre')?.touched) {
+                <li class="letra-normal-pequeña" >
+                    Nombre:
+                    <small class="letra-normal-pequeña w-100 text-danger">{{ errorMessages.nombre.nombreInvalido }}</small>
+                </li>
+            }
+
+            <!-- APELLIDO -->
+            @if (form.get('appat')?.invalid && form.get('appat')?.touched) {
+                <li class="letra-normal-pequeña">
+                    Apellido:
+                    <small class="letra-normal-pequeña w-100 text-danger">{{ errorMessages.appat.apellidoPaternoInvalido }}</small>
+                </li>
+            }
+
+            <!-- EMAIL --> 
+            @if (form.get('email')?.invalid && form.get('email')?.touched) {
+                <li class="letra-normal-pequeña">
+                    Email:
+                    <small class="letra-normal-pequeña w-100 text-danger">{{ errorMessages.email.emailInvalido }}</small>
+                </li>
+            }
+
+            <!-- CONTRASEÑA -->
+            @if (form.get('contrasena')?.invalid && form.get('contrasena')?.touched) {
+                <li class="letra-normal-pequeña">
+                    Contraseña:
+                    <small class="letra-normal-pequeña w-100 text-danger">{{ errorMessages.contrasena.contrasenaInvalida }}</small>
+                </li>
+            }
+
+            <!-- REPETIR CONTRASEÑA -->
+            @if (form.errors?.['passwordMismatch'] && form.get('r_contrasena')?.touched) {
+                <li class="letra-normal-pequeña">
+                    Repeticion:
+                    <small class="letra-normal-pequeña w-100 text-danger">{{ errorMessages.r_contrasena.passwordMismatch }}</small>
+                </li>
+            }
+
+        </ul>
+    </div>
+
+    <div class="text-center mb-3">
+        <button type="submit" class="btn-bd-primary letra-normal p-2 w-100 d-block text-center">
+            Crear
+        </button>
+    </div>
+
+    <div class="text-center mb-3">
+        <button type="button" class="btn-bd-primary letra-normal p-2 w-100 text-center d-block" (click)="cerrar()">
+            Cerrar
+        </button>
+    </div>
+
+</form>

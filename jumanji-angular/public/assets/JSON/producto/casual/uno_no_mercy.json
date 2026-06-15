@@ -1,0 +1,15 @@
+
+{
+    "id": 10,
+    "nombre": "Uno No Mercy",
+    "imagen": "uno.png",
+    "descripcion": "Un juego de cartas rápido y divertido donde los jugadores compiten para quedarse sin cartas antes que los demás.",
+    "categoria": "Casual",
+    "precio": 8000,
+    "descuento": 0,
+    "precio_final": null, 
+    "cant_jugadores": "2-10",
+    "duracion": "15-30 MIN",
+    "dificultad": 1
+}
+

@@ -1,0 +1,14 @@
+
+{
+    "id": 8,
+    "nombre": "Call Of Cthulhu",
+    "imagen": "cthulhu.jpg",
+    "descripcion": "Un juego de rol de horror e investigación inspirado en las historias de H.P. Lovecraft.",
+    "categoria": "Rol",
+    "precio": 55000,
+    "descuento": 0.10,
+    "precio_final": null, 
+    "cant_jugadores": "1-6",
+    "duracion": "60-180 MIN",
+    "dificultad": 5
+}

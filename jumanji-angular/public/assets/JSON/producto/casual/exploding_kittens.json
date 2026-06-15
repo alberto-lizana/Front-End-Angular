@@ -1,0 +1,15 @@
+
+{
+    "id": 12,
+    "nombre": "Exploding Kittens",
+    "imagen": "exploding_kittens.jpg",
+    "descripcion": "Un juego de cartas caótico y humorístico donde los jugadores intentan evitar explotar mientras sabotean a sus rivales.",
+    "categoria": "Casual",
+    "precio": 18000,
+    "descuento": 0.10,
+    "precio_final": null, 
+    "cant_jugadores": "2-5",
+    "duracion": "15-30 MIN",
+    "dificultad": 2
+}
+

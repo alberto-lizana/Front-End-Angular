@@ -1,0 +1,21 @@
+<app-login-box
+  (abrirCrearUsuario)="abrirCrear()"
+  (abrirRecuperarUsuario)="abrirRecuperar()"
+  >
+</app-login-box>
+
+<app-modal 
+  [isOpen]="isOpen" 
+  [titulo]="modalType === 'crear' ? 'CREAR PERSONAJE' : 'RECUPERAR PERSONAJE'" 
+  [comentario]="modalType === 'crear' ? 'Registra tu cuenta para entrar al mundo' : ''" 
+  (closed)="isOpen = false">
+
+  @if (modalType === 'crear') {
+    <app-form-crear-usuario (cerrarModal)="isOpen = false" (done)="isOpen = false"/>
+  }
+
+  @if (modalType === 'recuperar') {
+    <app-form-recuperar-usuario (cerrarModal)="isOpen = false" (done)="isOpen = false"/>
+  }
+
+</app-modal>

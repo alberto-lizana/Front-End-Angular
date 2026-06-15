@@ -1,0 +1,15 @@
+
+{
+    "id": 11,
+    "nombre": "Dixit",
+    "imagen": "dixit.jpg",
+    "descripcion": "Un juego casual de imaginación y creatividad donde las cartas cuentan historias mediante ilustraciones artísticas.",
+    "categoria": "Casual",
+    "precio": 30000,
+    "descuento": 0.05,
+    "precio_final": null, 
+    "cant_jugadores": "3-6",
+    "duracion": "15-45 MIN",
+    "dificultad": 2
+}
+

@@ -1,0 +1,14 @@
+
+{
+    "id": 9,
+    "nombre": "Vampire: The Masquerade",
+    "imagen": "vampire_rivals.jpg",
+    "descripcion": "Un juego de rol narrativo donde los jugadores interpretan vampiros en un mundo oscuro y lleno de secretos.",
+    "categoria": "Rol",
+    "precio": 45000,
+    "descuento": 0.10,
+    "precio_final": null, 
+    "cant_jugadores": "3-4",
+    "duracion": "60-120 MIN",
+    "dificultad": 4
+}

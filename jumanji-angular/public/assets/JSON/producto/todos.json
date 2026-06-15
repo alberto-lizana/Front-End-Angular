@@ -1,0 +1,178 @@
+{
+    "Estrategia": [
+        {
+            "id": 1,
+            "nombre": "Terraforming Mars",
+            "imagen": "terraforming-mars.jpg",
+            "descripcion": "Un juego de estrategia donde los jugadores compiten para terraformar Marte y hacerlo habitable.",
+            "categoria": "Estrategia",
+            "precio": 65000,
+            "descuento": 0.15,
+            "precio_final": null, 
+            "cant_jugadores": "1-5",
+            "duracion": "90-120 MIN",
+            "dificultad": 5
+        },
+
+        {
+            "id": 2,
+            "nombre": "Ajedrez",
+            "imagen": "ajedrez.jpg",
+            "descripcion": "El clásico juego de estrategia donde dos jugadores compiten usando táctica, lógica y planificación.",
+            "categoria": "Estrategia",
+            "precio": 25000,
+            "descuento": 0.20,
+            "precio_final": null, 
+            "cant_jugadores": "2",
+            "duracion": "∞",
+            "dificultad": 4
+        },
+
+        {
+            "id": 3,
+            "nombre": "Catan",
+            "imagen": "catan.jpg",
+            "descripcion": "Un juego de estrategia y comercio donde los jugadores construyen aldeas, caminos y ciudades para dominar la isla.",
+            "categoria": "Estrategia",
+            "precio": 50000,
+            "descuento": 0.10,
+            "precio_final": null, 
+            "cant_jugadores": "3-4",
+            "duracion": "60-120 MIN",
+            "dificultad": 3
+        }
+    ],
+
+    "Cooperativos": [
+        {
+            "id": 4,
+            "nombre": "Pandemic",
+            "imagen": "pandemic.jpg",
+            "descripcion": "Un juego cooperativo donde los jugadores trabajan juntos para detener enfermedades y salvar al mundo.",
+            "categoria": "Cooperativo",
+            "precio": 48000,
+            "descuento": 0.10,
+            "precio_final": null, 
+            "cant_jugadores": "2-4",
+            "duracion": "45-60 MIN",
+            "dificultad": 4
+        },
+
+        {
+            "id": 5,
+            "nombre": "The Crew",
+            "imagen": "the_crew.png",
+            "descripcion": "Un juego cooperativo de cartas donde los jugadores completan misiones espaciales usando estrategia y comunicación.",
+            "categoria": "Cooperativo",
+            "precio": 22000,
+            "descuento": 0.15,
+            "precio_final": null, 
+            "cant_jugadores": "2-5",
+            "duracion": "20-60 MIN",
+            "dificultad": 3
+        },
+
+        {
+            "id": 6,
+            "nombre": "Arkham Horror",
+            "imagen": "arkham_horror.jpg",
+            "descripcion": "Un juego cooperativo de terror e investigación inspirado en el universo de Lovecraft.",
+            "categoria": "Cooperativo",
+            "precio": 70000,
+            "descuento": 0.20,
+            "precio_final": null, 
+            "cant_jugadores": "1-8",
+            "duracion": "120+ MIN",
+            "dificultad": 5
+        }
+    ],
+
+    "Rol": [
+        {
+            "id": 7,
+            "nombre": "Dungeon & Dragons",
+            "imagen": "dungeons_dragons.jpg",
+            "descripcion": "Un juego de rol de fantasía donde los jugadores crean personajes, viven aventuras y exploran mundos mágicos.",
+            "categoria": "Rol",
+            "precio": 60000,
+            "descuento": 0.15,
+            "precio_final": null, 
+            "cant_jugadores": "3-6",
+            "duracion": "120+ MIN",
+            "dificultad": 5
+        },
+
+        {
+            "id": 8,
+            "nombre": "Call Of Cthulhu",
+            "imagen": "cthulhu.jpg",
+            "descripcion": "Un juego de rol de horror e investigación inspirado en las historias de H.P. Lovecraft.",
+            "categoria": "Rol",
+            "precio": 55000,
+            "descuento": 0.10,
+            "precio_final": null, 
+            "cant_jugadores": "1-6",
+            "duracion": "60-180 MIN",
+            "dificultad": 5
+        },
+
+        {
+            "id": 9,
+            "nombre": "Vampire: The Masquerade",
+            "imagen": "vampire_rivals.jpg",
+            "descripcion": "Un juego de rol narrativo donde los jugadores interpretan vampiros en un mundo oscuro y lleno de secretos.",
+            "categoria": "Rol",
+            "precio": 45000,
+            "descuento": 0.10,
+            "precio_final": null, 
+            "cant_jugadores": "3-4",
+            "duracion": "60-120 MIN",
+            "dificultad": 4
+        }
+    ],
+
+    "Casual": [
+        {
+            "id": 10,
+            "nombre": "Uno No Mercy",
+            "imagen": "uno.png",
+            "descripcion": "Un juego de cartas rápido y divertido donde los jugadores compiten para quedarse sin cartas antes que los demás.",
+            "categoria": "Casual",
+            "precio": 8000,
+            "descuento": 0,
+            "precio_final": null, 
+            "cant_jugadores": "2-10",
+            "duracion": "15-30 MIN",
+            "dificultad": 1
+        },
+
+        {
+            "id": 11,
+            "nombre": "Dixit",
+            "imagen": "dixit.jpg",
+            "descripcion": "Un juego casual de imaginación y creatividad donde las cartas cuentan historias mediante ilustraciones artísticas.",
+            "categoria": "Casual",
+            "precio": 30000,
+            "descuento": 0.05,
+            "precio_final": null, 
+            "cant_jugadores": "3-6",
+            "duracion": "15-45 MIN",
+            "dificultad": 2
+        },
+
+        
+        {
+            "id": 12,
+            "nombre": "Exploding Kittens",
+            "imagen": "exploding_kittens.jpg",
+            "descripcion": "Un juego de cartas caótico y humorístico donde los jugadores intentan evitar explotar mientras sabotean a sus rivales.",
+            "categoria": "Casual",
+            "precio": 18000,
+            "descuento": 0.10,
+            "precio_final": null, 
+            "cant_jugadores": "2-5",
+            "duracion": "15-30 MIN",
+            "dificultad": 2
+        }
+    ]
+}

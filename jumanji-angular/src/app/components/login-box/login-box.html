@@ -1,0 +1,57 @@
+<!-- SECCION INICIO DE SESION -->
+<section>
+    <div class="container-img-inicio-sesion">
+
+        <!-- L&D -->
+        <app-theme-switch></app-theme-switch>
+
+        <!-- CAJA LOG-IN -->
+        <div class="p-4 log-in-box">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                
+                <div class="row">
+                    
+                    <div class="col mb-4 letra-especial text-center">
+                        <h1> Iniciar Sesión </h1>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <label for="email" class="form-label mb-2 letra-normal letra-normal-bold "> Email </label>
+                    <input type="email" class="mb-4 letra-normal input-transparente color-letra-dinamico" formControlName="email" placeholder="Ingresa tu email" required>
+                    
+                </div>
+
+                <div class="row">
+
+                    <label for="contrasena" class="form-label mb-2 letra-normal letra-normal-bold"> Contraseña </label>
+                    <input type="password" class="mb-3 letra-normal input-transparente color-letra-dinamico" formControlName="contrasena" placeholder="Ingresa tu contraseña" required>
+
+                </div>
+
+                <div class="row-12 text-center mb-3">
+                    <a class="recuperar-pass-a" (click)="abrirRecuperar()">
+                        ¿Ha olvidado su contraseña?
+                    </a>
+                </div>
+
+                <div class="row-12 text-center mb-3">
+                    <button type="submit" class="btn-bd-primary letra-normal p-2 w-100">
+                        Iniciar Sesión
+                    </button>
+                </div>
+
+                <div class="row-12 text-center mb-3">
+                    <button class="btn-bd-primary letra-normal p-2 w-100 text-center d-block" type="button" (click)="abrirCrear()">
+                        Crear Cuenta
+                    </button>
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+</section>

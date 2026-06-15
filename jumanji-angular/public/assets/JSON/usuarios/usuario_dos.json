@@ -1,0 +1,12 @@
+
+{
+    "id": 3,
+    "nombre": "Juan",
+    "appat": "Ramírez",
+    "apmat": "López",
+    "email": "juan.ramirez@mail.com",
+    "contrasena": "juan12345",
+    "r_contrasena": "juan12345",
+    "direccion": "Los Aromos 1284, Villa El Sol, Rancagua, Chile",
+    "rol": "user"
+}

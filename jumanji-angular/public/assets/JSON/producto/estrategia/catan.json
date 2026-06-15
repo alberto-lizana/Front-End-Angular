@@ -1,0 +1,14 @@
+
+{
+    "id": 3,
+    "nombre": "Catan",
+    "imagen": "catan.jpg",
+    "descripcion": "Un juego de estrategia y comercio donde los jugadores construyen aldeas, caminos y ciudades para dominar la isla.",
+    "categoria": "Estrategia",
+    "precio": 50000,
+    "descuento": 0.10,
+    "precio_final": null, 
+    "cant_jugadores": "3-4",
+    "duracion": "60-120 MIN",
+    "dificultad": 3
+}

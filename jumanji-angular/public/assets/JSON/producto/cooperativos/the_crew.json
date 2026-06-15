@@ -1,0 +1,15 @@
+
+{
+    "id": 5,
+    "nombre": "The Crew",
+    "imagen": "the_crew.png",
+    "descripcion": "Un juego cooperativo de cartas donde los jugadores completan misiones espaciales usando estrategia y comunicación.",
+    "categoria": "Cooperativo",
+    "precio": 22000,
+    "descuento": 0.15,
+    "precio_final": null, 
+    "cant_jugadores": "2-5",
+    "duracion": "20-60 MIN",
+    "dificultad": 3
+}
+

@@ -1,0 +1,8 @@
+
+{
+    "id": 1,
+    "nombre": "Administrador",
+    "email": "admin@jumanjigames.cl",
+    "contrasena": "123456789987654321",
+    "rol": "admin"
+}
