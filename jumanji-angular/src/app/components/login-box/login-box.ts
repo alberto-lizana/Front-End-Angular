@@ -1,9 +1,9 @@
 import { ThemeSwitch } from '../theme-switch/theme-switch';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { StorageService } from '../../services/storage.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { normalizarCampo,  } from '../../utils/normalizadores';
 
 
 @Component({
@@ -34,6 +34,9 @@ export class LoginBox {
     if (this.form.invalid) return;
 
     const { email, contrasena } = this.form.getRawValue() as { email: string; contrasena: string };
+
+    normalizarCampo(email);
+    contrasena.trim;
 
     if (!email || !contrasena) return;
 

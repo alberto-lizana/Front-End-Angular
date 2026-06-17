@@ -1,1 +1,17 @@
-<p>home works!</p>
+<app-nav></app-nav>
+
+<app-presentacion
+  (abrirModificar)="abrirModificar()">
+</app-presentacion>
+
+<app-modal
+  [isOpen]="isOpen"
+  [titulo]="modalType === 'modificar' ? 'MODIFICAR PERFIL': ''">
+
+    @if (modalType === 'modificar') {
+    <app-form-modificar-usuario (isOpen)="cerrarModificar()"> </app-form-modificar-usuario>
+    }
+
+</app-modal>
+
+<app-footer></app-footer>

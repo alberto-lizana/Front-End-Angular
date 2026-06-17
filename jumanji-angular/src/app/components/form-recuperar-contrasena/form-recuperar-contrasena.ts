@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { FormUtils } from '../../utils/form-utils';
 import { RecuperarContrasenaService } from '../../services/recuperar.contrasena.service'
+import { normalizarCampo } from '../../utils/normalizadores';
 
 @Component({
   selector: 'app-form-recuperar-usuario',
@@ -30,9 +31,9 @@ export class FormRecuperarContrasena {
     
     const formValue = this.form.getRawValue();
 
-    const nombre = formValue.nombre
-    const appat = formValue.appat
-    const email = formValue.email
+    const nombre = normalizarCampo(formValue.nombre)
+    const appat =  normalizarCampo(formValue.appat)
+    const email =  normalizarCampo(formValue.email)
 
 
     const user = this.recuperarContrasenaService.recuperarContrasena(nombre, appat, email );

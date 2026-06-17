@@ -1,0 +1,77 @@
+
+<!-- NAVEGADOR COMPLETO -->
+<nav class="contenedor p-3 nav-contenedor"> 
+    <!-- CONTENEDOR PARA IMAGEN DE MARCA EN EL NAV -->
+    <div class="marca">
+        <div class="img-logo" alt="Logo de la tienda Jumanji">
+        </div>
+    </div>
+    
+    <!-- NAVEGADOR PARTE INTERACTIVA -->
+    <div class="nav-interactivo" [class.nav-responsive]="menuResponsiveOpen">
+        <!-- INICIO --> 
+        <li class="nav-items">
+            <a routerLink = "/home"> 
+                <span class="letras-nav"> Inicio </span>
+                <i class="fa-solid fa-house iconos-nav"></i>
+            </a>
+        </li>
+        <!-- CATEGORIAS -->
+        <li class="nav-items"> 
+            <a href="#" (click)="$event.preventDefault(); toggleCategorias()"> 
+                <span class="letras-nav"> Categorias </span>
+                <i class="fa-solid fa-table-list iconos-nav"></i>
+            </a> 
+            <!-- SUBMENU CATEGORIAS -->
+            <div class="submenu-categorias" [class.submenu-activo]="submenuOpen">
+                <ul class="submenu-categorias-lista">
+                    <li class="submenu-categorias-item">
+                        <a routerLink = "/estrategia"> 
+                            <span class="letras-nav-submenu"> Estrategia </span>
+                            <i class="fa-solid fa-chess iconos-nav-submenu"></i>
+                        </a>
+                    </li>
+                    <li class="submenu-categorias-item">
+                        <a routerLink = "/cooperativos"> 
+                            <span class="letras-nav-submenu"> Cooperativos </span>
+                            <i class="fa-solid fa-handshake iconos-nav-submenu"></i>
+                        </a> 
+                    </li>
+                    <li class="submenu-categorias-item">
+                        <a routerLink = "/rol">
+                            <span class="letras-nav-submenu"> Rol </span>
+                            <i class="fa-solid fa-masks-theater iconos-nav-submenu"></i>
+                        </a>
+                    </li>
+                                        
+                    <li class="submenu-categorias-item">
+                        <a routerLink = "/casual"> 
+                            <span class="letras-nav-submenu"> Casual </span>   
+                            <i class="fa-solid fa-dice-five iconos-nav-submenu"></i>    
+                        </a>                                      
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <!-- CONTACTO -->
+        <li class="nav-items">
+            <a (click)="scrollTo('footer_contacto')"> 
+                <span class="letras-nav">Contacto</span>
+                <i class="fa-solid fa-circle-user iconos-nav"></i>
+            </a>
+        </li>
+        
+        
+        <!-- CARRITO -->
+        <li class="nav-items">
+            <a routerLink = "/carrito">
+                <span class="letras-nav">Carrito</span>
+                <i class="fa-solid fa-cart-shopping iconos-nav"></i>
+            </a>
+        </li>
+    </div>
+    <!-- ICONO RESPONSIVE -->
+    <div class="icono-responsive m-3" (click)="toggleMenuResponsive($event)">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</nav> 

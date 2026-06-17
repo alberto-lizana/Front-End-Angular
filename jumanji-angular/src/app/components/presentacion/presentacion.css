@@ -1,0 +1,13 @@
+.contenedor-img {
+    background-image: url("/assets/img/img_incial.png");
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 80vh;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: inset 0 0 100px rgb(53, 28, 28);
+    z-index: 0;
+    border: solid 1px black;
+    position: relative;
+}

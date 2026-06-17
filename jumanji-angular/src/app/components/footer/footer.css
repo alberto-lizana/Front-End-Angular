@@ -1,0 +1,19 @@
+.footer {
+    width: 100%;
+    background: linear-gradient(to bottom, var(--bg-principal) 5% , var(--bg-secundario) 95%);
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 30%));
+    gap: 30px;
+    margin-bottom: 1%;
+}
+
+.item-footer {
+    font-size: clamp(13px, 1.1vw, 22px);
+}
+
+.copyright {
+    border-top: solid 1px var(--destacar-primario);
+}

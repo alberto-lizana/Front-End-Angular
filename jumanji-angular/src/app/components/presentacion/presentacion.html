@@ -1,0 +1,34 @@
+<!-- SECCION IMAGEN PRESENTACION -->
+<section class="ms-2 me-2">
+   <div class="contenedor-img">
+       <div class="row m-3">
+        
+        <div class="col-6">
+        @if (dataUsuario?.rol == 'admin') {
+           <!-- VOLVER VISTA ADMIN -->
+               <div>
+                    <button class="btn btn-bd-primary letra-normal p-2 d-block text-center color-letra-dinamico" routerLink = "/admin"> Vista Admin </button>
+               </div>
+        }
+
+        </div>
+           <div class="col-6 d-flex justify-content-end">
+               <div class="btn-group">
+                   <button type="button" class="btn dropdown-toggle btn-bd-primary letra-normal p-2 color-letra-dinamico" data-bs-toggle="dropdown" aria-expanded="false">
+                       Perfil
+                   </button>
+                   <ul class="dropdown-menu">
+                       <li><a class="dropdown-item disabled" href="#">Ver</a></li>
+                       <li><a class="dropdown-item" href="#" (click)="abrirModalModificar(); $event.preventDefault()">Modificar</a></li>
+                       <li><a class="dropdown-item disabled" href="#">Historial</a></li>
+                       <li><hr class="dropdown-divider"></li>
+                       <li><a class="dropdown-item" href="#" (click)="cerrarSesion()">Cerrar Sesión</a></li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+
+        <!-- SECCION MODO LIGHT & DARK -->
+        <app-theme-switch></app-theme-switch>
+   </div>
+</section>

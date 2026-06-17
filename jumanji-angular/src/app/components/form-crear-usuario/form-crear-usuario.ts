@@ -4,6 +4,7 @@ import { validarApellido, validarContrasena, validarEmail, validarNombre, passwo
 import { Usuario } from '../../interfaces/usuario.interface';
 import { FormUtils } from '../../utils/form-utils';
 import { CrearUsuarioService } from '../../services/crear.usuario.service';
+import { normalizarUsuario } from '../../utils/normalizadores'
 
 @Component({
   selector: 'app-form-crear-usuario',
@@ -63,7 +64,7 @@ errorMessages = {
     
     const formValue = this.form.getRawValue();
 
-    const usuario: Usuario = {
+    const usuario: Usuario = normalizarUsuario({
       id: Date.now(),
       nombre: formValue.nombre ?? '',
       appat: formValue.appat ?? '',
@@ -73,7 +74,7 @@ errorMessages = {
       r_contrasena: formValue.r_contrasena ?? '',
       direccion: formValue.direccion ?? '',
       rol: 'user'
-    };
+    });
 
     const esExitoso:boolean = this.crearUsuarioService.crearUsuario(usuario);
 
