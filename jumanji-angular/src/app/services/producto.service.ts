@@ -1,15 +1,28 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ProductosResponse } from '../interfaces/productos.response.interface'
+import { ProductosResponse } from '../interfaces/productos.response.interface';
+import { map, of, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class ProductoService{
+export class ProductoService {
 
-  private http = inject(HttpClient);
+  private productosCache: ProductosResponse | null = null; 
 
-  rutaProductos = 'assets/JSON/producto/todos.json';
+  constructor(private http: HttpClient) {}
 
   obtenerProductosJSON() {
-    return this.http.get<ProductosResponse>(this.rutaProductos);
+    if (this.productosCache) {
+      return of(this.productosCache);  
+    }
+
+    return this.http.get<ProductosResponse>('assets/JSON/producto/todos.json').pipe(
+      tap(data => this.productosCache = data)  
+    );
+  }
+
+  obtenerProductoCategoria(categoria: keyof ProductosResponse) {
+    return this.obtenerProductosJSON().pipe(
+      map(response => response[categoria])
+    );
   }
 }

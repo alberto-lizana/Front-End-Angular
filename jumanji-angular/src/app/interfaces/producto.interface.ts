@@ -6,7 +6,7 @@ export interface Producto {
   categoria: string;
   precio: number;
   descuento: number;
-  precio_final: null;
+  precio_final: number | null;
   cant_jugadores: string;
   duracion: string;
   dificultad: number;

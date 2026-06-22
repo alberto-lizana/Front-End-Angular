@@ -1,0 +1,47 @@
+.contenedor-img-img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    max-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.contenedor-img-categoria {
+    border: solid 2px black ;
+}
+
+.contenedor-img-categoria{
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    min-height: 90vh;
+}
+
+.contenedor-img-categoria:hover {
+    transform: scale(1.010);
+    background-color: rgba(0, 0, 0, 0.575);
+    background-blend-mode: darken;
+    box-shadow: 0 0 15px var(--destacar-primario);
+}
+
+.titulo-imagen{
+    display: flex;
+    font-size: clamp(14px, 1.5vw, 30px);
+    color: var(--destacar-primario);
+    font-weight: bold;
+    text-shadow: 5px 5px 15px rgba(0,0,0);
+    padding: 3%;
+    font-family: "Eater", serif;
+    border-bottom: 1px solid var(--destacar-primario);
+    justify-content: center;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.712), transparent);
+    backdrop-filter: blur(6px);
+}
+
+.decoracion-categorias {
+    background: var(--degradado-primario);
+}

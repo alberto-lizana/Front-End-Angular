@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Usuario } from '../../interfaces/usuario.interface';
 import { AuthService } from '../../services/auth.service';
@@ -14,7 +14,7 @@ import { FormUtils } from '../../utils/form-utils';
   styleUrl: './form-modificar-usuario.css',
 })
 
-export class FormModificarUsuario {
+export class FormModificarUsuario implements OnInit {
 
   @Output() isOpen = new EventEmitter<void>();
 
@@ -42,9 +42,12 @@ form = new FormGroup({
   }
 
   submit() {
+    this.form.updateValueAndValidity();
+    if (this.form.invalid) return;
 
     if (!this.dataUsuario) return;
-    this.modificarUsuarioService.Modificar( this.form.getRawValue(), this.dataUsuario);
+
+    this.modificarUsuarioService.Modificar(this.form.getRawValue(), this.dataUsuario);
     this.cerrar();
   }
 

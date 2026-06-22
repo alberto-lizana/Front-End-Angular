@@ -1,0 +1,39 @@
+{
+    "Categorias": [
+        {
+            "titulo": "Estrategia",
+            "caracteristicas": ["Planificación a largo plazo", "Toma de decisiones constante", "Partidas de duración media o larga", "Premia la habilidad sobre el azar"],
+            "descripcion": "Juegos que requieren planificación, toma de decisiones y pensamiento estratégico para superar desafíos y alcanzar objetivos específicos.", 
+            "espiritu": "Planifica cada movimiento, anticipa a tus rivales y domina el tablero. La victoria comienza mucho antes del primer turno.",
+            "imagen": "estrategia.png",
+            "ruta": "estrategia"
+        },
+
+        {
+            "titulo": "Cooperativos",
+            "caracteristicas": ["Trabajo en equipo", "Comunicación entre jugadores", "Desafíos contra el juego", "Ideal para grupos y familias"],
+            "descripcion": "Juegos de mesa en los que los jugadores trabajan juntos para lograr un objetivo común, enfrentándose a desafíos y tomando decisiones colaborativas para superar obstáculos y ganar como equipo.", 
+            "espiritu": "Ningún héroe salva el mundo solo. Une fuerzas, comparte decisiones y enfrenten juntos lo desconocido.",
+            "imagen": "cooperativos.png",
+            "ruta": "cooperativos"
+        },
+
+        {
+            "titulo": "Rol",
+            "caracteristicas": ["Interpretación de personajes", "Narrativas inmersivas", "Uso frecuente de dados", "Gran libertad creativa"],
+            "descripcion": "Juegos de mesa diseñados para ser fáciles de aprender y jugar, con reglas simples y partidas rápidas, ideales para jugadores ocasionales o aquellos que buscan una experiencia de juego más relajada.", 
+            "espiritu": "Forja tu leyenda, interpreta a tu personaje y vive aventuras que solo existen en la imaginación de tu grupo.",
+            "imagen": "rol.png",
+            "ruta": "rol"
+        },
+        
+        {
+            "titulo": "Casual",
+            "caracteristicas": ["Reglas sencillas ", "Partidas rápidas", "Fácil de aprender", "Perfecto para reuniones sociales"],
+            "descripcion": "Juegos de mesa diseñados para ser fáciles de aprender y jugar, con reglas simples y partidas rápidas, ideales para jugadores ocasionales o aquellos que buscan una experiencia de juego más relajada.", 
+            "espiritu": "Fáciles de aprender, rápidos de jugar y perfectos para transformar cualquier reunión en un momento inolvidable.",
+            "imagen": "casual.png",
+            "ruta": "casual"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+.carritoContainer {
+    border: 1px solid var(--destacar-primario); 
+    background: var(--degradado-primario);
+}
+
+.btnPagar {
+    display: none;
+}
+
+.btnPagar.activo{
+    display: block;
+}

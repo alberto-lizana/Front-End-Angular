@@ -1,0 +1,106 @@
+.tabla-productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: clamp(10px, 2vw, 25px);
+    padding: 2%;
+    align-items: stretch;
+}
+
+.producto {
+    background: var(--bg-secundario);
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--destacar-primario);
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 320px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.producto h3 {
+    color: var(--destacar-primario);
+    text-align: center;
+    padding-top: 3%;
+    font-size: clamp(18px, 1.5vw, 30px);
+
+}
+
+.producto p {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 1.5;
+    font-size: clamp(13px, 1vw, 20px);
+}
+
+.btn-comprar {
+    margin: 5%;
+    padding: 2%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--destacar-primario);
+    color: var(--texto-principal);
+    font-family: "Cinzel", serif;
+    font-size: clamp(13px, 1vw, 20px);
+    transition: 0.3s ease;
+}
+
+.btn-comprar:hover {
+    filter: brightness(1.15);
+    transform: scale(1.03);
+}
+
+.info-juego{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+    padding: 1%;
+}
+
+.item-info{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: var(--bg-principal);
+}
+
+.titulo-info{
+    font-weight: bold;
+    color: var(--destacar-primario);
+}
+
+.btn-agregado {
+  background-color: green !important;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+
+    .tabla-productos {
+        grid-template-columns: 1fr;
+    }
+
+}

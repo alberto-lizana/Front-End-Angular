@@ -15,7 +15,7 @@ import { normalizarUsuario } from '../../utils/normalizadores'
 export class FormCrearUsuario {
 
   @Output() cerrarModal = new EventEmitter<void>();
-
+  
   constructor(
     private crearUsuarioService: CrearUsuarioService
   ) {}

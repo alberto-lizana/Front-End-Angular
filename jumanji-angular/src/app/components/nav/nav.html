@@ -11,7 +11,7 @@
     <div class="nav-interactivo" [class.nav-responsive]="menuResponsiveOpen">
         <!-- INICIO --> 
         <li class="nav-items">
-            <a routerLink = "/home"> 
+            <a routerLink = "/home" (click)="$event.stopPropagation(); onNavigate()"> 
                 <span class="letras-nav"> Inicio </span>
                 <i class="fa-solid fa-house iconos-nav"></i>
             </a>
@@ -26,26 +26,26 @@
             <div class="submenu-categorias" [class.submenu-activo]="submenuOpen">
                 <ul class="submenu-categorias-lista">
                     <li class="submenu-categorias-item">
-                        <a routerLink = "/estrategia"> 
+                        <a routerLink = "/productos/estrategia" (click)="$event.stopPropagation(); onNavigate()"> 
                             <span class="letras-nav-submenu"> Estrategia </span>
                             <i class="fa-solid fa-chess iconos-nav-submenu"></i>
                         </a>
                     </li>
                     <li class="submenu-categorias-item">
-                        <a routerLink = "/cooperativos"> 
+                        <a routerLink = "/productos/cooperativos" (click)="$event.stopPropagation(); onNavigate()"> 
                             <span class="letras-nav-submenu"> Cooperativos </span>
                             <i class="fa-solid fa-handshake iconos-nav-submenu"></i>
                         </a> 
                     </li>
                     <li class="submenu-categorias-item">
-                        <a routerLink = "/rol">
+                        <a routerLink="/productos/rol" (click)="$event.stopPropagation(); onNavigate()">
                             <span class="letras-nav-submenu"> Rol </span>
                             <i class="fa-solid fa-masks-theater iconos-nav-submenu"></i>
                         </a>
                     </li>
                                         
                     <li class="submenu-categorias-item">
-                        <a routerLink = "/casual"> 
+                        <a routerLink = "/productos/casual" (click)="$event.stopPropagation(); onNavigate()"> 
                             <span class="letras-nav-submenu"> Casual </span>   
                             <i class="fa-solid fa-dice-five iconos-nav-submenu"></i>    
                         </a>                                      
@@ -64,7 +64,7 @@
         
         <!-- CARRITO -->
         <li class="nav-items">
-            <a routerLink = "/carrito">
+            <a routerLink = "/carrito" (click)="$event.stopPropagation(); onNavigate()">
                 <span class="letras-nav">Carrito</span>
                 <i class="fa-solid fa-cart-shopping iconos-nav"></i>
             </a>

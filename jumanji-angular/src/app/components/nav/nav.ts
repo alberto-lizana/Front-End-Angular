@@ -36,6 +36,10 @@ export class Nav {
     }
   }
 
+  onNavigate() {
+    this.cerrarTodo();
+  }
+
   scrollTo(id: string) {
     document.getElementById(id)
       ?.scrollIntoView({ behavior: 'smooth' });

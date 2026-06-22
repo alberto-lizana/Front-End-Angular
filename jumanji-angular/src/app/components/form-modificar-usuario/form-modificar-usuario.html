@@ -51,6 +51,13 @@
             <label for="r_contrasena" class="form-label letra-normal letra-normal-bold">Repetir</label>
             <input type="password" formControlName="r_contrasena" class="input-transparente letra-normal w-100" placeholder="••••••••">
         </div>
+
+        <!-- MENSAJE ERROR -->
+        @if (form.errors?.['passwordMismatch'] && form.get('r_contrasena')?.dirty) {
+            <small class="letra-normal-pequeña w-100 text-danger">
+                Las contraseñas no coinciden
+            </small>
+        }
     </div>
 
     <!-- BOTONES -->

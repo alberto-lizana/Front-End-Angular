@@ -1,5 +1,5 @@
 {
-    "Estrategia": [
+    "estrategia": [
         {
             "id": 1,
             "nombre": "Terraforming Mars",
@@ -43,7 +43,7 @@
         }
     ],
 
-    "Cooperativos": [
+    "cooperativos": [
         {
             "id": 4,
             "nombre": "Pandemic",
@@ -87,7 +87,7 @@
         }
     ],
 
-    "Rol": [
+    "rol": [
         {
             "id": 7,
             "nombre": "Dungeon & Dragons",
@@ -131,7 +131,7 @@
         }
     ],
 
-    "Casual": [
+    "casual": [
         {
             "id": 10,
             "nombre": "Uno No Mercy",

@@ -1,0 +1,62 @@
+<app-nav></app-nav>
+
+<section>
+    <div class="tabla-productos">
+    @for (juego of productos(); track juego.id) {
+        <div class="producto">
+            <div>
+                <div class="producto-imagen">
+                    <img [src]="'assets/img/' + juego.imagen" [alt]="juego.nombre">
+                </div>
+
+                <h3 class="letra-especial subtitulo">{{juego.nombre}}</h3>
+
+                <p class="letra-normal letra-normal-bold color-letra-dinamico mt-3 p-1">{{juego.descripcion}} </p>
+
+                <div class="info-juego m-1">
+
+                    <div class="item-info">
+                        <span class="letra-normal letra-normal-bold subtitulo">Precio</span>
+                        <span class="letra-normal color-letra-dinamico"><del>{{juego.precio}}</del></span>
+                    </div>
+
+                    <div class="item-info">
+                        <span class="letra-normal letra-normal-bold subtitulo">Descuento</span>
+                        <span class="letra-normal color-letra-dinamico">{{juego.descuento * 100}}%</span>
+                    </div>
+
+                    <div class="item-info">
+                        <span class="letra-normal letra-normal-bold subtitulo">Precio final</span>
+                        <span class="letra-normal color-letra-dinamico">{{ juego.precio - (juego.precio * juego.descuento)}}</span>
+                    </div>
+
+                    <div class="item-info">
+                        <span class="letra-normal letra-normal-bold subtitulo">Jugadores</span>
+                        <span class="letra-normal color-letra-dinamico">{{juego.cant_jugadores}}</span>
+                    </div>
+
+                    <div class="item-info">
+                        <span class="letra-normal letra-normal-bold subtitulo">Duración</span>
+                        <span class="letra-normal color-letra-dinamico">{{juego.duracion}}</span>
+                    </div>
+
+                    <div class="item-info">
+                        <span class="letra-normal letra-normal-bold subtitulo">Dificultad</span>
+                        <span class="letra-normal color-letra-dinamico">{{generarDificultad(juego.dificultad)}}</span>
+                    </div>
+                </div>
+            </div>
+
+        <button 
+        class="btn-comprar letra-normal letra-normal-bold subtitulo"
+        [class.btn-agregado]="agregado()[juego.id]"
+        [disabled]="agregado()[juego.id]"
+        (click)="$event.stopPropagation(); agregarAlCarrito(juego)">
+        {{ agregado()[juego.id] ? '✓ Agregado' : 'Agregar al Carrito' }}
+        </button>
+        </div>                
+    }
+    </div>
+</section>
+
+<app-footer></app-footer>

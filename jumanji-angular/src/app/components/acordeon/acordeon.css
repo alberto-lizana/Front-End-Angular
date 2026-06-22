@@ -1,0 +1,56 @@
+.accordion-jumanji {
+    --bs-accordion-bg: var(--bg-secundario);
+    --bs-accordion-border-color: var(--destacar-primario);
+    --bs-accordion-border-width: 1px;
+    --bs-accordion-border-radius: 12px;
+    --bs-accordion-btn-bg: rgba(0, 0, 0, 0.45);
+    --bs-accordion-btn-color: var(--destacar-primario);
+    --bs-accordion-active-bg: rgba(0, 0, 0, 0.75);
+    --bs-accordion-active-color: var(--destacar-primario);
+    --bs-accordion-btn-focus-box-shadow: 0 0 15px var(--destacar-primario);
+}
+
+.accordion-jumanji .accordion-item {
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--destacar-primario);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4), 0 0 8px var(--destacar-primario);
+}
+
+.accordion-jumanji .accordion-button {
+    font-family: "Eater", serif;
+    font-size: clamp(14px, 1.2vw, 22px);
+    background: transparent;
+    color: var(--destacar-primario);
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    transition: all .3s ease;
+}
+
+.accordion-jumanji .accordion-button:hover {
+    transform: scale(1.01);
+    filter: brightness(1.05);
+}
+
+.accordion-jumanji .accordion-button:not(.collapsed) {
+    box-shadow: inset 0 -1px 0 var(--destacar-primario);
+}
+
+.accordion-jumanji .accordion-body {
+    font-family: "Cinzel", serif;
+    font-size: clamp(13px, .9vw, 18px);
+    color: var(--texto-principal);
+    background: var(--degradado-primario);
+    backdrop-filter: blur(4px);
+}
+
+.accordion-jumanji .accordion-button::after {
+    filter: drop-shadow(0 0 5px var(--destacar-primario)) brightness(1.2);
+}
+
+.accordion-jumanji .accordion-item:hover {
+    transform: translateY(-2px);
+    box-shadow:0 0 15px var(--destacar-primario), 0 0 30px rgba(0,0,0,0.4);
+    transition: all .3s ease;
+}

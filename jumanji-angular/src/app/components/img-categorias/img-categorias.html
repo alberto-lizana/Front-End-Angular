@@ -1,0 +1,36 @@
+@if (categorias().length > 0) {
+    @for (categoria of categorias(); track categoria.titulo) {
+        <section class="contenedor-secundario info-categoria col-12 mb-3">
+            <a [routerLink]="['/productos', categoria.ruta]" class="contenedor-img-img">
+                <div class="contenedor-img-categoria" [style.background-image]="'url(/assets/img/' + categoria.imagen + ')'">
+                    <div class="titulo-imagen">
+                        {{ categoria.titulo }}
+                    </div>   
+                    <div class="row p-4 decoracion-categorias">
+                        <div class="col-md-4 col-sm-12"> 
+                            <h4 class="letra-especial subtitulo mb-3"> Características </h4>
+                            @for (caracteristica of categoria.caracteristicas; track $index) {
+                                <p class="letra-normal letra-normal-bold descripcion p-1">
+                                    {{ caracteristica }}
+                                </p>
+                            }
+                        </div>
+                        
+                        <div class="col-md-4 .col-sm-12"> 
+                            <h4 class="letra-especial subtitulo">  Descripción </h4>
+                            <p class="letra-normal letra-normal-bold descripcion pt-3">
+                                {{ categoria.descripcion }}
+                            </p>
+                        </div>
+                        <div class="col-md-4 .col-sm-12"> 
+                            <h4 class="letra-especial subtitulo">Espíritu</h4>
+                            <p class="letra-normal letra-normal-bold descripcion pt-3">
+                                {{ categoria.espiritu }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>    
+    } 
+}

@@ -30,8 +30,6 @@ export class ModificarUsuarioService{
 
     const usuarioModificado = normalizarUsuario(usuarioActualizado);
 
-    console.log(usuarioModificado);
-
     this.authService.actualizarUsuarioLocalStorage(usuarioModificado);
 
     this.authService.actualizarSesion(usuarioModificado);
