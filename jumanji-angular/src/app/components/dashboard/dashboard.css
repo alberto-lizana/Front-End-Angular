@@ -1,0 +1,9 @@
+.card-admin{
+    position: relative;
+    background: var(--degradado-primario);
+    border:1px solid var(--destacar-primario);
+    border-radius:15px;
+    padding:35px;
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+}

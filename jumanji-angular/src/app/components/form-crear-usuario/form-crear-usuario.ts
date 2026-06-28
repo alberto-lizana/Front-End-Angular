@@ -6,6 +6,14 @@ import { FormUtils } from '../../utils/form-utils';
 import { CrearUsuarioService } from '../../services/crear.usuario.service';
 import { normalizarUsuario } from '../../utils/normalizadores'
 
+/**
+ * @description
+ * Componente encargado de gestionar el formulario de creación de usuarios.
+ *
+ * Utiliza formularios reactivos para validar la información ingresada,
+ * crear un nuevo usuario y emitir el evento de cierre del formulario
+ * modal al finalizar la operación.
+ */
 @Component({
   selector: 'app-form-crear-usuario',
   standalone: true,
@@ -58,6 +66,14 @@ errorMessages = {
   }
 };
 
+  /**
+   * @description
+   * Procesa el envío del formulario de creación de usuario.
+   *
+   * Valida la información ingresada, construye el objeto del usuario,
+   * lo normaliza y solicita su almacenamiento mediante el servicio
+   * correspondiente.
+   */
   submit() {
     this.form.updateValueAndValidity();
     if (this.form.invalid) return;
@@ -88,6 +104,11 @@ errorMessages = {
     this.cerrar();
   }
 
+  /**
+   * @description
+   * Restablece el formulario y emite el evento para cerrar
+   * la ventana modal.
+   */
   cerrar() {
     FormUtils.reset(this.form);
     this.cerrarModal.emit();

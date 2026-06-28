@@ -1,5 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
+/**
+ * @description
+ * Es un componente modal que define una estructura visual (tipo card con animación) 
+ * y proyecta contenido dinámico en su interior, normalmente formularios, manteniendo consistencia de estilos.
+ */
 @Component({
   selector: 'app-modal',
   standalone: true,

@@ -1,3 +1,7 @@
+/**
+ * @description
+ * Representa un usuario registrado en la aplicación.
+ */
 export interface Usuario {
   id: number | null;
   nombre: string;

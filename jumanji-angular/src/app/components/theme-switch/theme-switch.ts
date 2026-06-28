@@ -2,6 +2,12 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { StorageService } from '../../services/storage.service';
 
+/**
+ * @description
+ * Componente encargado de gestionar el cambio entre el tema claro y oscuro
+ * de la aplicación, almacenando la preferencia del usuario y aplicándola
+ * al cargar la página.
+ */
 @Component({
   selector: 'app-theme-switch',
   standalone: true,
@@ -21,6 +27,11 @@ export class ThemeSwitch implements OnInit {
   ) {}
   
 
+  /**
+   * @description
+   * Inicializa el componente recuperando la preferencia de tema
+   * almacenada en el LocalStorage y aplicándola a la aplicación.
+   */
   ngOnInit() {
     const saved = this.storage.getItem('theme'); 
 
@@ -30,6 +41,12 @@ export class ThemeSwitch implements OnInit {
     }
   }
 
+  /**
+   * @description
+   * Alterna entre el tema claro y oscuro, actualizando la apariencia
+   * de la aplicación y guardando la preferencia del usuario en el
+   * LocalStorage.
+   */
   toggleTheme() {
     this.darkMode = !this.darkMode;
 

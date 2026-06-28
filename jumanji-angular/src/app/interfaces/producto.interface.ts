@@ -1,3 +1,7 @@
+/**
+ * @description
+ * Representa un producto.
+ */
 export interface Producto {
   id: number;
   nombre: string;

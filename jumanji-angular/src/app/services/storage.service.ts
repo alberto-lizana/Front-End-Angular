@@ -37,6 +37,18 @@ import { Admin } from '../interfaces/admin.interface';
 // Es el equivalente conceptual a un @Service de Spring Boot,
 // registrado como bean en el contenedor de inyección de
 // dependencias.
+
+/**
+ * @description
+ * Servicio encargado de abstraer el acceso a LocalStorage y SessionStorage.
+ *
+ * Su principal objetivo es centralizar el uso de estas APIs del navegador
+ * y garantizar compatibilidad con SSR (Server Side Rendering), evitando
+ * errores cuando la aplicación se ejecuta en entorno Node.js.
+ *
+ * Este servicio actúa como una capa de seguridad entre la aplicación y
+ * el almacenamiento del navegador.
+ */
 @Injectable({ providedIn: 'root' })
 export class StorageService {
 
@@ -72,6 +84,14 @@ export class StorageService {
   //   sin tocar localStorage (evita el error en el servidor).
   // - Si SÍ estamos en el navegador, llamamos a la función real
   //   de localStorage y devolvemos su resultado.
+  
+  /**
+   * @description
+   * Obtiene un valor almacenado en el localStorage según su clave.
+   *
+   * @param key Clave del valor almacenado.
+   * @returns El valor asociado a la clave en formato string o `null` si no existe.
+   */
   getItem(key: string): string | null {
     if (!this.isBrowser) return null;
     return localStorage.getItem(key);
@@ -85,11 +105,26 @@ export class StorageService {
   // - Si NO estamos en el navegador, no hacemos nada (return
   //   vacío, porque el método es "void" = no devuelve nada).
   // - Si SÍ estamos en el navegador, guardamos el valor.
+
+  /**
+   * @description
+   * Almacena un valor en el localStorage utilizando una clave.
+   *
+   * @param key Clave bajo la cual se almacenará el valor.
+   * @param value Valor que se desea guardar en el localStorage.
+   */
   setItem(key: string, value: string): void {
     if (!this.isBrowser) return;
     localStorage.setItem(key, value);
   }
 
+  /**
+   * @description
+   * Elimina todos los datos almacenados en el localStorage.
+   *
+   * Este método borra completamente el contenido del almacenamiento local
+   * del navegador.
+   */
   clearLocalStorage(): void {
     if (!this.isBrowser) return;
     localStorage.clear();
@@ -106,16 +141,37 @@ export class StorageService {
   //                      cierre el navegador.
   // - sessionStorage -> los datos se borran al cerrar la pestaña
   //                      o el navegador.
+  
+  /**
+   * @description
+   * Obtiene un valor desde el SessionStorage según la clave proporcionada.
+   *
+   * @param key Clave del valor almacenado.
+   * @returns El valor almacenado como string o `null` si no existe.
+   */
   getSessionItem(key: string): string | null {
     if (!this.isBrowser) return null;
     return sessionStorage.getItem(key);
   }
 
+  /**
+   * @description
+   * Almacena un valor en el SessionStorage utilizando una clave.
+   *
+   * @param key Clave bajo la cual se almacenará el valor.
+   * @param value Valor que se desea guardar en el SessionStorage.
+   */
   setSessionItem(key: string, value: string): void {
     if (!this.isBrowser) return;
     sessionStorage.setItem(key, value);
   }
 
+  /**
+   * @description
+   * Elimina todos los datos almacenados en el SessionStorage del navegador.
+   *
+   * Este método borra completamente el contenido del almacenamiento de sesión.
+   */
   clearSessionStorage(): void {
     if (!this.isBrowser) return;
     sessionStorage.clear();
@@ -137,6 +193,15 @@ export class StorageService {
     return this.isBrowser;
   }
 
+  /**
+   * @description
+   * Obtiene la lista de usuarios almacenados en el LocalStorage.
+   *
+   * Si no existe información o no se está ejecutando en el navegador,
+   * retorna un arreglo vacío.
+   *
+   * @returns Lista de usuarios registrados.
+   */
   getUsuarios(): Usuario[] {
     if (!this.isBrowser) return [];
     return JSON.parse(
@@ -144,6 +209,15 @@ export class StorageService {
     );
   }
 
+  /**
+   * @description
+   * Obtiene la lista de productos almacenados en el LocalStorage.
+   *
+   * Si no existe información o no se está ejecutando en el navegador,
+   * retorna un arreglo vacío.
+   *
+   * @returns Lista de productos disponibles.
+   */
   getProductos(): Producto[] {
     if (!this.isBrowser) return [];
     return JSON.parse(
@@ -151,6 +225,15 @@ export class StorageService {
     );
   }
 
+  /**
+   * @description
+   * Obtiene la lista de administradores almacenados en el LocalStorage.
+   *
+   * Si no existe información o no se está ejecutando en el navegador,
+   * retorna un arreglo vacío.
+   *
+   * @returns Lista de administradores registrados.
+   */
   getAdmin(): Admin[] {
     if (!this.isBrowser) return [];
     return JSON.parse(
