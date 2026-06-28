@@ -2,20 +2,30 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 /**
  * @description
- * Valida que un nombre contenga únicamente letras y espacios,
- * con una longitud mínima de dos caracteres.
+ * Valida que un nombre contenga únicamente letras y espacios.
  *
  * Requisitos:
  * - Solo permite letras (incluyendo acentos y la letra ñ).
  * - Permite espacios entre palabras.
- * - Debe contener al menos dos caracteres.
+ * - Debe contener al menos 3 letras (sin contar espacios).
  *
  * @param nombre Nombre que se desea validar.
- * @returns "true" si el nombre cumple el formato, de lo contrario, "false".
+ * @returns `true` si el nombre cumple el formato; de lo contrario, `false`.
+ *
+ * @usageNotes
+ * La función espera recibir un nombre previamente normalizado
+ * (por ejemplo, con trim y en minúsculas). No realiza la normalización internamente.
  */
 export const validarNombre = (nombre: string): boolean => {
-  const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}$/;
-  return regex.test(nombre);
+
+  const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
+
+  if (!regex.test(nombre)) return false;
+
+  // contar letras reales (sin espacios)
+  const soloLetras = nombre.replace(/\s/g, '');
+
+  return soloLetras.length >= 3;
 };
 
 /**
@@ -27,13 +37,23 @@ export const validarNombre = (nombre: string): boolean => {
  * - Solo permite letras (incluyendo acentos y la letra ñ).
  * - Puede contener espacios, guiones (-) y apóstrofos (').
  * - No permite caracteres especiales distintos de los anteriores.
+ * - Debe contener al menos 2 letras (sin contar espacios).
  *
  * @param apellido Apellido que se desea validar.
+ * 
  * @returns "true" si el apellido cumple el formato, de lo contrario, "false"
+ * 
+ * @usageNotes
+ * La función espera recibir un nombre previamente normalizado
+ * (por ejemplo, con trim y en minúsculas). No realiza la normalización internamente.
  */
 export const validarApellido = (apellido: string): boolean => {
+
   const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:[-'\s][A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
-  return regex.test(apellido);
+
+  if (!regex.test(apellido)) return false;
+
+  return apellido.replace(/[-'\s]/g, '').length >= 2;
 };
 
 /**
@@ -45,8 +65,7 @@ export const validarApellido = (apellido: string): boolean => {
  * - Debe incluir el símbolo @.
  * - El dominio puede contener letras, números, puntos y guiones.
  * - Debe existir un punto antes de la extensión.
- * - La extensión debe estar formada únicamente por letras y tener
- *   al menos dos caracteres.
+ * - La extensión debe estar formada únicamente por letras y tener al menos dos caracteres.
  *
  * @param email Correo electrónico que se desea validar.
  * @returns true si el correo cumple el formato, de lo contrario, false.

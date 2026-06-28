@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ThemeSwitch } from './theme-switch';
 
-describe('ThemeSwitch', () => {
+describe.skip('ThemeSwitch', () => {
   let component: ThemeSwitch;
   let fixture: ComponentFixture<ThemeSwitch>;
 

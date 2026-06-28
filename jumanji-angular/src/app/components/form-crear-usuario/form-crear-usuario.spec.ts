@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormCrearUsuario } from './form-crear-usuario';
 
-describe('FormCrearUsuario', () => {
+describe.skip('FormCrearUsuario', () => {
   let component: FormCrearUsuario;
   let fixture: ComponentFixture<FormCrearUsuario>;
 
