@@ -1,0 +1,852 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>jumanji-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">jumanji-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >AuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/auth.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio encargado de gestionar la autenticación y el estado de la sesión del usuario.</p>
+<p>Responsabilidades:</p>
+<ul>
+<li>Iniciar sesión.</li>
+<li>Obtener la sesión activa.</li>
+<li>Actualizar los datos del usuario almacenados.</li>
+<li>Actualizar la información de la sesión.</li>
+<li>Cerrar sesión.</li>
+</ul>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarSesion" >actualizarSesion</a>
+                            </li>
+                            <li>
+                                <a href="#actualizarUsuarioLocalStorage" >actualizarUsuarioLocalStorage</a>
+                            </li>
+                            <li>
+                                <a href="#getSessionActiva" >getSessionActiva</a>
+                            </li>
+                            <li>
+                                <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                <a href="#logout" >logout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(storageService: <a href="../injectables/StorageService.html" target="_self">StorageService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/auth.service.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>storageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StorageService.html" target="_self" >StorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarSesion"></a>
+                    <span class="name">
+                        <span ><b>actualizarSesion</b></span>
+                        <a href="#actualizarSesion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarSesion(usuario: <a href="../interfaces/Usuario.html" target="_self">Usuario</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="127"
+                                    class="link-to-prism">src/app/services/auth.service.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza la información del usuario almacenada en la sesión activa.</p>
+<p>Si existe una sesión en el SessionStorage, reemplaza el objeto <code>user</code>
+por la información recibida, manteniendo el resto de los datos de la
+sesión, como el estado de autenticación (<code>logueado</code>).</p>
+<p>Este método se utiliza junto con <code>actualizarUsuarioLocalStorage()</code>
+después de modificar los datos de un usuario, para mantener sincronizada
+la información almacenada en el SessionStorage con la del LocalStorage.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>usuario</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Usuario.html" target="_self" >Usuario</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Usuario con la información actualizada.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarUsuarioLocalStorage"></a>
+                    <span class="name">
+                        <span ><b>actualizarUsuarioLocalStorage</b></span>
+                        <a href="#actualizarUsuarioLocalStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarUsuarioLocalStorage(usuario: <a href="../interfaces/Usuario.html" target="_self">Usuario</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/services/auth.service.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza la información de un usuario en el LocalStorage.</p>
+<p>Este método reemplaza los datos del usuario existente manteniendo su
+identidad (id) y cualquier información previamente asociada, como el
+carrito de compras u otros datos persistentes.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>usuario</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Usuario.html" target="_self" >Usuario</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Usuario con la información actualizada.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSessionActiva"></a>
+                    <span class="name">
+                        <span ><b>getSessionActiva</b></span>
+                        <a href="#getSessionActiva"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSessionActiva()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/services/auth.service.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtenemos la session que está activa en el navegador.</p>
+<p>La session tiene dos parámetros logueado (boolean) y el objeto usuario,
+que es un conjunto de campos que le pertenecen al usuario</p>
+<p>Por otro lado si no existe session obtendremos null.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Obtenemos la información del usuario (objeto usuario) de la cuenta que esta en el sessionStorage. 
+Por otro lado si no existe session obtendremos null.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>login(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, contrasena: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/app/services/auth.service.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Inicia sesión verificando las credenciales del usuario.</p>
+<p>Si las credenciales son válidas, crea la sesión en el SessionStorage
+y retorna el usuario autenticado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Correo electrónico del usuario.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>contrasena</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Contraseña del usuario.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../components/Admin.html" target="_self" >Admin | Usuario | null</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El usuario autenticado o null si las credenciales son incorrectas.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="153"
+                                    class="link-to-prism">src/app/services/auth.service.ts:153</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Cierra la sesión activa eliminando la información almacenada
+en el SessionStorage.</p>
+<p>Si existe una sesión, esta es eliminada y el método retorna true.
+Si no existe una sesión activa, no realiza ninguna acción y retorna <code>false</code>.</p>
+<p>true si la sesión fue eliminada correctamente;
+false si no existía una sesión activa.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>true si la sesión fue eliminada correctamente;
+false si no existía una sesión activa.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { StorageService } from &quot;./storage.service&quot;;
+import { Admin } from &quot;../interfaces/admin.interface&quot;;
+import { Usuario } from &quot;../interfaces/usuario.interface&quot;;
+import { normalizarUsuario } from &quot;../utils/normalizadores&quot;;
+
+/**
+ * @description
+ * Servicio encargado de gestionar la autenticación y el estado de la sesión del usuario.
+ *
+ * Responsabilidades:
+ * - Iniciar sesión.
+ * - Obtener la sesión activa.
+ * - Actualizar los datos del usuario almacenados.
+ * - Actualizar la información de la sesión.
+ * - Cerrar sesión.
+ */
+ 
+@Injectable({ providedIn: &#x27;root&#x27; })
+export class AuthService {
+
+  constructor(private storageService: StorageService) {}
+
+  /**
+   * @description
+   * Inicia sesión verificando las credenciales del usuario.
+   *
+   * Si las credenciales son válidas, crea la sesión en el SessionStorage
+   * y retorna el usuario autenticado.
+   *
+   * @param email Correo electrónico del usuario.
+   * @param contrasena Contraseña del usuario.
+   * @returns El usuario autenticado o null si las credenciales son incorrectas.
+   */
+  login(email: string, contrasena: string): Admin | Usuario | null {
+    
+    const usuarios &#x3D; this.storageService.getUsuarios();
+    const administradores &#x3D; this.storageService.getAdmin();
+
+    const user &#x3D;
+      usuarios.find(u &#x3D;&gt; u.email &#x3D;&#x3D;&#x3D; email &amp;&amp; u.contrasena &#x3D;&#x3D;&#x3D; contrasena) ||
+      administradores.find(a &#x3D;&gt; a.email &#x3D;&#x3D;&#x3D; email &amp;&amp; a.contrasena &#x3D;&#x3D;&#x3D; contrasena);
+
+    if (!user) return null;
+
+    if (user.rol &#x3D;&#x3D;&#x3D; &#x27;user&#x27;){
+      const usuario &#x3D; normalizarUsuario(user);
+    
+      this.storageService.setSessionItem(&#x27;sesion&#x27;, JSON.stringify({
+        logueado: true,
+        user: usuario
+      }));
+
+      return usuario;
+    } else {
+      this.storageService.setSessionItem(&#x27;sesion&#x27;, JSON.stringify({
+        logueado: true,
+        user: user
+      }));
+      return user;
+    }
+  }
+
+  /**
+   * @description
+   * Obtenemos la session que está activa en el navegador.
+   *
+   * La session tiene dos parámetros logueado (boolean) y el objeto usuario, 
+   * que es un conjunto de campos que le pertenecen al usuario
+   * 
+   * @returns Obtenemos la información del usuario (objeto usuario) de la cuenta que esta en el sessionStorage. 
+   * Por otro lado si no existe session obtendremos null. 
+   */
+  getSessionActiva(){
+    const sesion &#x3D; this.storageService.getSessionItem(&#x27;sesion&#x27;);
+
+    if (!sesion) return null;
+
+    const info &#x3D; JSON.parse(sesion);
+    const data &#x3D; info.user
+
+    return data
+  }
+  
+  /**
+   * @description
+   * Actualiza la información de un usuario en el LocalStorage.
+   *
+   * Este método reemplaza los datos del usuario existente manteniendo su
+   * identidad (id) y cualquier información previamente asociada, como el
+   * carrito de compras u otros datos persistentes.
+   *
+   * @param usuario Usuario con la información actualizada.
+   */
+  actualizarUsuarioLocalStorage(usuario: Usuario){
+    const usuarios &#x3D; this.storageService.getUsuarios();
+
+    const index &#x3D; usuarios.findIndex(
+      u &#x3D;&gt; u.id &#x3D;&#x3D;&#x3D; usuario.id
+    );
+
+    if (index !&#x3D;&#x3D; -1) {
+      usuarios[index] &#x3D; usuario;
+    }
+
+    this.storageService.setItem(
+      &#x27;usuarios&#x27;,
+      JSON.stringify(usuarios)
+    )
+  }
+
+  /**
+   * @description
+   * Actualiza la información del usuario almacenada en la sesión activa.
+   *
+   * Si existe una sesión en el SessionStorage, reemplaza el objeto &#x60;user&#x60;
+   * por la información recibida, manteniendo el resto de los datos de la
+   * sesión, como el estado de autenticación (&#x60;logueado&#x60;).
+   *
+   * @param usuario Usuario con la información actualizada.
+   *
+   * @usageNotes
+   * Este método se utiliza junto con &#x60;actualizarUsuarioLocalStorage()&#x60;
+   * después de modificar los datos de un usuario, para mantener sincronizada
+   * la información almacenada en el SessionStorage con la del LocalStorage.
+   */
+  actualizarSesion(usuario: Usuario){
+    const sesion &#x3D; this.storageService.getSessionItem(&#x27;sesion&#x27;);
+
+    if (sesion) {
+      const info &#x3D; JSON.parse(sesion);
+      info.user &#x3D; usuario;
+
+      this.storageService.setSessionItem(
+        &#x27;sesion&#x27;,
+        JSON.stringify(info)
+      )
+    }
+  }
+
+  /**
+   * @description
+   * Cierra la sesión activa eliminando la información almacenada
+   * en el SessionStorage.
+   *
+   * Si existe una sesión, esta es eliminada y el método retorna true.
+   * Si no existe una sesión activa, no realiza ninguna acción y retorna &#x60;false&#x60;.
+   *
+   * @returns
+   * true si la sesión fue eliminada correctamente;
+   * false si no existía una sesión activa.
+   */
+  logout(): boolean {
+      const sesion &#x3D; this.storageService.getSessionItem(&#x27;sesion&#x27;);
+
+      if (!sesion) return false;
+
+      this.storageService.removeSessionItem(&#x27;sesion&#x27;);
+
+      return true;
+  }
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

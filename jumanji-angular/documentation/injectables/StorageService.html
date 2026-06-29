@@ -1,0 +1,1304 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>jumanji-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">jumanji-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >StorageService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/storage.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio encargado de abstraer el acceso a LocalStorage y SessionStorage.</p>
+<p>Su principal objetivo es centralizar el uso de estas APIs del navegador
+y garantizar compatibilidad con SSR (Server Side Rendering), evitando
+errores cuando la aplicación se ejecuta en entorno Node.js.</p>
+<p>Este servicio actúa como una capa de seguridad entre la aplicación y
+el almacenamiento del navegador.</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isBrowser" >isBrowser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clearLocalStorage" >clearLocalStorage</a>
+                            </li>
+                            <li>
+                                <a href="#clearSessionStorage" >clearSessionStorage</a>
+                            </li>
+                            <li>
+                                <a href="#getAdmin" >getAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#getItem" >getItem</a>
+                            </li>
+                            <li>
+                                <a href="#getProductos" >getProductos</a>
+                            </li>
+                            <li>
+                                <a href="#getSessionItem" >getSessionItem</a>
+                            </li>
+                            <li>
+                                <a href="#getUsuarios" >getUsuarios</a>
+                            </li>
+                            <li>
+                                <a href="#isRunningInBrowser" >isRunningInBrowser</a>
+                            </li>
+                            <li>
+                                <a href="#removeSessionItem" >removeSessionItem</a>
+                            </li>
+                            <li>
+                                <a href="#setItem" >setItem</a>
+                            </li>
+                            <li>
+                                <a href="#setSessionItem" >setSessionItem</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(platformId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/services/storage.service.ts:59</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>platformId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearLocalStorage"></a>
+                    <span class="name">
+                        <span ><b>clearLocalStorage</b></span>
+                        <a href="#clearLocalStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearLocalStorage()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/services/storage.service.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina todos los datos almacenados en el localStorage.</p>
+<p>Este método borra completamente el contenido del almacenamiento local
+del navegador.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearSessionStorage"></a>
+                    <span class="name">
+                        <span ><b>clearSessionStorage</b></span>
+                        <a href="#clearSessionStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearSessionStorage()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="175"
+                                    class="link-to-prism">src/app/services/storage.service.ts:175</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina todos los datos almacenados en el SessionStorage del navegador.</p>
+<p>Este método borra completamente el contenido del almacenamiento de sesión.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAdmin"></a>
+                    <span class="name">
+                        <span ><b>getAdmin</b></span>
+                        <a href="#getAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAdmin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="237"
+                                    class="link-to-prism">src/app/services/storage.service.ts:237</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de administradores almacenados en el LocalStorage.</p>
+<p>Si no existe información o no se está ejecutando en el navegador,
+retorna un arreglo vacío.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Admin.html" target="_self" >Admin[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Lista de administradores registrados.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItem"></a>
+                    <span class="name">
+                        <span ><b>getItem</b></span>
+                        <a href="#getItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getItem(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/services/storage.service.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un valor almacenado en el localStorage según su clave.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Clave del valor almacenado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El valor asociado a la clave en formato string o <code>null</code> si no existe.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductos"></a>
+                    <span class="name">
+                        <span ><b>getProductos</b></span>
+                        <a href="#getProductos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="221"
+                                    class="link-to-prism">src/app/services/storage.service.ts:221</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de productos almacenados en el LocalStorage.</p>
+<p>Si no existe información o no se está ejecutando en el navegador,
+retorna un arreglo vacío.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Producto.html" target="_self" >Producto[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Lista de productos disponibles.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSessionItem"></a>
+                    <span class="name">
+                        <span ><b>getSessionItem</b></span>
+                        <a href="#getSessionItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSessionItem(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/services/storage.service.ts:152</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un valor desde el SessionStorage según la clave proporcionada.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Clave del valor almacenado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>El valor almacenado como string o <code>null</code> si no existe.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsuarios"></a>
+                    <span class="name">
+                        <span ><b>getUsuarios</b></span>
+                        <a href="#getUsuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsuarios()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="205"
+                                    class="link-to-prism">src/app/services/storage.service.ts:205</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de usuarios almacenados en el LocalStorage.</p>
+<p>Si no existe información o no se está ejecutando en el navegador,
+retorna un arreglo vacío.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Usuario.html" target="_self" >Usuario[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Lista de usuarios registrados.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isRunningInBrowser"></a>
+                    <span class="name">
+                        <span ><b>isRunningInBrowser</b></span>
+                        <a href="#isRunningInBrowser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isRunningInBrowser()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="192"
+                                    class="link-to-prism">src/app/services/storage.service.ts:192</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeSessionItem"></a>
+                    <span class="name">
+                        <span ><b>removeSessionItem</b></span>
+                        <a href="#removeSessionItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeSessionItem(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="253"
+                                    class="link-to-prism">src/app/services/storage.service.ts:253</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un elemento específico del SessionStorage.</p>
+<p>Si la aplicación no se está ejecutando en un navegador,
+el método no realiza ninguna acción.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Clave del elemento que se eliminará del SessionStorage.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setItem"></a>
+                    <span class="name">
+                        <span ><b>setItem</b></span>
+                        <a href="#setItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setItem(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="116"
+                                    class="link-to-prism">src/app/services/storage.service.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Almacena un valor en el localStorage utilizando una clave.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Clave bajo la cual se almacenará el valor.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>value</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Valor que se desea guardar en el localStorage.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSessionItem"></a>
+                    <span class="name">
+                        <span ><b>setSessionItem</b></span>
+                        <a href="#setSessionItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setSessionItem(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/app/services/storage.service.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Almacena un valor en el SessionStorage utilizando una clave.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Clave bajo la cual se almacenará el valor.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>value</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Valor que se desea guardar en el SessionStorage.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isBrowser"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>isBrowser</b></span>
+                        <a href="#isBrowser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/services/storage.service.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Inject, PLATFORM_ID } from &#x27;@angular/core&#x27;;
+
+// isPlatformBrowser: función helper que recibe el valor de
+// PLATFORM_ID y devuelve true/false según si es el navegador.
+import { isPlatformBrowser } from &#x27;@angular/common&#x27;;
+import { Usuario } from &#x27;../interfaces/usuario.interface&#x27;;
+import { Producto } from &#x27;../interfaces/producto.interface&#x27;;
+import { Admin } from &#x27;../interfaces/admin.interface&#x27;;
+
+
+// @Injectable({ providedIn: &#x27;root&#x27; })
+// ------------------------------------------------------------
+// Le dice a Angular: &quot;esta clase es un servicio, créala UNA sola
+// vez (singleton) y mantenla disponible para toda la aplicación&quot;.
+// Es el equivalente conceptual a un @Service de Spring Boot,
+// registrado como bean en el contenedor de inyección de
+// dependencias.
+
+/**
+ * @description
+ * Servicio encargado de abstraer el acceso a LocalStorage y SessionStorage.
+ *
+ * Su principal objetivo es centralizar el uso de estas APIs del navegador
+ * y garantizar compatibilidad con SSR (Server Side Rendering), evitando
+ * errores cuando la aplicación se ejecuta en entorno Node.js.
+ *
+ * Este servicio actúa como una capa de seguridad entre la aplicación y
+ * el almacenamiento del navegador.
+ */
+@Injectable({ providedIn: &#x27;root&#x27; })
+export class StorageService {
+
+  // Variable privada que guarda el resultado de la pregunta:
+  // &quot;¿esta instancia de la app está corriendo en el navegador?&quot;
+  // Se calcula UNA sola vez (en el constructor) y se reutiliza
+  // en todos los métodos de la clase.
+  private isBrowser: boolean;
+
+  // ----------------------------------------------------------
+  // Constructor
+  // ----------------------------------------------------------
+  // Cuando Angular crea este servicio (la primera vez que algún
+  // componente lo pide), automáticamente le &quot;inyecta&quot; el valor
+  // de PLATFORM_ID gracias a @Inject(PLATFORM_ID).
+  //
+  // platformId valdrá:
+  //   - &#x27;browser&#x27; si la app corre en el navegador del usuario
+  //   - &#x27;server&#x27;  si la app corre en el servidor (Node, SSR)
+  //
+  // isPlatformBrowser(platformId) traduce ese valor a un booleano
+  // simple: true (navegador) o false (servidor).
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser &#x3D; isPlatformBrowser(platformId);
+  }
+
+  // ----------------------------------------------------------
+  // getItem
+  // ----------------------------------------------------------
+  // Wrapper (envoltorio) seguro de localStorage.getItem().
+  //
+  // - Si NO estamos en el navegador, devolvemos null de inmediato
+  //   sin tocar localStorage (evita el error en el servidor).
+  // - Si SÍ estamos en el navegador, llamamos a la función real
+  //   de localStorage y devolvemos su resultado.
+  
+  /**
+   * @description
+   * Obtiene un valor almacenado en el localStorage según su clave.
+   *
+   * @param key Clave del valor almacenado.
+   * @returns El valor asociado a la clave en formato string o &#x60;null&#x60; si no existe.
+   */
+  getItem(key: string): string | null {
+    if (!this.isBrowser) return null;
+    return localStorage.getItem(key);
+  }
+
+  // ----------------------------------------------------------
+  // setItem
+  // ----------------------------------------------------------
+  // Wrapper seguro de localStorage.setItem().
+  //
+  // - Si NO estamos en el navegador, no hacemos nada (return
+  //   vacío, porque el método es &quot;void&quot; &#x3D; no devuelve nada).
+  // - Si SÍ estamos en el navegador, guardamos el valor.
+
+  /**
+   * @description
+   * Almacena un valor en el localStorage utilizando una clave.
+   *
+   * @param key Clave bajo la cual se almacenará el valor.
+   * @param value Valor que se desea guardar en el localStorage.
+   */
+  setItem(key: string, value: string): void {
+    if (!this.isBrowser) return;
+    localStorage.setItem(key, value);
+  }
+
+  /**
+   * @description
+   * Elimina todos los datos almacenados en el localStorage.
+   *
+   * Este método borra completamente el contenido del almacenamiento local
+   * del navegador.
+   */
+  clearLocalStorage(): void {
+    if (!this.isBrowser) return;
+    localStorage.clear();
+  }
+
+  // ----------------------------------------------------------
+  // getSessionItem / setSessionItem
+  // ----------------------------------------------------------
+  // Misma lógica que getItem/setItem, pero usando sessionStorage
+  // en vez de localStorage.
+  //
+  // Diferencia entre ambos:
+  // - localStorage   -&gt; los datos persisten aunque el usuario
+  //                      cierre el navegador.
+  // - sessionStorage -&gt; los datos se borran al cerrar la pestaña
+  //                      o el navegador.
+  
+  /**
+   * @description
+   * Obtiene un valor desde el SessionStorage según la clave proporcionada.
+   *
+   * @param key Clave del valor almacenado.
+   * @returns El valor almacenado como string o &#x60;null&#x60; si no existe.
+   */
+  getSessionItem(key: string): string | null {
+    if (!this.isBrowser) return null;
+    return sessionStorage.getItem(key);
+  }
+
+  /**
+   * @description
+   * Almacena un valor en el SessionStorage utilizando una clave.
+   *
+   * @param key Clave bajo la cual se almacenará el valor.
+   * @param value Valor que se desea guardar en el SessionStorage.
+   */
+  setSessionItem(key: string, value: string): void {
+    if (!this.isBrowser) return;
+    sessionStorage.setItem(key, value);
+  }
+
+  /**
+   * @description
+   * Elimina todos los datos almacenados en el SessionStorage del navegador.
+   *
+   * Este método borra completamente el contenido del almacenamiento de sesión.
+   */
+  clearSessionStorage(): void {
+    if (!this.isBrowser) return;
+    sessionStorage.clear();
+  }
+
+  // ----------------------------------------------------------
+  // isRunningInBrowser
+  // ----------------------------------------------------------
+  // Método público para que, desde un componente, también puedas
+  // preguntar &quot;¿estoy en el navegador?&quot; antes de usar OTRAS APIs
+  // exclusivas del navegador, como &#x60;document&#x60; o &#x60;window&#x60;,
+  // que este servicio no envuelve directamente.
+  //
+  // Ejemplo de uso en un componente:
+  //   if (this.storage.isRunningInBrowser()) {
+  //     document.body.classList.add(&#x27;dark&#x27;);
+  //   }
+  isRunningInBrowser(): boolean {
+    return this.isBrowser;
+  }
+
+  /**
+   * @description
+   * Obtiene la lista de usuarios almacenados en el LocalStorage.
+   *
+   * Si no existe información o no se está ejecutando en el navegador,
+   * retorna un arreglo vacío.
+   *
+   * @returns Lista de usuarios registrados.
+   */
+  getUsuarios(): Usuario[] {
+    if (!this.isBrowser) return [];
+    return JSON.parse(
+      localStorage.getItem(&#x27;usuarios&#x27;) || &#x27;[]&#x27;
+    );
+  }
+
+  /**
+   * @description
+   * Obtiene la lista de productos almacenados en el LocalStorage.
+   *
+   * Si no existe información o no se está ejecutando en el navegador,
+   * retorna un arreglo vacío.
+   *
+   * @returns Lista de productos disponibles.
+   */
+  getProductos(): Producto[] {
+    if (!this.isBrowser) return [];
+    return JSON.parse(
+      localStorage.getItem(&#x27;productos&#x27;) || &#x27;[]&#x27;
+    );
+  }
+
+  /**
+   * @description
+   * Obtiene la lista de administradores almacenados en el LocalStorage.
+   *
+   * Si no existe información o no se está ejecutando en el navegador,
+   * retorna un arreglo vacío.
+   *
+   * @returns Lista de administradores registrados.
+   */
+  getAdmin(): Admin[] {
+    if (!this.isBrowser) return [];
+    return JSON.parse(
+      localStorage.getItem(&#x27;admin&#x27;) || &#x27;[]&#x27;
+    );
+  }
+
+  /**
+   * @description
+   * Elimina un elemento específico del SessionStorage.
+   *
+   * Si la aplicación no se está ejecutando en un navegador,
+   * el método no realiza ninguna acción.
+   *
+   * @param key Clave del elemento que se eliminará del SessionStorage.
+   */
+  removeSessionItem(key: string): void {
+    if (!this.isBrowser) return;
+    sessionStorage.removeItem(key);
+  }
+}
+
+
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'StorageService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

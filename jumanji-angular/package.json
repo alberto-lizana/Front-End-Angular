@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "docs": "compodoc -p tsconfig.json",
+    "docs:serve": "compodoc -p tsconfig.json -s",
     "serve:ssr:jumanji-angular": "node dist/jumanji-angular/server/server.mjs"
   },
   "private": true,

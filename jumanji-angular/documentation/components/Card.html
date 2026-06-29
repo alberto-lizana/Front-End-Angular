@@ -1,0 +1,870 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>jumanji-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">jumanji-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  Card</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/card/card.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente encargado de obtener y mostrar los productos de la categoría
+seleccionada.</p>
+<p>Recupera la categoría desde los parámetros de la ruta, consulta el
+servicio correspondiente para obtener los productos y permite agregarlos
+al carrito de compras.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-card</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./card.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./card.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregado" >agregado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#carritoService" >carritoService</a>
+                            </li>
+                            <li>
+                                <a href="#productos" >productos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#productoService" >productoService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#route" >route</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarAlCarrito" >agregarAlCarrito</a>
+                            </li>
+                            <li>
+                                <a href="#generarDificultad" >generarDificultad</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarAlCarrito"></a>
+                    <span class="name">
+                        <span ><b>agregarAlCarrito</b></span>
+                        <a href="#agregarAlCarrito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarAlCarrito(juego: <a href="../interfaces/Producto.html" target="_self">Producto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="69"
+                                    class="link-to-prism">src/app/components/card/card.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Agrega un juego al carrito de compras y actualiza temporalmente el
+estado del botón para indicar que el producto fue agregado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>juego</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Producto que será agregado al carrito.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generarDificultad"></a>
+                    <span class="name">
+                        <span ><b>generarDificultad</b></span>
+                        <a href="#generarDificultad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generarDificultad(dificultad: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/components/card/card.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Genera una representación visual de la dificultad del juego mediante
+estrellas llenas y vacías.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dificultad</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Nivel de dificultad del juego (1 a 5).</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Cadena de texto con estrellas que representan la dificultad.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregado"></a>
+                    <span class="name">
+                        <span ><b>agregado</b></span>
+                        <a href="#agregado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal&lt;{ [id: number]: boolean }&gt;({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/card/card.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carritoService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>carritoService</b></span>
+                        <a href="#carritoService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CarritoService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/card/card.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productos"></a>
+                    <span class="name">
+                        <span ><b>productos</b></span>
+                        <a href="#productos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>toSignal(
+    this.route.paramMap.pipe(
+      map(params &#x3D;&gt; params.get(&#x27;categoria&#x27;) as keyof ProductosResponse),
+      filter((c): c is keyof ProductosResponse &#x3D;&gt; !!c),
+      switchMap(categoria &#x3D;&gt; this.productoService.obtenerProductoCategoria(categoria))
+    ),
+    { initialValue: [] as Producto[] }
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/card/card.ts:41</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Señal que contiene la lista de productos de la categoría seleccionada.</p>
+<p>La categoría se obtiene desde los parámetros de la ruta y se utiliza
+para consultar el servicio de productos correspondiente.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productoService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>productoService</b></span>
+                        <a href="#productoService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ProductoService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/card/card.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="route"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>route</b></span>
+                        <a href="#route"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ActivatedRoute)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/card/card.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, signal } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { toSignal } from &#x27;@angular/core/rxjs-interop&#x27;;
+import { map, switchMap, filter } from &#x27;rxjs/operators&#x27;;
+import { ProductoService } from &#x27;../../services/producto.service&#x27;;
+import { ProductosResponse } from &#x27;../../interfaces/productos.response.interface&#x27;;
+import { Producto } from &#x27;../../interfaces/producto.interface&#x27;;
+import { CarritoService } from &#x27;../../services/carrito.service&#x27;;
+
+/**
+ * @description
+ * Componente encargado de obtener y mostrar los productos de la categoría
+ * seleccionada.
+ *
+ * Recupera la categoría desde los parámetros de la ruta, consulta el
+ * servicio correspondiente para obtener los productos y permite agregarlos
+ * al carrito de compras.
+ */
+@Component({
+  selector: &#x27;app-card&#x27;,
+  standalone: true,
+  imports: [],
+  templateUrl: &#x27;./card.html&#x27;,
+  styleUrl: &#x27;./card.css&#x27;,
+})
+export class Card {
+
+  private route &#x3D; inject(ActivatedRoute);
+  private productoService &#x3D; inject(ProductoService);
+  private carritoService &#x3D; inject(CarritoService);
+
+  agregado &#x3D; signal&lt;{ [id: number]: boolean }&gt;({});
+
+  /**
+   * @description
+   * Señal que contiene la lista de productos de la categoría seleccionada.
+   *
+   * La categoría se obtiene desde los parámetros de la ruta y se utiliza
+   * para consultar el servicio de productos correspondiente.
+   */
+  productos &#x3D; toSignal(
+    this.route.paramMap.pipe(
+      map(params &#x3D;&gt; params.get(&#x27;categoria&#x27;) as keyof ProductosResponse),
+      filter((c): c is keyof ProductosResponse &#x3D;&gt; !!c),
+      switchMap(categoria &#x3D;&gt; this.productoService.obtenerProductoCategoria(categoria))
+    ),
+    { initialValue: [] as Producto[] }
+  );
+
+  /**
+   * @description
+   * Genera una representación visual de la dificultad del juego mediante
+   * estrellas llenas y vacías.
+   *
+   * @param dificultad Nivel de dificultad del juego (1 a 5).
+   * @returns Cadena de texto con estrellas que representan la dificultad.
+   */
+  generarDificultad(dificultad: number) {
+    return &quot;⭐&quot;.repeat(dificultad) + &quot;☆&quot;.repeat(5 - dificultad);
+  }
+
+  /**
+   * @description
+   * Agrega un juego al carrito de compras y actualiza temporalmente el
+   * estado del botón para indicar que el producto fue agregado.
+   *
+   * @param juego Producto que será agregado al carrito.
+   */
+  agregarAlCarrito(juego: Producto): void {
+    this.carritoService.agregarAlCarrito(juego);
+    this.agregado.set({ ...this.agregado(), [juego.id]: true });
+    setTimeout(() &#x3D;&gt; {
+      this.agregado.set({ ...this.agregado(), [juego.id]: false });
+    }, 1000);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section&gt;
+    &lt;div class&#x3D;&quot;tabla-productos&quot;&gt;
+    @for (juego of productos(); track juego.id) {
+        &lt;div class&#x3D;&quot;producto&quot;&gt;
+            &lt;div&gt;
+                &lt;div class&#x3D;&quot;producto-imagen&quot;&gt;
+                    &lt;img [src]&#x3D;&quot;&#x27;assets/img/&#x27; + juego.imagen&quot; [alt]&#x3D;&quot;juego.nombre&quot;&gt;
+                &lt;/div&gt;
+
+                &lt;h3 class&#x3D;&quot;letra-especial subtitulo&quot;&gt;{{juego.nombre}}&lt;/h3&gt;
+
+                &lt;p class&#x3D;&quot;letra-normal letra-normal-bold color-letra-dinamico mt-3 p-1&quot;&gt;{{juego.descripcion}} &lt;/p&gt;
+
+                &lt;div class&#x3D;&quot;info-juego m-1&quot;&gt;
+
+                    &lt;div class&#x3D;&quot;item-info&quot;&gt;
+                        &lt;span class&#x3D;&quot;letra-normal letra-normal-bold subtitulo&quot;&gt;Precio&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;letra-normal color-letra-dinamico&quot;&gt;&lt;del&gt;{{juego.precio}}&lt;/del&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;item-info&quot;&gt;
+                        &lt;span class&#x3D;&quot;letra-normal letra-normal-bold subtitulo&quot;&gt;Descuento&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;letra-normal color-letra-dinamico&quot;&gt;{{juego.descuento * 100}}%&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;item-info&quot;&gt;
+                        &lt;span class&#x3D;&quot;letra-normal letra-normal-bold subtitulo&quot;&gt;Precio final&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;letra-normal color-letra-dinamico&quot;&gt;{{ juego.precio - (juego.precio * juego.descuento)}}&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;item-info&quot;&gt;
+                        &lt;span class&#x3D;&quot;letra-normal letra-normal-bold subtitulo&quot;&gt;Jugadores&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;letra-normal color-letra-dinamico&quot;&gt;{{juego.cant_jugadores}}&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;item-info&quot;&gt;
+                        &lt;span class&#x3D;&quot;letra-normal letra-normal-bold subtitulo&quot;&gt;Duración&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;letra-normal color-letra-dinamico&quot;&gt;{{juego.duracion}}&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;item-info&quot;&gt;
+                        &lt;span class&#x3D;&quot;letra-normal letra-normal-bold subtitulo&quot;&gt;Dificultad&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;letra-normal color-letra-dinamico&quot;&gt;{{generarDificultad(juego.dificultad)}}&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;button 
+        class&#x3D;&quot;btn-comprar letra-normal letra-normal-bold subtitulo&quot;
+        [class.btn-agregado]&#x3D;&quot;agregado()[juego.id]&quot;
+        [disabled]&#x3D;&quot;agregado()[juego.id]&quot;
+        (click)&#x3D;&quot;$event.stopPropagation(); agregarAlCarrito(juego)&quot;&gt;
+        {{ agregado()[juego.id] ? &#x27;✓ Agregado&#x27; : &#x27;Agregar al Carrito&#x27; }}
+        &lt;/button&gt;
+        &lt;/div&gt;                
+    }
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section>    <div class="tabla-productos">    @for (juego of productos(); track juego.id) {        <div class="producto">            <div>                <div class="producto-imagen">                    <img [src]="\'assets/img/\' + juego.imagen" [alt]="juego.nombre">                </div>                <h3 class="letra-especial subtitulo">{{juego.nombre}}</h3>                <p class="letra-normal letra-normal-bold color-letra-dinamico mt-3 p-1">{{juego.descripcion}} </p>                <div class="info-juego m-1">                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Precio</span>                        <span class="letra-normal color-letra-dinamico"><del>{{juego.precio}}</del></span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Descuento</span>                        <span class="letra-normal color-letra-dinamico">{{juego.descuento * 100}}%</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Precio final</span>                        <span class="letra-normal color-letra-dinamico">{{ juego.precio - (juego.precio * juego.descuento)}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Jugadores</span>                        <span class="letra-normal color-letra-dinamico">{{juego.cant_jugadores}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Duración</span>                        <span class="letra-normal color-letra-dinamico">{{juego.duracion}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Dificultad</span>                        <span class="letra-normal color-letra-dinamico">{{generarDificultad(juego.dificultad)}}</span>                    </div>                </div>            </div>        <button         class="btn-comprar letra-normal letra-normal-bold subtitulo"        [class.btn-agregado]="agregado()[juego.id]"        [disabled]="agregado()[juego.id]"        (click)="$event.stopPropagation(); agregarAlCarrito(juego)">        {{ agregado()[juego.id] ? \'✓ Agregado\' : \'Agregar al Carrito\' }}        </button>        </div>                    }    </div></section></div>'
+    var COMPONENTS = [{'name': 'Acordeon', 'selector': 'app-acordeon'},{'name': 'Admin', 'selector': 'app-admin'},{'name': 'App', 'selector': 'app-root'},{'name': 'Card', 'selector': 'app-card'},{'name': 'Carrito', 'selector': 'app-carrito'},{'name': 'CarritoPage', 'selector': 'app-carrito-page'},{'name': 'Dashboard', 'selector': 'app-dashboard'},{'name': 'Footer', 'selector': 'app-footer'},{'name': 'FormCrearUsuario', 'selector': 'app-form-crear-usuario'},{'name': 'FormModificarUsuario', 'selector': 'app-form-modificar-usuario'},{'name': 'FormRecuperarContrasena', 'selector': 'app-form-recuperar-usuario'},{'name': 'Home', 'selector': 'app-home'},{'name': 'ImgCategorias', 'selector': 'app-img-categorias'},{'name': 'InicioSesion', 'selector': 'app-inicio-sesion'},{'name': 'LoginBox', 'selector': 'app-login-box'},{'name': 'Menu', 'selector': 'app-menu'},{'name': 'Modal', 'selector': 'app-modal'},{'name': 'Nav', 'selector': 'app-nav'},{'name': 'Presentacion', 'selector': 'app-presentacion'},{'name': 'TemplatePlaygroundComponent', 'selector': 'template-playground-root'},{'name': 'ThemeSwitch', 'selector': 'app-theme-switch'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'Card'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'Card.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
