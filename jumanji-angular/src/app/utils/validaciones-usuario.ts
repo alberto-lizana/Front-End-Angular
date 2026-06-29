@@ -9,20 +9,21 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
  * - Permite espacios entre palabras.
  * - Debe contener al menos 3 letras (sin contar espacios).
  *
- * @param nombre Nombre que se desea validar.
- * @returns `true` si el nombre cumple el formato; de lo contrario, `false`.
+ * @param nombre string | null |undefined
+ * @returns true si el nombre cumple el formato, de lo contrario, false.
  *
  * @usageNotes
  * La función espera recibir un nombre previamente normalizado
  * (por ejemplo, con trim y en minúsculas). No realiza la normalización internamente.
  */
-export const validarNombre = (nombre: string): boolean => {
+export const validarNombre = (nombre: string | null |undefined): boolean => {
+
+  if (!nombre) return false;
 
   const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
 
   if (!regex.test(nombre)) return false;
 
-  // contar letras reales (sin espacios)
   const soloLetras = nombre.replace(/\s/g, '');
 
   return soloLetras.length >= 3;
@@ -39,7 +40,7 @@ export const validarNombre = (nombre: string): boolean => {
  * - No permite caracteres especiales distintos de los anteriores.
  * - Debe contener al menos 2 letras (sin contar espacios).
  *
- * @param apellido Apellido que se desea validar.
+ * @param apellido string | null |undefined que se debe validar.
  * 
  * @returns "true" si el apellido cumple el formato, de lo contrario, "false"
  * 
@@ -47,14 +48,16 @@ export const validarNombre = (nombre: string): boolean => {
  * La función espera recibir un nombre previamente normalizado
  * (por ejemplo, con trim y en minúsculas). No realiza la normalización internamente.
  */
-export const validarApellido = (apellido: string): boolean => {
+export const validarApellido = (apellido: string | null | undefined): boolean => {
+
+  if (!apellido) return false;
 
   const regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:[-'\s][A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
 
   if (!regex.test(apellido)) return false;
 
   return apellido.replace(/[-'\s]/g, '').length >= 2;
-};
+}
 
 /**
  * @description
@@ -67,13 +70,17 @@ export const validarApellido = (apellido: string): boolean => {
  * - Debe existir un punto antes de la extensión.
  * - La extensión debe estar formada únicamente por letras y tener al menos dos caracteres.
  *
- * @param email Correo electrónico que se desea validar.
+ * @param email string | null |undefined que se debe validar.
  * @returns true si el correo cumple el formato, de lo contrario, false.
  */
-export const validarEmail = (email: string): boolean => {
+export const validarEmail = (email: string | null | undefined): boolean => {
+
+  if (!email) return false;
+
   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   return regex.test(email);
-};
+}
 
 /**
  * Nota:
@@ -95,14 +102,18 @@ export const validarEmail = (email: string): boolean => {
  * - Al menos un carácter especial.
  * - No puede comenzar ni terminar con espacios.
  * 
- * @param contrasena Contraseña que se desea validar.
+ * @param contrasena string | null |undefined que se debe validar.
  * @returns true si la contraseña cumple los requisitos, de lo contrario, false.
  * 
  */
-export const validarContrasena = (contrasena: string): boolean => {
+export const validarContrasena = (contrasena: string | null | undefined): boolean => {
+
+  if (!contrasena) return false;
+
   const regex = /^(?!\s)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}(?<!\s)$/;
+
   return regex.test(contrasena);
-};
+}
 
 /**
  * @description

@@ -714,7 +714,9 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>(apellido: string): boolean &#x3D;&gt; {
+                        <i>Default value : </i><code>(apellido: string | null | undefined): boolean &#x3D;&gt; {
+
+  if (!apellido) return false;
 
   const regex &#x3D; /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:[-&#x27;\s][A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
 
@@ -747,8 +749,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>(contrasena: string): boolean &#x3D;&gt; {
+                        <i>Default value : </i><code>(contrasena: string | null | undefined): boolean &#x3D;&gt; {
+
+  if (!contrasena) return false;
+
   const regex &#x3D; /^(?!\s)(?&#x3D;.*[a-z])(?&#x3D;.*[A-Z])(?&#x3D;.*[^a-zA-Z0-9]).{8,}(?&lt;!\s)$/;
+
   return regex.test(contrasena);
 }</code>
                     </td>
@@ -786,8 +792,12 @@ contraseña no se está cumpliendo.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>(email: string): boolean &#x3D;&gt; {
+                        <i>Default value : </i><code>(email: string | null | undefined): boolean &#x3D;&gt; {
+
+  if (!email) return false;
+
   const regex &#x3D; /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   return regex.test(email);
 }</code>
                     </td>
@@ -815,13 +825,14 @@ contraseña no se está cumpliendo.</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>(nombre: string): boolean &#x3D;&gt; {
+                        <i>Default value : </i><code>(nombre: string | null |undefined): boolean &#x3D;&gt; {
+
+  if (!nombre) return false;
 
   const regex &#x3D; /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:\s+[A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
 
   if (!regex.test(nombre)) return false;
 
-  // contar letras reales (sin espacios)
   const soloLetras &#x3D; nombre.replace(/\s/g, &#x27;&#x27;);
 
   return soloLetras.length &gt;&#x3D; 3;

@@ -43,7 +43,7 @@ export class FormCrearUsuario {
 errorMessages = {
   nombre: {
     required: 'El nombre es obligatorio',
-    nombreInvalido: 'Solo letras y espacios (mín. 2 caracteres)'
+    nombreInvalido: 'Solo letras y espacios (mín. 3 caracteres)'
   },
   appat: {
     required: 'El apellido es obligatorio',
