@@ -240,5 +240,20 @@ export class StorageService {
       localStorage.getItem('admin') || '[]'
     );
   }
+
+  /**
+   * @description
+   * Elimina un elemento específico del SessionStorage.
+   *
+   * Si la aplicación no se está ejecutando en un navegador,
+   * el método no realiza ninguna acción.
+   *
+   * @param key Clave del elemento que se eliminará del SessionStorage.
+   */
+  removeSessionItem(key: string): void {
+    if (!this.isBrowser) return;
+    sessionStorage.removeItem(key);
+  }
 }
+
 

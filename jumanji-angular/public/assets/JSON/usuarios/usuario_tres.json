@@ -1,12 +1,12 @@
 
 {
     "id": 4,
-    "nombre": "María",
-    "appat": "Fernández",
-    "apmat": "Soto",
+    "nombre": "maría",
+    "appat": "fernández",
+    "apmat": "soto",
     "email": "maria.fernandez@mail.com",
     "contrasena": "maria987",
     "r_contrasena": "maria987",
-    "direccion": "Los Carrera 778, Condominio Los Jardines, Depto 5C, Valparaíso, Chile",
+    "direccion": "los carrera 778, condominio los jardines, depto 5c, valparaíso, chile",
     "rol": "user"
 }

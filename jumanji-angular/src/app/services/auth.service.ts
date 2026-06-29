@@ -30,7 +30,7 @@ export class AuthService {
    *
    * @param email Correo electrónico del usuario.
    * @param contrasena Contraseña del usuario.
-   * @returns El usuario autenticado o `null` si las credenciales son incorrectas.
+   * @returns El usuario autenticado o null si las credenciales son incorrectas.
    */
   login(email: string, contrasena: string): Admin | Usuario | null {
     
@@ -65,14 +65,16 @@ export class AuthService {
    * @description
    * Obtenemos la session que está activa en el navegador.
    *
-   * La session tiene dos parámetros logueado (boolean) y el objeto usuario, que es un conjunto de campos que le pertenecen al usuario
+   * La session tiene dos parámetros logueado (boolean) y el objeto usuario, 
+   * que es un conjunto de campos que le pertenecen al usuario
    * 
-   * @returns Obtenemos la información del usuario (objeto usuario) de la cuenta que esta en el sessionStorage. Por otro lado si no existe session obtendremos undefined. 
+   * @returns Obtenemos la información del usuario (objeto usuario) de la cuenta que esta en el sessionStorage. 
+   * Por otro lado si no existe session obtendremos null. 
    */
   getSessionActiva(){
     const sesion = this.storageService.getSessionItem('sesion');
 
-    if (!sesion) return;
+    if (!sesion) return null;
 
     const info = JSON.parse(sesion);
     const data = info.user
@@ -85,7 +87,7 @@ export class AuthService {
    * Actualiza la información de un usuario en el LocalStorage.
    *
    * Este método reemplaza los datos del usuario existente manteniendo su
-   * identidad (`id`) y cualquier información previamente asociada, como el
+   * identidad (id) y cualquier información previamente asociada, como el
    * carrito de compras u otros datos persistentes.
    *
    * @param usuario Usuario con la información actualizada.
@@ -138,12 +140,23 @@ export class AuthService {
 
   /**
    * @description
-   * Cierra la sesión del usuario eliminando toda la información almacenada
+   * Cierra la sesión activa eliminando la información almacenada
    * en el SessionStorage.
    *
-   * Una vez ejecutado este método, el usuario deja de estar autenticado.
+   * Si existe una sesión, esta es eliminada y el método retorna true.
+   * Si no existe una sesión activa, no realiza ninguna acción y retorna `false`.
+   *
+   * @returns
+   * true si la sesión fue eliminada correctamente;
+   * false si no existía una sesión activa.
    */
-  logout() {
-    this.storageService.clearSessionStorage();
+  logout(): boolean {
+      const sesion = this.storageService.getSessionItem('sesion');
+
+      if (!sesion) return false;
+
+      this.storageService.removeSessionItem('sesion');
+
+      return true;
   }
 }
