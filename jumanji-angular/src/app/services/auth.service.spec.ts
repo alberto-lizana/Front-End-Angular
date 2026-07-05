@@ -1,5 +1,5 @@
+import { Admin } from "../interfaces/admin.interface";
 import { Usuario } from "../interfaces/usuario.interface";
-import { Admin } from "../pages/admin/admin";
 import { AuthService } from "./auth.service";
 import { describe, it, expect, vi, beforeEach} from 'vitest';
 

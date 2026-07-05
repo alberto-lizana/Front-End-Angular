@@ -1,4 +1,3 @@
-
 {
     "id": 2,
     "nombre": "Ajedrez",
@@ -10,5 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "2",
     "duracion": "∞",
+    "stock": 20,
     "dificultad": 4
 }

@@ -1,4 +1,3 @@
-
 {
     "id": 5,
     "nombre": "The Crew",
@@ -10,6 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "2-5",
     "duracion": "20-60 MIN",
+    "stock": 40,
     "dificultad": 3
 }
-

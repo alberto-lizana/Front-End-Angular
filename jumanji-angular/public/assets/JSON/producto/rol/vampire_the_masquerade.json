@@ -1,4 +1,3 @@
-
 {
     "id": 9,
     "nombre": "Vampire: The Masquerade",
@@ -10,5 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "3-4",
     "duracion": "60-120 MIN",
+    "stock": 7,
     "dificultad": 4
 }

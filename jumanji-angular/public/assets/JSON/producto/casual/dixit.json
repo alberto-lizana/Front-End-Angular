@@ -1,4 +1,3 @@
-
 {
     "id": 11,
     "nombre": "Dixit",
@@ -10,6 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "3-6",
     "duracion": "15-45 MIN",
+    "stock": 5,
     "dificultad": 2
 }
-

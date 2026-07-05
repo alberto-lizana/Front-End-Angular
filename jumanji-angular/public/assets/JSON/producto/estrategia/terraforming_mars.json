@@ -1,4 +1,3 @@
-
 {
     "id": 1,
     "nombre": "Terraforming Mars",
@@ -10,5 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "1-5",
     "duracion": "90-120 MIN",
+    "stock": 12,
     "dificultad": 5
 }

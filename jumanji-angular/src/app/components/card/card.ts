@@ -6,6 +6,7 @@ import { ProductoService } from '../../services/producto.service';
 import { ProductosResponse } from '../../interfaces/productos.response.interface';
 import { Producto } from '../../interfaces/producto.interface';
 import { CarritoService } from '../../services/carrito.service';
+import { generarDificultad } from '../../utils/productos.utils';
 
 /**
  * @description
@@ -28,6 +29,7 @@ export class Card {
   private route = inject(ActivatedRoute);
   private productoService = inject(ProductoService);
   private carritoService = inject(CarritoService);
+  generarDificultad = generarDificultad;
 
   agregado = signal<{ [id: number]: boolean }>({});
 
@@ -46,18 +48,6 @@ export class Card {
     ),
     { initialValue: [] as Producto[] }
   );
-
-  /**
-   * @description
-   * Genera una representación visual de la dificultad del juego mediante
-   * estrellas llenas y vacías.
-   *
-   * @param dificultad Nivel de dificultad del juego (1 a 5).
-   * @returns Cadena de texto con estrellas que representan la dificultad.
-   */
-  generarDificultad(dificultad: number) {
-    return "⭐".repeat(dificultad) + "☆".repeat(5 - dificultad);
-  }
 
   /**
    * @description

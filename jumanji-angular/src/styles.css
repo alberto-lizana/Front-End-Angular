@@ -109,3 +109,38 @@ input:-webkit-autofill:active {
 .btn-bd-primary:focus {
     color: var(--destacar-primario);
 }
+
+.tabla-admin {
+    background: var(--degradado-primario);
+    border: 1px solid var(--destacar-primario);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0,0,0,.15);
+    color: var(--texto-principal);
+    margin-bottom: 0;
+}
+
+.tabla-admin thead th {
+    background: transparent;
+    color: var(--destacar-primario);
+    border-bottom: 2px solid var(--destacar-primario);
+}
+
+.tabla-admin tbody td {
+    color: var(--texto-principal);
+    background: transparent;
+    border-color: rgba(255,255,255,.08);
+}
+
+.tabla-admin tbody tr {
+    transition: .2s ease;
+}
+
+.tabla-admin tbody tr:hover td {
+    background: rgba(255,255,255,.05);
+}
+
+.tabla-responsive {
+    border-radius: 15px;
+}

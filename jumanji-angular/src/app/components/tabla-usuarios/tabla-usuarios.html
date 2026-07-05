@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <div class="tabla-responsive">
+        <table class="table tabla-admin align-middle">
+            <thead>
+                <tr class="color-letra-dinamico letra-normal letra-normal-bold">
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Appat</th>
+                    <th>Apmat</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (usuario of datosUsuarios(); track usuario.id) {
+                    <tr class="color-letra-dinamico letra-normal-pequeña">
+                        <td>{{ usuario.id }}</td>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.appat }}</td>
+                        <td>{{ usuario.apmat }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>{{ usuario.direccion }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,7 +1,57 @@
 <app-nav></app-nav>
 
-<main class="container">
-    <app-dashboard></app-dashboard>
+<div class="container-fluid d-flex justify-content-center mt-4">
+    <div class="row m-2">
+        @for (kpi of kpis(); track $index) {
+            <div class="col-12 col-sm-6 col-md-4 col-lg">
+                <app-kpi-card
+                    [titulo]="kpi.titulo"
+                    [valor]="kpi.valor">
+                </app-kpi-card>
+            </div>
+        }
+    </div>
+</div>
+
+<main class="container-fluid">
+    <app-dashboard
+    [mostrarUsuariosInput]="mostrarUsuarios()"
+    [mostrarProductosInput]="mostrarProductos()"
+    (categoriaChange)="changeCategoria($event)"
+    (mostrarUsuarios)="mostrarUsuariosEmit()"
+    (mostrarProductos)="mostrarProductosEmit()">
+    </app-dashboard>
+
+    @if (mostrarUsuarios()) {
+        <app-tabla-usuarios
+        [datosUsuarios]="usuarios()">
+        </app-tabla-usuarios>
+    } 
+
+    @if (mostrarProductos()) {
+    <app-tabla-productos
+        [datosProductos]="productos()"
+        (editarProducto)="editarProducto($event)"
+        (eliminarProducto)="eliminarProducto($event)"
+        (verProducto)="verProducto($event)">
+    </app-tabla-productos>
+    }
+
 </main>
+
+    <div class="container-fluid d-flex justify-content-center mt-4">
+        <div class="row m-2">
+            @for (div of divisas(); track $index) {
+                <div class="col-12 col-sm-6 col-md-4 col-lg">
+                    <app-kpi-card
+                        [titulo]="div.titulo"
+                        [valor]="div.valor">
+                    </app-kpi-card>
+                </div>
+            }
+        </div>
+    </div>
+
 <hr>
+
 <app-footer></app-footer>

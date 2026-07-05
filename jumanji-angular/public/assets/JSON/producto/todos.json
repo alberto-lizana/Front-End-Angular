@@ -11,6 +11,7 @@
             "precio_final": null, 
             "cant_jugadores": "1-5",
             "duracion": "90-120 MIN",
+            "stock": 12,
             "dificultad": 5
         },
 
@@ -25,6 +26,7 @@
             "precio_final": null, 
             "cant_jugadores": "2",
             "duracion": "∞",
+            "stock": 20,
             "dificultad": 4
         },
 
@@ -39,6 +41,7 @@
             "precio_final": null, 
             "cant_jugadores": "3-4",
             "duracion": "60-120 MIN",
+            "stock": 30,
             "dificultad": 3
         }
     ],
@@ -55,6 +58,7 @@
             "precio_final": null, 
             "cant_jugadores": "2-4",
             "duracion": "45-60 MIN",
+            "stock": 25,
             "dificultad": 4
         },
 
@@ -69,6 +73,7 @@
             "precio_final": null, 
             "cant_jugadores": "2-5",
             "duracion": "20-60 MIN",
+            "stock": 40,
             "dificultad": 3
         },
 
@@ -83,6 +88,7 @@
             "precio_final": null, 
             "cant_jugadores": "1-8",
             "duracion": "120+ MIN",
+            "stock": 15,
             "dificultad": 5
         }
     ],
@@ -99,6 +105,7 @@
             "precio_final": null, 
             "cant_jugadores": "3-6",
             "duracion": "120+ MIN",
+            "stock": 30,
             "dificultad": 5
         },
 
@@ -113,6 +120,7 @@
             "precio_final": null, 
             "cant_jugadores": "1-6",
             "duracion": "60-180 MIN",
+            "stock": 10,
             "dificultad": 5
         },
 
@@ -127,6 +135,7 @@
             "precio_final": null, 
             "cant_jugadores": "3-4",
             "duracion": "60-120 MIN",
+            "stock": 7,
             "dificultad": 4
         }
     ],
@@ -143,6 +152,7 @@
             "precio_final": null, 
             "cant_jugadores": "2-10",
             "duracion": "15-30 MIN",
+            "stock": 3,
             "dificultad": 1
         },
 
@@ -157,6 +167,7 @@
             "precio_final": null, 
             "cant_jugadores": "3-6",
             "duracion": "15-45 MIN",
+            "stock": 5,
             "dificultad": 2
         },
 
@@ -172,6 +183,7 @@
             "precio_final": null, 
             "cant_jugadores": "2-5",
             "duracion": "15-30 MIN",
+            "stock": 8,
             "dificultad": 2
         }
     ]

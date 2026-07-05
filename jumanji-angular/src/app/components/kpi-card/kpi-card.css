@@ -1,0 +1,26 @@
+.kpi-card {
+    background-color: var(--bg-secundario);
+    color: var(--texto-principal);
+    border-radius: 10px;
+    padding: 1rem;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(123, 97, 255, 0.15);
+    box-shadow: 0 0 10px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 14px var(--destacar-primario);
+}
+
+.kpi-title {
+    color: var(--texto-principal);
+    opacity: 0.8;
+}
+
+.kpi-value {
+    color: var(--destacar-primario);
+}

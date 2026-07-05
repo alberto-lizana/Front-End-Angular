@@ -13,5 +13,6 @@ export interface Producto {
   precio_final: number | null;
   cant_jugadores: string;
   duracion: string;
+  stock: number; 
   dificultad: number;
 }

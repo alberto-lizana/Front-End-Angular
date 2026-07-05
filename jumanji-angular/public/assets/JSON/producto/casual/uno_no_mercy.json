@@ -1,4 +1,3 @@
-
 {
     "id": 10,
     "nombre": "Uno No Mercy",
@@ -10,6 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "2-10",
     "duracion": "15-30 MIN",
+    "stock": 3,
     "dificultad": 1
 }
-

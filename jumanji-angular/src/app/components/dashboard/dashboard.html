@@ -4,7 +4,7 @@
 
 
         <h2 class="letra-normal-bold color-letra-dinamico">
-            Administración de Usuarios
+            Gestión Jumanji
         </h2>
 
         <div class="row mt-4">
@@ -26,7 +26,7 @@
 
         <hr>
 
-        <div class="row">
+        <div class="row m-3">
 
             <div class="col-md-6">
                 <button class="btn-bd-primary w-100">
@@ -35,12 +35,48 @@
             </div>
 
             <div class="col-md-6">
-                <button class="btn-bd-primary w-100">
+                @if(!mostrarUsuariosInput()){
+                <button class="btn-bd-primary w-100" (click)="mostrarUsuariosEmit()">
                     Todos los Usuarios
                 </button>
+                } @else {
+                <button class="btn-bd-primary w-100" (click)="mostrarUsuariosEmit()">
+                    Ocultar Usuarios
+                </button>
+                }
             </div>
 
         </div>
 
+        <div class="row m-3">
+
+            <div class="col-md-6">
+                <button class="btn-bd-primary w-100">
+                    No se
+                </button>
+            </div>
+
+            <div class="col-md-6">
+                @if(!mostrarProductosInput()){
+                <button class="btn-bd-primary w-100" (click)="mostrarProductosEmit()">
+                    Mostrar Productos
+                </button>
+                } @else {
+                <button class="btn-bd-primary w-100" (click)="mostrarProductosEmit()">
+                    Cerrar Productos
+                </button>
+                }
+            </div>
+
+        </div>
+
+        <hr>
+        <select (change)="changeCategoria($event)" class="form-select btn-bd-primary m-3" aria-label="Default select example">
+            <option class="input-transparente" value="">Todos</option>
+            <option class="input-transparente" value="estrategia">Estrategia</option>
+            <option class="input-transparente" value="cooperativos">Cooperativos</option>
+            <option class="input-transparente" value="rol">Rol</option>
+            <option class="input-transparente" value="casual">Casual</option>
+        </select>   
     </div>
 </section>

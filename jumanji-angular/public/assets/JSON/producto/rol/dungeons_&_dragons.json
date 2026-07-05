@@ -1,4 +1,3 @@
-
 {
     "id": 7,
     "nombre": "Dungeon & Dragons",
@@ -10,5 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "3-6",
     "duracion": "120+ MIN",
+    "stock": 30,
     "dificultad": 5
 }

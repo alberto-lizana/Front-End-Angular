@@ -1,4 +1,3 @@
-
 {
     "id": 8,
     "nombre": "Call Of Cthulhu",
@@ -10,5 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "1-6",
     "duracion": "60-180 MIN",
+    "stock": 10,
     "dificultad": 5
 }

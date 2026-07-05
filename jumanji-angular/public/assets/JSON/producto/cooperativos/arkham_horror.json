@@ -1,4 +1,3 @@
-
 {
     "id": 6,
     "nombre": "Arkham Horror",
@@ -10,5 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "1-8",
     "duracion": "120+ MIN",
+    "stock": 15,
     "dificultad": 5
 }

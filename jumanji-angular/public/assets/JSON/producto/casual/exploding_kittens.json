@@ -1,4 +1,3 @@
-
 {
     "id": 12,
     "nombre": "Exploding Kittens",
@@ -10,6 +9,7 @@
     "precio_final": null, 
     "cant_jugadores": "2-5",
     "duracion": "15-30 MIN",
+    "stock": 8,
     "dificultad": 2
 }
 

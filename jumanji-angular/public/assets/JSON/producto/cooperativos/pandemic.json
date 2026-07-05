@@ -1,4 +1,3 @@
-
 {
     "id": 4,
     "nombre": "Pandemic",
@@ -10,5 +9,6 @@
     "precio_final": null, 
     "cant_jugadores": "2-4",
     "duracion": "45-60 MIN",
+    "stock": 25,
     "dificultad": 4
 }

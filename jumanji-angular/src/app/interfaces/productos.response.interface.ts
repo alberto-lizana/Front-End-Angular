@@ -5,9 +5,4 @@ import { Producto } from "./producto.interface";
  * Representa la estructura de respuesta del JSON de productos,
  * organizado por categorías.
  */
-export interface ProductosResponse {
-  estrategia: Producto[];
-  cooperativos: Producto[];
-  rol: Producto[];
-  casual: Producto[];
-}
+export type ProductosResponse = Record<'estrategia' | 'cooperativos' | 'rol' | 'casual', Producto[]>;
