@@ -19,8 +19,22 @@
     [mostrarProductosInput]="mostrarProductos()"
     (categoriaChange)="changeCategoria($event)"
     (mostrarUsuarios)="mostrarUsuariosEmit()"
-    (mostrarProductos)="mostrarProductosEmit()">
+    (mostrarProductos)="mostrarProductosEmit()"
+    (crearProductoOutput)="abrirModalCrearProducto()">
     </app-dashboard>
+
+    <app-modal
+    [isOpen]="isOpen()"
+    [titulo]="modalType === 'Crear Producto' ? 'CREAR PRODUCTO': ''">
+
+        @if (modalType === 'Crear Producto') {
+        <app-form-crear-producto 
+        (isOpen)="cerrarCrearProducto()"
+        (submitEmit)="crearProducto($event)"> 
+        </app-form-crear-producto>
+        }
+
+    </app-modal>
 
     @if (mostrarUsuarios()) {
         <app-tabla-usuarios
@@ -33,7 +47,7 @@
         [datosProductos]="productos()"
         (editarProducto)="editarProducto($event)"
         (eliminarProducto)="eliminarProducto($event)"
-        (verProducto)="verProducto($event)">
+        (borradoLogicoProducto)="borradoLogicoProducto($event)">
     </app-tabla-productos>
     }
 

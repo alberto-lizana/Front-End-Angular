@@ -1,3 +1,4 @@
+import { Producto, ProductoRequest } from '../interfaces/producto.interface';
 import { Usuario } from '../interfaces/usuario.interface';
 
 /**
@@ -35,4 +36,16 @@ export const normalizarUsuario = (user: Usuario): Usuario => {
     direccion: user.direccion?.trim().toLowerCase() ?? '',
   };
 };
+
+export const normalizarProducto = (producto: Producto | ProductoRequest): Producto | ProductoRequest => {
+  return {
+    ...producto,
+    nombre: producto.nombre?.trim().toLowerCase() ?? '',
+    descripcion: producto.descripcion?.trim().toLowerCase() ?? '',
+    categoria: producto.categoria?.trim() ?? '',
+    cantidadJugadores: producto.cantidadJugadores?.trim().toLowerCase() ?? '',
+    duracion: producto.duracion?.trim() ?? ''
+  };
+};
+
 

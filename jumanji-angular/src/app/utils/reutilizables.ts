@@ -12,3 +12,13 @@ import { Usuario } from '../interfaces/usuario.interface'
 export function emailExiste(email: string, usuarios: Usuario[] | []): boolean {
     return usuarios.some(u => u.email === email);
   }
+
+export const validarDificultad = (dificultad: number): boolean => {
+  return dificultad > 0 || dificultad <= 5
+}
+
+export const validarStock = (stock: number): boolean => {
+  return stock > 0;
+};
+
+

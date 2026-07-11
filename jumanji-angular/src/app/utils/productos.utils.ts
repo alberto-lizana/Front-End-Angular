@@ -1,14 +1,13 @@
 import { Producto } from "../interfaces/producto.interface";
-import { ProductosResponse } from "../interfaces/productos.response.interface";
 
-export function getProductos(data: ProductosResponse | null, categoria?: keyof ProductosResponse): Producto[] {
-  if (!data) return [];
+export function getProductos(productos: Producto[], categoria?: string): Producto[] {
 
-  if (!categoria) {
-    return Object.values(data).flat();
-  }
+    if (!categoria) 
+      return productos.filter(p => p.estaDisponible === true);
 
-  return data[categoria];
+    return productos.filter(
+        p => p.categoria === categoria && p.estaDisponible === true
+    );
 }
 
   /**

@@ -1,3 +1,5 @@
+import { Estadisticas } from "./estadisticas.interface";
+
 /**
  * @description
  * Representa un producto.
@@ -10,9 +12,30 @@ export interface Producto {
   categoria: string;
   precio: number;
   descuento: number;
-  precio_final: number | null;
-  cant_jugadores: string;
+  precioFinal: number;
+  cantidadJugadores: string;
   duracion: string;
-  stock: number; 
+  stock: number;
   dificultad: number;
+  estaDisponible: boolean;
+  creadoAt: string;
+  estadisticasVentas: Estadisticas;
 }
+
+  export interface ProductoRequest{
+   id?: number;
+   nombre: string,
+   imagen: string,
+   descripcion: string,
+   categoria: string,
+   precio: number,
+   descuento: number,
+   precioFinal?: number,
+   cantidadJugadores: string,
+   duracion: string,
+   stock: number,
+   dificultad: number,
+   estaDisponible?: boolean,
+   creadoAt?: string,
+   estadisticasVentas?: Estadisticas;
+  }

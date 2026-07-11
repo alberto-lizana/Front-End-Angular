@@ -25,27 +25,29 @@
                         <td>{{ producto.precio }} </td>
                         <td>{{ producto.descuento * 100}} %</td>
                         <td>{{ producto.precio - (producto.precio * producto.descuento) }}</td>
-                        <td>{{ producto.cant_jugadores }}</td>
+                        <td>{{ producto.cantidadJugadores }}</td>
                         <td>{{ producto.duracion }}</td>
                         <td>{{ producto.stock }}</td>
                         <td>{{ generarDificultad(producto.dificultad) }}</td>
-                        <td class="text-center">
+                        <td class="text-center p-3">
 
-                            <button class="btn btn-sm btn-outline-primary me-2"
+                            <div class="row align-baseline">
+                                <button class="btn btn-sm btn-outline-primary col-4" type="button"
                                     (click)="editarProductoEmit(producto)">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
 
-                            <button class="btn btn-sm btn-outline-danger me-2"
-                                    (click)="eliminarProductoEmit(producto)">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-
-                            <button class="btn btn-sm btn-outline-success"
-                                    (click)="verProductoEmit(producto)">
-                                <i class="fa-solid fa-eye"></i>
-                            </button>
-
+                                <button class="btn btn-sm btn-outline-warning col-4" type="button"
+                                    (click)="borradoLogicoProductoEmit(producto)">
+                                    <i class="fa-solid fa-ban"></i>
+                                </button>
+                                
+                                <button class="btn btn-sm btn-outline-danger col-4" type="button"
+                                        (click)="eliminarProductoEmit(producto)">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                            
                         </td>  
                     </tr>
                 }

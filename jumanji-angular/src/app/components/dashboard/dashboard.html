@@ -51,8 +51,9 @@
         <div class="row m-3">
 
             <div class="col-md-6">
-                <button class="btn-bd-primary w-100">
-                    No se
+                <button class="btn-bd-primary w-100"
+                (click)="abrirModalCrearProducto(); $event.preventDefault()">
+                    Crear Producto
                 </button>
             </div>
 
@@ -73,10 +74,10 @@
         <hr>
         <select (change)="changeCategoria($event)" class="form-select btn-bd-primary m-3" aria-label="Default select example">
             <option class="input-transparente" value="">Todos</option>
-            <option class="input-transparente" value="estrategia">Estrategia</option>
-            <option class="input-transparente" value="cooperativos">Cooperativos</option>
-            <option class="input-transparente" value="rol">Rol</option>
-            <option class="input-transparente" value="casual">Casual</option>
+            <option class="input-transparente" value="ESTRATEGIA">Estrategia</option>
+            <option class="input-transparente" value="COOPERATIVO">Cooperativos</option>
+            <option class="input-transparente" value="ROL">Rol</option>
+            <option class="input-transparente" value="CASUAL">Casual</option>
         </select>   
     </div>
 </section>

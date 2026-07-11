@@ -1,9 +1,8 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map, switchMap, filter } from 'rxjs/operators';
+import { map, filter, switchMap, tap } from 'rxjs/operators';
 import { ProductoService } from '../../services/producto.service';
-import { ProductosResponse } from '../../interfaces/productos.response.interface';
 import { Producto } from '../../interfaces/producto.interface';
 import { CarritoService } from '../../services/carrito.service';
 import { generarDificultad } from '../../utils/productos.utils';
@@ -35,18 +34,28 @@ export class Card {
 
   /**
    * @description
-   * Señal que contiene la lista de productos de la categoría seleccionada.
+   * Señal reactiva que contiene la lista de productos correspondiente a la
+   * categoría seleccionada.
    *
-   * La categoría se obtiene desde los parámetros de la ruta y se utiliza
-   * para consultar el servicio de productos correspondiente.
+   * La categoría se obtiene desde los parámetros de la ruta (`paramMap`) y,
+   * cada vez que cambia, se realiza automáticamente una nueva solicitud al
+   * servicio para recuperar los productos asociados. El resultado del
+   * `Observable` se convierte en un `Signal` mediante `toSignal`, permitiendo
+   * que la vista se actualice de forma reactiva.
+   *
+   * Mientras la solicitud aún no finaliza o no existe una categoría válida,
+   * el valor inicial de la señal será un arreglo vacío.
    */
   productos = toSignal(
     this.route.paramMap.pipe(
-      map(params => params.get('categoria') as keyof ProductosResponse),
-      filter((c): c is keyof ProductosResponse => !!c),
-      switchMap(categoria => this.productoService.obtenerProductoCategoria(categoria))
+      map(params => params.get('categoria')),
+      filter((c): c is string => !!c),
+      tap(categoria => console.log('Categoría enviada:', categoria)),
+      switchMap(categoria =>
+        this.productoService.productosPorCategoria(categoria)
+      )
     ),
-    { initialValue: [] as Producto[] }
+    { initialValue: [] }
   );
 
   /**

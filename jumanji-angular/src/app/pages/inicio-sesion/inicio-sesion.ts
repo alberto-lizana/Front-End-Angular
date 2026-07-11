@@ -59,10 +59,12 @@ export class InicioSesion implements OnInit{
 
       
     if(this.storageService.getProductos().length > 0) return;
-      
-    this.productoService.obtenerProductosJSON().subscribe(data => {
-        this.storageService.setItem('productos', JSON.stringify(data));
-    });
+
+    const data = this.productoService.productos();
+
+    if (data) {
+      this.storageService.setItem('productos', JSON.stringify(data));
+    }
   }
 
   /**

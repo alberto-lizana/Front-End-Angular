@@ -1,75 +1,62 @@
-import { VentasFormato } from "../interfaces/venta.formato.interface";
-import { VentasInterface } from "../interfaces/ventas.interface";
+import { Producto } from "../interfaces/producto.interface";
 
-export function getProductosVentas(data: VentasInterface | null, categoria?: string): VentasFormato[] {
 
-  if (!data) return [];
-
-  const ventas = data.ventas;
-
-  if (!categoria) {
-    return Object.values(ventas).flat();
-  }
-
-  return ventas[categoria] ?? [];
-}
-
-export function getProductoMasVendido(productos: VentasFormato[]) {
+export function getProductoMasVendido(productos: Producto[]) {
   if (!productos.length) return null;
 
-  return productos.reduce((max, p) =>
-    p.estadisticas.unidadesVendidas > max.estadisticas.unidadesVendidas
-      ? p
-      : max
-  );
+  return productos.reduce((best, p) => {
+    const bestVentas = best.estadisticasVentas?.unidadesVendidas ?? 0;
+    const pVentas = p.estadisticasVentas?.unidadesVendidas ?? 0;
+    return pVentas > bestVentas ? p : best;
+  });
 }
 
-export function getProductoMenosVendido(productos: VentasFormato[]) {
+export function getProductoMenosVendido(productos: Producto[]) {
   if (!productos.length) return null;
 
-  return productos.reduce((min, p) =>
-    p.estadisticas.unidadesVendidas < min.estadisticas.unidadesVendidas
-      ? p
-      : min
-  );
+  return productos.reduce((worst, p) => {
+    const worstVentas = worst.estadisticasVentas?.unidadesVendidas ?? 0;
+    const pVentas = p.estadisticasVentas?.unidadesVendidas ?? 0;
+    return pVentas < worstVentas ? p : worst;
+  });
 }
 
-export function getProductoMenorStock(productos: VentasFormato[]) {
+
+export function getProductoMenorStock(productos: Producto[]) {
+
   if (!productos.length) return null;
 
-  return productos.reduce((min, p) =>
-    p.estadisticas.stock < min.estadisticas.stock
-      ? p
-      : min
-  );
+  return productos.reduce((min, p) => p.stock < min.stock ? p : min);
+
 }
 
-export function getProductoMayorStock(productos: VentasFormato[]) {
+
+export function getProductoMayorStock(productos: Producto[]) {
+
   if (!productos.length) return null;
 
-  return productos.reduce((max, p) =>
-    p.estadisticas.stock > max.estadisticas.stock
-      ? p
-      : max
-  );
+  return productos.reduce((max, p) =>  p.stock > max.stock ? p : max);
+
 }
 
-export function getProductoMejorRatingPromedio(productos: VentasFormato[]) {
+export function getProductoMejorRatingPromedio(productos: Producto[]) {
   if (!productos.length) return null;
 
-  return productos.reduce((max, p) =>
-    p.estadisticas.ratingPromedio > max.estadisticas.ratingPromedio
-      ? p
-      : max
-  );
+  return productos.reduce((max, p) => {
+    const ratingActual = p.estadisticasVentas?.ratingPromedio ?? 0;
+    const ratingMax = max.estadisticasVentas?.ratingPromedio ?? 0;
+
+    return ratingActual > ratingMax ? p : max;
+  });
 }
 
-  export function getProductoPeorRatingPromedio(productos: VentasFormato[]) {
-    if (!productos.length) return null;
-  
-    return productos.reduce((min, p) =>
-      p.estadisticas.ratingPromedio < min.estadisticas.ratingPromedio
-        ? p
-        : min
-    );
-  }
+export function getProductoPeorRatingPromedio(productos: Producto[]) {
+  if (!productos.length) return null;
+
+  return productos.reduce((min, p) => {
+    const ratingActual = p.estadisticasVentas?.ratingPromedio ?? 0;
+    const ratingMin = min.estadisticasVentas?.ratingPromedio ?? 0;
+
+    return ratingActual < ratingMin ? p : min;
+  });
+}

@@ -1,56 +1,104 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ProductosResponse } from '../interfaces/productos.response.interface';
-import { map, of, tap } from 'rxjs';
+import { inject, Injectable, signal } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { catchError, Observable, of, switchMap, tap } from 'rxjs';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { Producto, ProductoRequest } from '../interfaces/producto.interface';
 
 /**
  * @description
- * Servicio encargado de proveer acceso a la información de productos
- * desde un archivo JSON local.
+ * Servicio encargado de gestionar el acceso a la información de productos
+ * mediante peticiones HTTP al backend desarrollado con Spring Boot.
  *
- * Implementa una caché en memoria para evitar múltiples lecturas del
- * mismo recurso y expone métodos para obtener todos los productos o
- * filtrarlos por categoría.
+ * Proporciona métodos para obtener todos los productos, filtrarlos por
+ * categoría, verificar su existencia y un crud.
  */
 @Injectable({ providedIn: 'root' })
 export class ProductoService {
 
-  private productosCache: ProductosResponse | null = null; 
+  rutaTodosLosProductos = 'http://localhost:8080/productos'
+  rutaProductosCategorizados = 'http://localhost:8080/productos/prod-cat'
+  rutaBorradoLogico = 'http://localhost:8080/productos'
+  rutaBorradoFisico = 'http://localhost:8080/productos/fisico/{id}'
 
-  constructor(private http: HttpClient) {}
+
+  private readonly http = inject(HttpClient);
+  private refresh = signal(0);
 
   /**
    * @description
-   * Obtiene la colección completa de productos.
+   * Señal que contiene la colección completa de productos obtenida desde el
+   * backend.
    *
-   * Si los productos ya fueron cargados previamente, retorna la información
-   * almacenada en la caché para evitar una nueva lectura del archivo JSON.
+   * La información se recupera mediante una petición HTTP y se convierte en
+   * un `Signal` utilizando "toSignal", permitiendo que los componentes
+   * consuman los datos de forma reactiva.
    *
-   * @returns Observable con todos los productos organizados por categoría.
-   */  
-  obtenerProductosJSON() {
-    if (this.productosCache) {
-      return of(this.productosCache);  
-    }
+   * Mientras la información aún no se encuentra disponible o ocurre un error,
+   * el valor de la señal será "null".
+   *
+   * @type {Signal<ProductosResponse | null>}
+   */
 
-    return this.http.get<ProductosResponse>('assets/JSON/producto/todos.json').pipe(
-      tap(data => this.productosCache = data)  
+    productos = toSignal(
+      toObservable(this.refresh).pipe(
+        switchMap(() => this.http.get<Producto[]>(this.rutaTodosLosProductos)),
+        catchError(() => of([]))
+      ),
+      { initialValue: [] }
     );
-  }
 
   /**
    * @description
-   * Obtiene los productos pertenecientes a una categoría específica.
+   * Obtiene los productos pertenecientes a una categoría específica mediante
+   * una petición HTTP al backend.
    *
-   * La información se obtiene a partir de la colección completa de productos,
-   * utilizando la caché cuando esta ya se encuentra disponible.
+   * La categoría se envía como parámetro de consulta para que el servidor
+   * retorne únicamente los productos asociados.
    *
    * @param categoria Categoría de productos que se desea consultar.
-   * @returns Observable con los productos de la categoría solicitada.
+   * @returns Observable con la lista de productos pertenecientes a la categoría indicada.
    */
-  obtenerProductoCategoria(categoria: keyof ProductosResponse) {
-    return this.obtenerProductosJSON().pipe(
-      map(response => response[categoria])
+  productosPorCategoria(categoria: string) {
+    return this.http.get<Producto[]>(
+        this.rutaProductosCategorizados,
+      {
+        params: new HttpParams().set('categoria', categoria)
+      }
     );
   }
+
+  productoExiste(nombreProducto:string):boolean {
+    const productos = this.productos();
+    return productos.some(p => p.nombre.trim().toLowerCase() === nombreProducto.trim().toLowerCase());
+  }
+
+  crearProductoPersistente(producto: Producto | ProductoRequest) {
+    return this.http.post<Producto>(this.rutaTodosLosProductos, producto).pipe(
+      tap(() => this.recargarProductos())
+    );
+  }
+
+  /**
+   * @description
+   * Fuerza la recarga de la colección de productos, actualizando el signal `productos`.
+   */
+  recargarProductos(): void {
+    this.refresh.update(n => n + 1);
+  }
+
+  borradoLogico(producto: Producto){
+    return this.http.delete<Producto>(this.rutaBorradoLogico + `/${producto.id}`).pipe(
+      tap(() => this.recargarProductos())
+    );
+  }
+
+/*
+  modificarProducto(producto: Producto): void {
+    return this.http.put<Producto> (this.rutaTodosLosProductos, producto);
+  }
+
+  eliminarProducto(id: number){
+
+  }
+*/
 }

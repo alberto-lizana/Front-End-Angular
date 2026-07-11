@@ -15,6 +15,7 @@ export class Dashboard {
   mostrarProductos = output<void>();
   mostrarUsuariosInput = input<boolean>();
   mostrarProductosInput = input<boolean>();
+  crearProductoOutput = output<void>();
 
 
 
@@ -32,6 +33,10 @@ export class Dashboard {
 
   mostrarProductosEmit(){
     this.mostrarProductos.emit();
+  }
+
+  abrirModalCrearProducto(){
+    this.crearProductoOutput.emit();
   }
 
 }
