@@ -1,4 +1,6 @@
-import { Producto, ProductoRequest } from '../interfaces/producto.interface';
+import { ModificarProducto } from '../interfaces/modificar.producto.interface';
+import { Producto } from '../interfaces/producto.interface';
+import { ProductoRequest } from '../interfaces/producto.request.interface';
 import { Usuario } from '../interfaces/usuario.interface';
 
 /**
@@ -41,8 +43,21 @@ export const normalizarProducto = (producto: Producto | ProductoRequest): Produc
   return {
     ...producto,
     nombre: producto.nombre?.trim().toLowerCase() ?? '',
+    imagen: producto.imagen?.trim().toLowerCase() ?? '',
     descripcion: producto.descripcion?.trim().toLowerCase() ?? '',
-    categoria: producto.categoria?.trim() ?? '',
+    categoria: producto.categoria?.trim().toUpperCase() ?? '',
+    cantidadJugadores: producto.cantidadJugadores?.trim().toLowerCase() ?? '',
+    duracion: producto.duracion?.trim() ?? ''
+  };
+}
+
+export const normalizarProductoParaModificar = (producto: ModificarProducto): ModificarProducto => {
+  return {
+    ...producto,
+    nombre: producto.nombre?.trim().toLowerCase() ?? '',
+    imagen: producto.imagen?.trim().toLowerCase() ?? '',
+    descripcion: producto.descripcion?.trim().toLowerCase() ?? '',
+    categoria: producto.categoria?.trim().toUpperCase() ?? '',
     cantidadJugadores: producto.cantidadJugadores?.trim().toLowerCase() ?? '',
     duracion: producto.duracion?.trim() ?? ''
   };

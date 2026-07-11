@@ -11,14 +11,17 @@ import { ProductoService } from '../../services/producto.service';
 import { getProductos } from '../../utils/productos.utils';
 import { ProductosResponse } from '../../interfaces/productos.response.interface';
 import { TablaProductos } from '../../components/tabla-productos/tabla-productos';
-import { Producto, ProductoRequest } from '../../interfaces/producto.interface';
+import { Producto } from '../../interfaces/producto.interface';
 import { Modal } from '../../components/modal-form/modal-form';
 import { FormCrearProducto } from '../../components/form-crear-producto/form-crear-producto';
+import { FormModificarProducto } from '../../components/form-modificar-producto/form-modificar-producto';
+import { ModificarProducto } from '../../interfaces/modificar.producto.interface';
+import { ProductoRequest } from '../../interfaces/producto.request.interface';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [Dashboard, Nav, Footer, KpiCard, TablaUsuarios, TablaProductos, Modal, FormCrearProducto],
+  imports: [Dashboard, Nav, Footer, KpiCard, TablaUsuarios, TablaProductos, Modal, FormCrearProducto, FormModificarProducto],
   templateUrl: './admin.html',
   styleUrl: './admin.css',
 })
@@ -40,6 +43,9 @@ export class Admin {
 
   isOpen = signal(false);
   modalType: string | null = null;
+
+  // Producto seleccionado para ser modificado
+  productoSeleccionado = signal<Producto | null>(null);
 
   usuarios = computed(() => { 
     const data = this.storageService.getUsuarios();
@@ -123,6 +129,17 @@ export class Admin {
     this.categoria.set(cat);
   } 
 
+  cerrarCrearProducto() {
+    this.isOpen.update(v => !v);
+    this.modalType = null;
+  }
+
+  cerrarModificarProducto(){
+    this.isOpen.update(v => !v);
+    this.modalType = null;
+    this.productoSeleccionado.set(null);
+  }
+    
   mostrarUsuariosEmit() {
     this.mostrarUsuarios.update(v => !v);
   }
@@ -131,28 +148,18 @@ export class Admin {
     this.mostrarProductos.update(v => !v);
   }
 
-  editarProducto(producto: Producto) {
-    console.log('Editar', producto);
-  }
-
-  eliminarProducto(producto: Producto) {
-    console.log('Eliminar Fisico', producto);
-  }
-
-  borradoLogicoProducto(producto: Producto) {
-    this.productoService.borradoLogico(producto).subscribe({
-      next: () => console.log('Borrado correctamente'),
-      error: err => console.error(err)
-    });
-  }
-
   abrirModalCrearProducto() {
     this.modalType = 'Crear Producto';
     this.isOpen.update(v => !v);
   }
 
-  cerrarCrearProducto() {
-    this.isOpen.update(v => !v);
+  abrirModalEditarProducto(producto: Producto) {
+    this.productoSeleccionado.set(producto);
+
+    console.log(this.productoSeleccionado());
+
+    this.modalType = 'Modificar Producto';
+    this.isOpen.set(true);
   }
 
   crearProducto(producto: Producto | ProductoRequest){
@@ -165,4 +172,33 @@ export class Admin {
       });
     }
   }
+
+  modificarProducto(productoNuevo: ModificarProducto){
+    if (!this.productoSeleccionado()) return;
+
+    const productoViejo = this.productoSeleccionado();
+
+    this.productoService.modificarProducto(productoNuevo, productoViejo)
+      .subscribe({
+        next: () => {
+          alert('Producto modificado');
+        },
+        error: err => console.error(err)
+      });
+  }
+
+  eliminarProducto(producto: Producto) {
+    this.productoService.borradoFisico(producto).subscribe({
+      next: () => alert('Borrado Fisico ejecutado correctamente'),
+      error: err => console.error(err)
+    });
+  }
+
+  borradoLogicoProducto(producto: Producto) {
+    this.productoService.borradoLogico(producto).subscribe({
+      next: () => alert('Borrado Logico ejecutado correctamente'),
+      error: err => console.error(err)
+    });
+  }
+
 }

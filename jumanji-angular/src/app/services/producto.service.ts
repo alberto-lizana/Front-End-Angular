@@ -1,8 +1,10 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { catchError, Observable, of, switchMap, tap } from 'rxjs';
+import { catchError,  of, switchMap, tap } from 'rxjs';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { Producto, ProductoRequest } from '../interfaces/producto.interface';
+import { Producto } from '../interfaces/producto.interface';
+import { ProductoRequest } from '../interfaces/producto.request.interface';
+import { ModificarProducto } from '../interfaces/modificar.producto.interface';
 
 /**
  * @description
@@ -15,11 +17,7 @@ import { Producto, ProductoRequest } from '../interfaces/producto.interface';
 @Injectable({ providedIn: 'root' })
 export class ProductoService {
 
-  rutaTodosLosProductos = 'http://localhost:8080/productos'
-  rutaProductosCategorizados = 'http://localhost:8080/productos/prod-cat'
-  rutaBorradoLogico = 'http://localhost:8080/productos'
-  rutaBorradoFisico = 'http://localhost:8080/productos/fisico/{id}'
-
+  rutaBaseRestAPI= 'http://localhost:8080/productos'
 
   private readonly http = inject(HttpClient);
   private refresh = signal(0);
@@ -41,7 +39,7 @@ export class ProductoService {
 
     productos = toSignal(
       toObservable(this.refresh).pipe(
-        switchMap(() => this.http.get<Producto[]>(this.rutaTodosLosProductos)),
+        switchMap(() => this.http.get<Producto[]>(this.rutaBaseRestAPI)),
         catchError(() => of([]))
       ),
       { initialValue: [] }
@@ -60,7 +58,7 @@ export class ProductoService {
    */
   productosPorCategoria(categoria: string) {
     return this.http.get<Producto[]>(
-        this.rutaProductosCategorizados,
+        this.rutaBaseRestAPI + "/prod-cat",
       {
         params: new HttpParams().set('categoria', categoria)
       }
@@ -73,7 +71,25 @@ export class ProductoService {
   }
 
   crearProductoPersistente(producto: Producto | ProductoRequest) {
-    return this.http.post<Producto>(this.rutaTodosLosProductos, producto).pipe(
+    return this.http.post<Producto>(this.rutaBaseRestAPI, producto).pipe(
+      tap(() => this.recargarProductos())
+    );
+  }
+
+  modificarProducto(productoNuevo: ModificarProducto, productoViejo: Producto | null) {
+    return this.http.put(this.rutaBaseRestAPI + `/${productoViejo?.id}`, productoNuevo).pipe(
+      tap(() => this.recargarProductos())
+    )
+  }
+
+  borradoLogico(producto: Producto){
+    return this.http.delete<Producto>(this.rutaBaseRestAPI + `/${producto.id}`).pipe(
+      tap(() => this.recargarProductos())
+    );
+  }
+
+  borradoFisico(producto: Producto){
+    return this.http.delete<Producto>(this.rutaBaseRestAPI + `/fisico/${producto.id}`).pipe(
       tap(() => this.recargarProductos())
     );
   }
@@ -86,19 +102,4 @@ export class ProductoService {
     this.refresh.update(n => n + 1);
   }
 
-  borradoLogico(producto: Producto){
-    return this.http.delete<Producto>(this.rutaBorradoLogico + `/${producto.id}`).pipe(
-      tap(() => this.recargarProductos())
-    );
-  }
-
-/*
-  modificarProducto(producto: Producto): void {
-    return this.http.put<Producto> (this.rutaTodosLosProductos, producto);
-  }
-
-  eliminarProducto(id: number){
-
-  }
-*/
 }

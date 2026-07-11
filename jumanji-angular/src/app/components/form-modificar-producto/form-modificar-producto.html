@@ -27,7 +27,6 @@
 
     <!-- CATEGORÍA -->
     <select formControlName="categoria" class="form-label letra-normal letra-normal-bold w-100 input-transparente mb-3">
-        <option value="" selected>Selecciona una categoría</option>
         <option value="ESTRATEGIA">Estrategia</option>
         <option value="COOPERATIVO">Cooperativos</option>
         <option value="ROL">Rol</option>
@@ -80,17 +79,49 @@
 
     </div>
 
+    <div class="row">
+        
+        <!-- VENDIDOS -->
+        <div class="col-4">
+            <label for="unidadesVendidas" class="form-label letra-normal letra-normal-bold">Vendidos</label>
+            <input type="number" formControlName="unidadesVendidas" class="input-transparente letra-normal w-100 mb-3" placeholder="1">
+        </div>
+
+        <!-- DEVOLUCIONES -->
+        <div class="col-4">
+            <label for="devoluciones" class="form-label letra-normal letra-normal-bold">Devoluciones</label>
+            <input type="number" formControlName="devoluciones" class="input-transparente letra-normal w-100 mb-4" placeholder="1">
+        </div>
+
+        <!-- RATING PROMEDIO -->
+        <div class="col-4">
+            <label for="ratingPromedio" class="form-label letra-normal letra-normal-bold">Rating</label>
+            <input type="number" formControlName="ratingPromedio" class="input-transparente letra-normal w-100 mb-4" placeholder="1">
+        </div>
+
+    </div>
+
     <!-- BOTONES -->
     <div class="row-12 text-center mb-2">
         <button type="submit" class="btn-bd-primary letra-normal p-2 w-100 d-block text-center">
-            Crear
+            Modificar
         </button>
     </div>
     
-    <div class="row-12 text-center mb-1">
-        <button class="btn-bd-primary letra-normal p-2 w-100 text-center d-block" type="button" (click)="cerrar()">
-            Cerrar
-        </button>
+    <div class="row text-center mb-1">
+
+        <div class="col-6">
+            <button class="btn-bd-primary letra-normal p-2 w-100 text-center d-block" type="button" (click)="limpiar()">
+                Limpiar
+            </button>
+        </div>
+
+        <div class="col-6">
+            <button class="btn-bd-primary letra-normal p-2 w-100 text-center d-block col-6" type="button" (click)="cerrar()">
+                Cerrar
+            </button>
+        </div>
+
     </div>
 </form>
 

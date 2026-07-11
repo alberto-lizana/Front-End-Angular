@@ -12,14 +12,14 @@ import { generarDificultad } from '../../utils/productos.utils';
 export class TablaProductos {
 
   datosProductos = input.required<Producto[]>();
-  editarProducto = output<Producto>();
+  abrirModalEditarProducto = output<Producto>();
   eliminarProducto = output<Producto>();
   borradoLogicoProducto = output<Producto>();
 
   generarDificultad = generarDificultad;
 
   editarProductoEmit(producto: Producto){
-    this.editarProducto.emit(producto);
+    this.abrirModalEditarProducto.emit(producto);
   }
 
   eliminarProductoEmit(producto: Producto){

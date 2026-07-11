@@ -25,14 +25,24 @@
 
     <app-modal
     [isOpen]="isOpen()"
-    [titulo]="modalType === 'Crear Producto' ? 'CREAR PRODUCTO': ''">
+    [titulo]="modalType === 'Crear Producto'
+                ? 'CREAR PRODUCTO'
+                : 'MODIFICAR PRODUCTO'">
 
-        @if (modalType === 'Crear Producto') {
-        <app-form-crear-producto 
+    @if (modalType === 'Crear Producto') {
+        <app-form-crear-producto
         (isOpen)="cerrarCrearProducto()"
-        (submitEmit)="crearProducto($event)"> 
+        (submitEmit)="crearProducto($event)">
         </app-form-crear-producto>
-        }
+    }
+
+    @if (modalType === 'Modificar Producto' && productoSeleccionado()) {
+        <app-form-modificar-producto
+        [producto]="productoSeleccionado()"
+        (isOpen)="cerrarModificarProducto()"
+        (submitEmit)="modificarProducto($event)">
+        </app-form-modificar-producto>
+    }
 
     </app-modal>
 
@@ -45,7 +55,7 @@
     @if (mostrarProductos()) {
     <app-tabla-productos
         [datosProductos]="productos()"
-        (editarProducto)="editarProducto($event)"
+        (abrirModalEditarProducto)="abrirModalEditarProducto($event)"
         (eliminarProducto)="eliminarProducto($event)"
         (borradoLogicoProducto)="borradoLogicoProducto($event)">
     </app-tabla-productos>
