@@ -43,5 +43,6 @@ export class Home {
    */
   cerrarModificar() {
     this.isOpen = false;
+    this.modalType = null;
   }
 }

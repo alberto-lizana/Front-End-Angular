@@ -141,11 +141,10 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Servicio encargado de proveer acceso a la información de productos
-desde un archivo JSON local.</p>
-<p>Implementa una caché en memoria para evitar múltiples lecturas del
-mismo recurso y expone métodos para obtener todos los productos o
-filtrarlos por categoría.</p>
+                <p>Servicio encargado de gestionar el acceso a la información de productos
+mediante peticiones HTTP al backend desarrollado con Spring Boot.</p>
+<p>Proporciona métodos para obtener todos los productos, filtrarlos por
+categoría, verificar su existencia y un crud.</p>
 
             </p>
 
@@ -165,7 +164,18 @@ filtrarlos por categoría.</p>
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#productosCache" >productosCache</a>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#http" >http</a>
+                            </li>
+                            <li>
+                                <a href="#productos" >productos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#refresh" >refresh</a>
+                            </li>
+                            <li>
+                                <a href="#rutaBaseRestAPI" >rutaBaseRestAPI</a>
                             </li>
                         </ul>
                     </td>
@@ -180,10 +190,25 @@ filtrarlos por categoría.</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#obtenerProductoCategoria" >obtenerProductoCategoria</a>
+                                <a href="#borradoFisico" >borradoFisico</a>
                             </li>
                             <li>
-                                <a href="#obtenerProductosJSON" >obtenerProductosJSON</a>
+                                <a href="#borradoLogico" >borradoLogico</a>
+                            </li>
+                            <li>
+                                <a href="#crearProductoPersistente" >crearProductoPersistente</a>
+                            </li>
+                            <li>
+                                <a href="#modificarProducto" >modificarProducto</a>
+                            </li>
+                            <li>
+                                <a href="#productoExiste" >productoExiste</a>
+                            </li>
+                            <li>
+                                <a href="#productosPorCategoria" >productosPorCategoria</a>
+                            </li>
+                            <li>
+                                <a href="#recargarProductos" >recargarProductos</a>
                             </li>
                         </ul>
                     </td>
@@ -197,54 +222,6 @@ filtrarlos por categoría.</p>
     </table>
 </section>
 
-            <section data-compodoc="block-constructor">
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/producto.service.ts:18</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>http</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
             <section data-compodoc="block-methods">
     
@@ -255,33 +232,381 @@ filtrarlos por categoría.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="obtenerProductoCategoria"></a>
+                    <a name="borradoFisico"></a>
                     <span class="name">
-                        <span ><b>obtenerProductoCategoria</b></span>
-                        <a href="#obtenerProductoCategoria"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>borradoFisico</b></span>
+                        <a href="#borradoFisico"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>obtenerProductoCategoria(categoria: unknown)</code>
+<code>borradoFisico(producto: <a href="../interfaces/Producto.html" target="_self">Producto</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="51"
-                                    class="link-to-prism">src/app/services/producto.service.ts:51</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/services/producto.service.ts:91</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Obtiene los productos pertenecientes a una categoría específica.</p>
-<p>La información se obtiene a partir de la colección completa de productos,
-utilizando la caché cuando esta ya se encuentra disponible.</p>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="borradoLogico"></a>
+                    <span class="name">
+                        <span ><b>borradoLogico</b></span>
+                        <a href="#borradoLogico"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>borradoLogico(producto: <a href="../interfaces/Producto.html" target="_self">Producto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/services/producto.service.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crearProductoPersistente"></a>
+                    <span class="name">
+                        <span ><b>crearProductoPersistente</b></span>
+                        <a href="#crearProductoPersistente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>crearProductoPersistente(producto: Producto | ProductoRequest)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/services/producto.service.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                        <code>Producto | ProductoRequest</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modificarProducto"></a>
+                    <span class="name">
+                        <span ><b>modificarProducto</b></span>
+                        <a href="#modificarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>modificarProducto(productoNuevo: <a href="../interfaces/ModificarProducto.html" target="_self">ModificarProducto</a>, productoViejo: <a href="../interfaces/Producto.html" target="_self">Producto | null</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/services/producto.service.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productoNuevo</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ModificarProducto.html" target="_self" >ModificarProducto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>productoViejo</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto | null</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productoExiste"></a>
+                    <span class="name">
+                        <span ><b>productoExiste</b></span>
+                        <a href="#productoExiste"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>productoExiste(nombreProducto: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/services/producto.service.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>nombreProducto</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productosPorCategoria"></a>
+                    <span class="name">
+                        <span ><b>productosPorCategoria</b></span>
+                        <a href="#productosPorCategoria"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>productosPorCategoria(categoria: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/services/producto.service.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los productos pertenecientes a una categoría específica mediante
+una petición HTTP al backend.</p>
+<p>La categoría se envía como parámetro de consulta para que el servidor
+retorne únicamente los productos asociados.</p>
 </div>
 
                             <div class="io-description">
@@ -300,7 +625,7 @@ utilizando la caché cuando esta ya se encuentra disponible.</p>
                                         <tr>
                                                 <td>categoria</td>
                                             <td>
-                                                        <code>unknown</code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
 
                                             <td>
@@ -321,7 +646,7 @@ utilizando la caché cuando esta ya se encuentra disponible.</p>
 
                         </div>
                             <div class="io-description">
-                                <p>Observable con los productos de la categoría solicitada.</p>
+                                <p>Observable con la lista de productos pertenecientes a la categoría indicada.</p>
 
                             </div>
                 </td>
@@ -332,43 +657,37 @@ utilizando la caché cuando esta ya se encuentra disponible.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="obtenerProductosJSON"></a>
+                    <a name="recargarProductos"></a>
                     <span class="name">
-                        <span ><b>obtenerProductosJSON</b></span>
-                        <a href="#obtenerProductosJSON"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>recargarProductos</b></span>
+                        <a href="#recargarProductos"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>obtenerProductosJSON()</code>
+<code>recargarProductos()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="31"
-                                    class="link-to-prism">src/app/services/producto.service.ts:31</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/services/producto.service.ts:101</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Obtiene la colección completa de productos.</p>
-<p>Si los productos ya fueron cargados previamente, retorna la información
-almacenada en la caché para evitar una nueva lectura del archivo JSON.</p>
+                        <div class="io-description"><p>Fuerza la recarga de la colección de productos, actualizando el signal <code>productos</code>.</p>
 </div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
-                            <div class="io-description">
-                                <p>Observable con todos los productos organizados por categoría.</p>
-
-                            </div>
                 </td>
             </tr>
         </tbody>
@@ -383,28 +702,141 @@ almacenada en la caché para evitar una nueva lectura del archivo JSON.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="productosCache"></a>
+                    <a name="http"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
-                        <span ><b>productosCache</b></span>
-                        <a href="#productosCache"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>http</b></span>
+                        <a href="#http"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>ProductosResponse | null</code>
+                        <i>Type : </i>    <code>unknown</code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>null</code>
+                        <i>Default value : </i><code>inject(HttpClient)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/producto.service.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/services/producto.service.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productos"></a>
+                    <span class="name">
+                        <span ><b>productos</b></span>
+                        <a href="#productos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>toSignal(
+      toObservable(this.refresh).pipe(
+        switchMap(() &#x3D;&gt; this.http.get&lt;Producto[]&gt;(this.rutaBaseRestAPI)),
+        catchError(() &#x3D;&gt; of([]))
+      ),
+      { initialValue: [] }
+    )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/services/producto.service.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Señal que contiene la colección completa de productos obtenida desde el
+backend.</p>
+<p>La información se recupera mediante una petición HTTP y se convierte en
+un <code>Signal</code> utilizando &quot;toSignal&quot;, permitiendo que los componentes
+consuman los datos de forma reactiva.</p>
+<p>Mientras la información aún no se encuentra disponible o ocurre un error,
+el valor de la señal será &quot;null&quot;.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refresh"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>refresh</b></span>
+                        <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(0)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/producto.service.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rutaBaseRestAPI"></a>
+                    <span class="name">
+                        <span ><b>rutaBaseRestAPI</b></span>
+                        <a href="#rutaBaseRestAPI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;http://localhost:8080/productos&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/producto.service.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -417,61 +849,110 @@ almacenada en la caché para evitar una nueva lectura del archivo JSON.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { ProductosResponse } from &#x27;../interfaces/productos.response.interface&#x27;;
-import { map, of, tap } from &#x27;rxjs&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { inject, Injectable, signal } from &#x27;@angular/core&#x27;;
+import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
+import { catchError,  of, switchMap, tap } from &#x27;rxjs&#x27;;
+import { toObservable, toSignal } from &#x27;@angular/core/rxjs-interop&#x27;;
+import { Producto } from &#x27;../interfaces/producto.interface&#x27;;
+import { ProductoRequest } from &#x27;../interfaces/producto.request.interface&#x27;;
+import { ModificarProducto } from &#x27;../interfaces/modificar.producto.interface&#x27;;
 
 /**
  * @description
- * Servicio encargado de proveer acceso a la información de productos
- * desde un archivo JSON local.
+ * Servicio encargado de gestionar el acceso a la información de productos
+ * mediante peticiones HTTP al backend desarrollado con Spring Boot.
  *
- * Implementa una caché en memoria para evitar múltiples lecturas del
- * mismo recurso y expone métodos para obtener todos los productos o
- * filtrarlos por categoría.
+ * Proporciona métodos para obtener todos los productos, filtrarlos por
+ * categoría, verificar su existencia y un crud.
  */
 @Injectable({ providedIn: &#x27;root&#x27; })
 export class ProductoService {
 
-  private productosCache: ProductosResponse | null &#x3D; null; 
+  rutaBaseRestAPI&#x3D; &#x27;http://localhost:8080/productos&#x27;
 
-  constructor(private http: HttpClient) {}
+  private readonly http &#x3D; inject(HttpClient);
+  private refresh &#x3D; signal(0);
 
   /**
    * @description
-   * Obtiene la colección completa de productos.
+   * Señal que contiene la colección completa de productos obtenida desde el
+   * backend.
    *
-   * Si los productos ya fueron cargados previamente, retorna la información
-   * almacenada en la caché para evitar una nueva lectura del archivo JSON.
+   * La información se recupera mediante una petición HTTP y se convierte en
+   * un &#x60;Signal&#x60; utilizando &quot;toSignal&quot;, permitiendo que los componentes
+   * consuman los datos de forma reactiva.
    *
-   * @returns Observable con todos los productos organizados por categoría.
-   */  
-  obtenerProductosJSON() {
-    if (this.productosCache) {
-      return of(this.productosCache);  
-    }
+   * Mientras la información aún no se encuentra disponible o ocurre un error,
+   * el valor de la señal será &quot;null&quot;.
+   *
+   * @type {Signal&lt;ProductosResponse | null&gt;}
+   */
 
-    return this.http.get&lt;ProductosResponse&gt;(&#x27;assets/JSON/producto/todos.json&#x27;).pipe(
-      tap(data &#x3D;&gt; this.productosCache &#x3D; data)  
+    productos &#x3D; toSignal(
+      toObservable(this.refresh).pipe(
+        switchMap(() &#x3D;&gt; this.http.get&lt;Producto[]&gt;(this.rutaBaseRestAPI)),
+        catchError(() &#x3D;&gt; of([]))
+      ),
+      { initialValue: [] }
     );
-  }
 
   /**
    * @description
-   * Obtiene los productos pertenecientes a una categoría específica.
+   * Obtiene los productos pertenecientes a una categoría específica mediante
+   * una petición HTTP al backend.
    *
-   * La información se obtiene a partir de la colección completa de productos,
-   * utilizando la caché cuando esta ya se encuentra disponible.
+   * La categoría se envía como parámetro de consulta para que el servidor
+   * retorne únicamente los productos asociados.
    *
    * @param categoria Categoría de productos que se desea consultar.
-   * @returns Observable con los productos de la categoría solicitada.
+   * @returns Observable con la lista de productos pertenecientes a la categoría indicada.
    */
-  obtenerProductoCategoria(categoria: keyof ProductosResponse) {
-    return this.obtenerProductosJSON().pipe(
-      map(response &#x3D;&gt; response[categoria])
+  productosPorCategoria(categoria: string) {
+    return this.http.get&lt;Producto[]&gt;(
+        this.rutaBaseRestAPI + &quot;/prod-cat&quot;,
+      {
+        params: new HttpParams().set(&#x27;categoria&#x27;, categoria)
+      }
     );
   }
+
+  productoExiste(nombreProducto:string):boolean {
+    const productos &#x3D; this.productos();
+    return productos.some(p &#x3D;&gt; p.nombre.trim().toLowerCase() &#x3D;&#x3D;&#x3D; nombreProducto.trim().toLowerCase());
+  }
+
+  crearProductoPersistente(producto: Producto | ProductoRequest) {
+    return this.http.post&lt;Producto&gt;(this.rutaBaseRestAPI, producto).pipe(
+      tap(() &#x3D;&gt; this.recargarProductos())
+    );
+  }
+
+  modificarProducto(productoNuevo: ModificarProducto, productoViejo: Producto | null) {
+    return this.http.put(this.rutaBaseRestAPI + &#x60;/${productoViejo?.id}&#x60;, productoNuevo).pipe(
+      tap(() &#x3D;&gt; this.recargarProductos())
+    )
+  }
+
+  borradoLogico(producto: Producto){
+    return this.http.delete&lt;Producto&gt;(this.rutaBaseRestAPI + &#x60;/${producto.id}&#x60;).pipe(
+      tap(() &#x3D;&gt; this.recargarProductos())
+    );
+  }
+
+  borradoFisico(producto: Producto){
+    return this.http.delete&lt;Producto&gt;(this.rutaBaseRestAPI + &#x60;/fisico/${producto.id}&#x60;).pipe(
+      tap(() &#x3D;&gt; this.recargarProductos())
+    );
+  }
+
+  /**
+   * @description
+   * Fuerza la recarga de la colección de productos, actualizando el signal &#x60;productos&#x60;.
+   */
+  recargarProductos(): void {
+    this.refresh.update(n &#x3D;&gt; n + 1);
+  }
+
 }</code></pre>
     </div>
 

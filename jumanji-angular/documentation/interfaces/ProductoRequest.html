@@ -116,7 +116,7 @@
   <li class="breadcrumb-item">Interfaces</li>
   <li class="breadcrumb-item"
   >
-  Producto</li>
+  ProductoRequest</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -140,17 +140,10 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/interfaces/producto.interface.ts</code>
+            <code>src/app/interfaces/producto.request.interface.ts</code>
         </p>
 
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Representa un producto.</p>
-
-            </p>
 
 
         <section data-compodoc="block-index">
@@ -178,6 +171,7 @@
                                         </a>
                                 </li>
                                 <li>
+                                            <span class="modifier">Optional</span>
                                         <a href="#creadoAt" 
 >
                                             creadoAt
@@ -208,18 +202,21 @@
                                         </a>
                                 </li>
                                 <li>
+                                            <span class="modifier">Optional</span>
                                         <a href="#estaDisponible" 
 >
                                             estaDisponible
                                         </a>
                                 </li>
                                 <li>
+                                            <span class="modifier">Optional</span>
                                         <a href="#estadisticasVentas" 
 >
                                             estadisticasVentas
                                         </a>
                                 </li>
                                 <li>
+                                            <span class="modifier">Optional</span>
                                         <a href="#id" 
 >
                                             id
@@ -244,6 +241,7 @@
                                         </a>
                                 </li>
                                 <li>
+                                            <span class="modifier">Optional</span>
                                         <a href="#precioFinal" 
 >
                                             precioFinal
@@ -359,6 +357,11 @@
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -524,6 +527,11 @@
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -557,6 +565,11 @@
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -590,6 +603,11 @@
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -722,6 +740,11 @@
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -768,27 +791,23 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Estadisticas } from &quot;./estadisticas.interface&quot;;
 
-/**
- * @description
- * Representa un producto.
- */
-export interface Producto {
-  id: number;
-  nombre: string;
-  imagen: string;
-  descripcion: string;
-  categoria: string;
-  precio: number;
-  descuento: number;
-  precioFinal: number;
-  cantidadJugadores: string;
-  duracion: string;
-  stock: number;
-  dificultad: number;
-  estaDisponible: boolean;
-  creadoAt: string;
-  estadisticasVentas: Estadisticas;
-}
+  export interface ProductoRequest{
+   id?: number;
+   nombre: string,
+   imagen: string,
+   descripcion: string,
+   categoria: string,
+   precio: number,
+   descuento: number,
+   precioFinal?: number,
+   cantidadJugadores: string,
+   duracion: string,
+   stock: number,
+   dificultad: number,
+   estaDisponible?: boolean,
+   creadoAt?: string,
+   estadisticasVentas?: Estadisticas;
+  }
 </code></pre>
     </div>
 </div>
@@ -826,7 +845,7 @@ export interface Producto {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'Producto.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductoRequest.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

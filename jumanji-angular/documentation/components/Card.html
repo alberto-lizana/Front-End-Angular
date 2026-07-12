@@ -223,6 +223,9 @@ al carrito de compras.</p>
                                 <a href="#carritoService" >carritoService</a>
                             </li>
                             <li>
+                                <a href="#generarDificultad" >generarDificultad</a>
+                            </li>
+                            <li>
                                 <a href="#productos" >productos</a>
                             </li>
                             <li>
@@ -247,9 +250,6 @@ al carrito de compras.</p>
                         <ul class="index-list">
                             <li>
                                 <a href="#agregarAlCarrito" >agregarAlCarrito</a>
-                            </li>
-                            <li>
-                                <a href="#generarDificultad" >generarDificultad</a>
                             </li>
                         </ul>
                     </td>
@@ -293,8 +293,8 @@ al carrito de compras.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="69"
-                                    class="link-to-prism">src/app/components/card/card.ts:69</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/components/card/card.ts:68</a></div>
                         </td>
                     </tr>
 
@@ -348,82 +348,6 @@ estado del botón para indicar que el producto fue agregado.</p>
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="generarDificultad"></a>
-                    <span class="name">
-                        <span ><b>generarDificultad</b></span>
-                        <a href="#generarDificultad"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>generarDificultad(dificultad: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="58"
-                                    class="link-to-prism">src/app/components/card/card.ts:58</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Genera una representación visual de la dificultad del juego mediante
-estrellas llenas y vacías.</p>
-</div>
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                                <td>Description</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>dificultad</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                            <td>
-                                                    <p>Nivel de dificultad del juego (1 a 5).</p>
-
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>Cadena de texto con estrellas que representan la dificultad.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>
     <section data-compodoc="block-properties">
     
@@ -454,7 +378,7 @@ estrellas llenas y vacías.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/card/card.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/card/card.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -497,6 +421,37 @@ estrellas llenas y vacías.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="generarDificultad"></a>
+                    <span class="name">
+                        <span ><b>generarDificultad</b></span>
+                        <a href="#generarDificultad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>generarDificultad</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/card/card.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="productos"></a>
                     <span class="name">
                         <span ><b>productos</b></span>
@@ -514,25 +469,34 @@ estrellas llenas y vacías.</p>
                     <td class="col-md-4">
                         <i>Default value : </i><code>toSignal(
     this.route.paramMap.pipe(
-      map(params &#x3D;&gt; params.get(&#x27;categoria&#x27;) as keyof ProductosResponse),
-      filter((c): c is keyof ProductosResponse &#x3D;&gt; !!c),
-      switchMap(categoria &#x3D;&gt; this.productoService.obtenerProductoCategoria(categoria))
+      map(params &#x3D;&gt; params.get(&#x27;categoria&#x27;)),
+      filter((c): c is string &#x3D;&gt; !!c),
+      tap(categoria &#x3D;&gt; console.log(&#x27;Categoría enviada:&#x27;, categoria)),
+      switchMap(categoria &#x3D;&gt;
+        this.productoService.productosPorCategoria(categoria)
+      )
     ),
-    { initialValue: [] as Producto[] }
+    { initialValue: [] }
   )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/card/card.ts:41</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/components/card/card.ts:49</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Señal que contiene la lista de productos de la categoría seleccionada.</p>
-<p>La categoría se obtiene desde los parámetros de la ruta y se utiliza
-para consultar el servicio de productos correspondiente.</p>
+                    <div class="io-description"><p>Señal reactiva que contiene la lista de productos correspondiente a la
+categoría seleccionada.</p>
+<p>La categoría se obtiene desde los parámetros de la ruta (<code>paramMap</code>) y,
+cada vez que cambia, se realiza automáticamente una nueva solicitud al
+servicio para recuperar los productos asociados. El resultado del
+<code>Observable</code> se convierte en un <code>Signal</code> mediante <code>toSignal</code>, permitiendo
+que la vista se actualice de forma reactiva.</p>
+<p>Mientras la solicitud aún no finaliza o no existe una categoría válida,
+el valor inicial de la señal será un arreglo vacío.</p>
 </div>
                 </td>
             </tr>
@@ -609,14 +573,14 @@ para consultar el servicio de productos correspondiente.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, signal } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, computed, effect, inject, signal } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { toSignal } from &#x27;@angular/core/rxjs-interop&#x27;;
-import { map, switchMap, filter } from &#x27;rxjs/operators&#x27;;
+import { map, filter, switchMap, tap } from &#x27;rxjs/operators&#x27;;
 import { ProductoService } from &#x27;../../services/producto.service&#x27;;
-import { ProductosResponse } from &#x27;../../interfaces/productos.response.interface&#x27;;
 import { Producto } from &#x27;../../interfaces/producto.interface&#x27;;
 import { CarritoService } from &#x27;../../services/carrito.service&#x27;;
+import { generarDificultad } from &#x27;../../utils/productos.utils&#x27;;
 
 /**
  * @description
@@ -639,36 +603,35 @@ export class Card {
   private route &#x3D; inject(ActivatedRoute);
   private productoService &#x3D; inject(ProductoService);
   private carritoService &#x3D; inject(CarritoService);
+  generarDificultad &#x3D; generarDificultad;
 
   agregado &#x3D; signal&lt;{ [id: number]: boolean }&gt;({});
 
   /**
    * @description
-   * Señal que contiene la lista de productos de la categoría seleccionada.
+   * Señal reactiva que contiene la lista de productos correspondiente a la
+   * categoría seleccionada.
    *
-   * La categoría se obtiene desde los parámetros de la ruta y se utiliza
-   * para consultar el servicio de productos correspondiente.
+   * La categoría se obtiene desde los parámetros de la ruta (&#x60;paramMap&#x60;) y,
+   * cada vez que cambia, se realiza automáticamente una nueva solicitud al
+   * servicio para recuperar los productos asociados. El resultado del
+   * &#x60;Observable&#x60; se convierte en un &#x60;Signal&#x60; mediante &#x60;toSignal&#x60;, permitiendo
+   * que la vista se actualice de forma reactiva.
+   *
+   * Mientras la solicitud aún no finaliza o no existe una categoría válida,
+   * el valor inicial de la señal será un arreglo vacío.
    */
   productos &#x3D; toSignal(
     this.route.paramMap.pipe(
-      map(params &#x3D;&gt; params.get(&#x27;categoria&#x27;) as keyof ProductosResponse),
-      filter((c): c is keyof ProductosResponse &#x3D;&gt; !!c),
-      switchMap(categoria &#x3D;&gt; this.productoService.obtenerProductoCategoria(categoria))
+      map(params &#x3D;&gt; params.get(&#x27;categoria&#x27;)),
+      filter((c): c is string &#x3D;&gt; !!c),
+      tap(categoria &#x3D;&gt; console.log(&#x27;Categoría enviada:&#x27;, categoria)),
+      switchMap(categoria &#x3D;&gt;
+        this.productoService.productosPorCategoria(categoria)
+      )
     ),
-    { initialValue: [] as Producto[] }
+    { initialValue: [] }
   );
-
-  /**
-   * @description
-   * Genera una representación visual de la dificultad del juego mediante
-   * estrellas llenas y vacías.
-   *
-   * @param dificultad Nivel de dificultad del juego (1 a 5).
-   * @returns Cadena de texto con estrellas que representan la dificultad.
-   */
-  generarDificultad(dificultad: number) {
-    return &quot;⭐&quot;.repeat(dificultad) + &quot;☆&quot;.repeat(5 - dificultad);
-  }
 
   /**
    * @description
@@ -720,7 +683,7 @@ export class Card {
 
                     &lt;div class&#x3D;&quot;item-info&quot;&gt;
                         &lt;span class&#x3D;&quot;letra-normal letra-normal-bold subtitulo&quot;&gt;Jugadores&lt;/span&gt;
-                        &lt;span class&#x3D;&quot;letra-normal color-letra-dinamico&quot;&gt;{{juego.cant_jugadores}}&lt;/span&gt;
+                        &lt;span class&#x3D;&quot;letra-normal color-letra-dinamico&quot;&gt;{{juego.cantidadJugadores}}&lt;/span&gt;
                     &lt;/div&gt;
 
                     &lt;div class&#x3D;&quot;item-info&quot;&gt;
@@ -774,8 +737,8 @@ export class Card {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section>    <div class="tabla-productos">    @for (juego of productos(); track juego.id) {        <div class="producto">            <div>                <div class="producto-imagen">                    <img [src]="\'assets/img/\' + juego.imagen" [alt]="juego.nombre">                </div>                <h3 class="letra-especial subtitulo">{{juego.nombre}}</h3>                <p class="letra-normal letra-normal-bold color-letra-dinamico mt-3 p-1">{{juego.descripcion}} </p>                <div class="info-juego m-1">                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Precio</span>                        <span class="letra-normal color-letra-dinamico"><del>{{juego.precio}}</del></span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Descuento</span>                        <span class="letra-normal color-letra-dinamico">{{juego.descuento * 100}}%</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Precio final</span>                        <span class="letra-normal color-letra-dinamico">{{ juego.precio - (juego.precio * juego.descuento)}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Jugadores</span>                        <span class="letra-normal color-letra-dinamico">{{juego.cant_jugadores}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Duración</span>                        <span class="letra-normal color-letra-dinamico">{{juego.duracion}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Dificultad</span>                        <span class="letra-normal color-letra-dinamico">{{generarDificultad(juego.dificultad)}}</span>                    </div>                </div>            </div>        <button         class="btn-comprar letra-normal letra-normal-bold subtitulo"        [class.btn-agregado]="agregado()[juego.id]"        [disabled]="agregado()[juego.id]"        (click)="$event.stopPropagation(); agregarAlCarrito(juego)">        {{ agregado()[juego.id] ? \'✓ Agregado\' : \'Agregar al Carrito\' }}        </button>        </div>                    }    </div></section></div>'
-    var COMPONENTS = [{'name': 'Acordeon', 'selector': 'app-acordeon'},{'name': 'Admin', 'selector': 'app-admin'},{'name': 'App', 'selector': 'app-root'},{'name': 'Card', 'selector': 'app-card'},{'name': 'Carrito', 'selector': 'app-carrito'},{'name': 'CarritoPage', 'selector': 'app-carrito-page'},{'name': 'Dashboard', 'selector': 'app-dashboard'},{'name': 'Footer', 'selector': 'app-footer'},{'name': 'FormCrearUsuario', 'selector': 'app-form-crear-usuario'},{'name': 'FormModificarUsuario', 'selector': 'app-form-modificar-usuario'},{'name': 'FormRecuperarContrasena', 'selector': 'app-form-recuperar-usuario'},{'name': 'Home', 'selector': 'app-home'},{'name': 'ImgCategorias', 'selector': 'app-img-categorias'},{'name': 'InicioSesion', 'selector': 'app-inicio-sesion'},{'name': 'LoginBox', 'selector': 'app-login-box'},{'name': 'Menu', 'selector': 'app-menu'},{'name': 'Modal', 'selector': 'app-modal'},{'name': 'Nav', 'selector': 'app-nav'},{'name': 'Presentacion', 'selector': 'app-presentacion'},{'name': 'TemplatePlaygroundComponent', 'selector': 'template-playground-root'},{'name': 'ThemeSwitch', 'selector': 'app-theme-switch'}];
+        var COMPONENT_TEMPLATE = '<div><section>    <div class="tabla-productos">    @for (juego of productos(); track juego.id) {        <div class="producto">            <div>                <div class="producto-imagen">                    <img [src]="\'assets/img/\' + juego.imagen" [alt]="juego.nombre">                </div>                <h3 class="letra-especial subtitulo">{{juego.nombre}}</h3>                <p class="letra-normal letra-normal-bold color-letra-dinamico mt-3 p-1">{{juego.descripcion}} </p>                <div class="info-juego m-1">                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Precio</span>                        <span class="letra-normal color-letra-dinamico"><del>{{juego.precio}}</del></span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Descuento</span>                        <span class="letra-normal color-letra-dinamico">{{juego.descuento * 100}}%</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Precio final</span>                        <span class="letra-normal color-letra-dinamico">{{ juego.precio - (juego.precio * juego.descuento)}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Jugadores</span>                        <span class="letra-normal color-letra-dinamico">{{juego.cantidadJugadores}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Duración</span>                        <span class="letra-normal color-letra-dinamico">{{juego.duracion}}</span>                    </div>                    <div class="item-info">                        <span class="letra-normal letra-normal-bold subtitulo">Dificultad</span>                        <span class="letra-normal color-letra-dinamico">{{generarDificultad(juego.dificultad)}}</span>                    </div>                </div>            </div>        <button         class="btn-comprar letra-normal letra-normal-bold subtitulo"        [class.btn-agregado]="agregado()[juego.id]"        [disabled]="agregado()[juego.id]"        (click)="$event.stopPropagation(); agregarAlCarrito(juego)">        {{ agregado()[juego.id] ? \'✓ Agregado\' : \'Agregar al Carrito\' }}        </button>        </div>                    }    </div></section></div>'
+    var COMPONENTS = [{'name': 'Acordeon', 'selector': 'app-acordeon'},{'name': 'Admin', 'selector': 'app-admin'},{'name': 'App', 'selector': 'app-root'},{'name': 'Card', 'selector': 'app-card'},{'name': 'Carrito', 'selector': 'app-carrito'},{'name': 'CarritoPage', 'selector': 'app-carrito-page'},{'name': 'Dashboard', 'selector': 'app-dashboard'},{'name': 'Footer', 'selector': 'app-footer'},{'name': 'FormCrearProducto', 'selector': 'app-form-crear-producto'},{'name': 'FormCrearUsuario', 'selector': 'app-form-crear-usuario'},{'name': 'FormModificarProducto', 'selector': 'app-form-modificar-producto'},{'name': 'FormModificarUsuario', 'selector': 'app-form-modificar-usuario'},{'name': 'FormRecuperarContrasena', 'selector': 'app-form-recuperar-usuario'},{'name': 'Home', 'selector': 'app-home'},{'name': 'ImgCategorias', 'selector': 'app-img-categorias'},{'name': 'InicioSesion', 'selector': 'app-inicio-sesion'},{'name': 'KpiCard', 'selector': 'app-kpi-card'},{'name': 'LoginBox', 'selector': 'app-login-box'},{'name': 'Menu', 'selector': 'app-menu'},{'name': 'Modal', 'selector': 'app-modal'},{'name': 'Nav', 'selector': 'app-nav'},{'name': 'Presentacion', 'selector': 'app-presentacion'},{'name': 'TablaProductos', 'selector': 'app-tabla-productos'},{'name': 'TablaUsuarios', 'selector': 'app-tabla-usuarios'},{'name': 'ThemeSwitch', 'selector': 'app-theme-switch'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'Card'};
 </script>

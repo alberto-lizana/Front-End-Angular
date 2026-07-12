@@ -132,6 +132,30 @@
                         <li>
                             <a href="#emailExiste" title="src/app/utils/reutilizables.ts" ><b>emailExiste</b>&nbsp;&nbsp;&nbsp;(src/.../reutilizables.ts)</a>
                         </li>
+                        <li>
+                            <a href="#generarDificultad" title="src/app/utils/productos.utils.ts" ><b>generarDificultad</b>&nbsp;&nbsp;&nbsp;(src/.../productos.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getProductoMasVendido" title="src/app/utils/ventas.utils.ts" ><b>getProductoMasVendido</b>&nbsp;&nbsp;&nbsp;(src/.../ventas.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getProductoMayorStock" title="src/app/utils/ventas.utils.ts" ><b>getProductoMayorStock</b>&nbsp;&nbsp;&nbsp;(src/.../ventas.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getProductoMejorRatingPromedio" title="src/app/utils/ventas.utils.ts" ><b>getProductoMejorRatingPromedio</b>&nbsp;&nbsp;&nbsp;(src/.../ventas.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getProductoMenorStock" title="src/app/utils/ventas.utils.ts" ><b>getProductoMenorStock</b>&nbsp;&nbsp;&nbsp;(src/.../ventas.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getProductoMenosVendido" title="src/app/utils/ventas.utils.ts" ><b>getProductoMenosVendido</b>&nbsp;&nbsp;&nbsp;(src/.../ventas.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getProductoPeorRatingPromedio" title="src/app/utils/ventas.utils.ts" ><b>getProductoPeorRatingPromedio</b>&nbsp;&nbsp;&nbsp;(src/.../ventas.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getProductos" title="src/app/utils/productos.utils.ts" ><b>getProductos</b>&nbsp;&nbsp;&nbsp;(src/.../productos.utils.ts)</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -218,6 +242,441 @@
                             <div class="io-description">
                                 <p>&quot;true&quot; si el correo ya existe, de lo contrario, &quot;false&quot;.</p>
 
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/utils/productos.utils.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generarDificultad"></a>
+                    <span class="name">
+                        <span ><b>generarDificultad</b></span>
+                        <a href="#generarDificultad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generarDificultad(dificultad: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dificultad</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Nivel de dificultad del juego (1 a 5).</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductos"></a>
+                    <span class="name">
+                        <span ><b>getProductos</b></span>
+                        <a href="#getProductos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductos(productos, categoria?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productos</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>categoria</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Producto.html" target="_self" >Producto[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/app/utils/ventas.utils.ts</h3>
+    <section data-compodoc="block-methods">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductoMasVendido"></a>
+                    <span class="name">
+                        <span ><b>getProductoMasVendido</b></span>
+                        <a href="#getProductoMasVendido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductoMasVendido(productos)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productos</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductoMayorStock"></a>
+                    <span class="name">
+                        <span ><b>getProductoMayorStock</b></span>
+                        <a href="#getProductoMayorStock"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductoMayorStock(productos)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productos</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductoMejorRatingPromedio"></a>
+                    <span class="name">
+                        <span ><b>getProductoMejorRatingPromedio</b></span>
+                        <a href="#getProductoMejorRatingPromedio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductoMejorRatingPromedio(productos)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productos</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductoMenorStock"></a>
+                    <span class="name">
+                        <span ><b>getProductoMenorStock</b></span>
+                        <a href="#getProductoMenorStock"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductoMenorStock(productos)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productos</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductoMenosVendido"></a>
+                    <span class="name">
+                        <span ><b>getProductoMenosVendido</b></span>
+                        <a href="#getProductoMenosVendido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductoMenosVendido(productos)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productos</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductoPeorRatingPromedio"></a>
+                    <span class="name">
+                        <span ><b>getProductoPeorRatingPromedio</b></span>
+                        <a href="#getProductoPeorRatingPromedio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductoPeorRatingPromedio(productos)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productos</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                 </td>
             </tr>

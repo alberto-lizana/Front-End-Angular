@@ -4,15 +4,49 @@
     <!-- NOMBRE -->
     <div class="row">
         <div class="col-12">
-            <label for="nombre" class="form-label letra-normal letra-normal-bold col-12">Nombre</label>
-            <input type="text"  formControlName="nombre" class="input-transparente letra-normal w-100 mb-3" placeholder="Nombre">
-        </div>
+            <label for="nombre" class="form-label letra-normal letra-normal-bold w-100">Nombre
+
+                <!-- ERROR -->
+                @if(form.get('nombre')?.invalid && form.get('nombre')?.touched) {   
+                    <span class="error-icon">
+                        !
+                        <span class="tooltip">
+                            @if(form.get('nombre')?.hasError('required')) {
+                                {{ errorMessages.nombre.requiredValidacion }}
+                            }   
+                            @if(form.get('nombre')?.hasError('maxLength')) {
+                                {{ errorMessages.nombre.maxLengthValidacion }}
+                            }
+                        </span>
+                    </span>
+                }  
+
+            </label> 
+            <input type="text" formControlName="nombre" class="input-transparente letra-normal w-100 mb-3 col-10" placeholder="Nombre"> 
+        </div>    
     </div>
 
     <!-- IMAGEN -->
     <div class=" row">
         <div class="col-12">
-            <label for="imagen" class="form-label letra-normal letra-normal-bold col-12">Imagen</label>
+            <label for="imagen" class="form-label letra-normal letra-normal-bold col-12">Imagen
+
+                <!-- ERROR -->
+                @if(form.get('imagen')?.invalid && form.get('imagen')?.touched) {   
+                    <span class="error-icon">
+                        !
+                        <span class="tooltip">
+                            @if(form.get('imagen')?.hasError('required')) {
+                                {{ errorMessages.imagen.requiredValidacion }}
+                            }   
+                            @if(form.get('imagen')?.hasError('maxLength')) {
+                                {{ errorMessages.imagen.maxLengthValidacion }}
+                            }
+                        </span>
+                    </span>
+                } 
+
+            </label>
             <input type="text"  formControlName="imagen" class="input-transparente letra-normal w-100 mb-3" placeholder="imagen">
         </div>
     </div>
@@ -20,11 +54,39 @@
     <!-- DESCRIPCIÓN -->
     <div class="row ">
         <div class="col-12">
-            <label for="descripcion" class="form-label letra-normal letra-normal-bold ">Descripción</label>
+            <label for="descripcion" class="form-label letra-normal letra-normal-bold ">Descripción
+                
+                <!-- ERROR -->
+                @if(form.get('descripcion')?.invalid && form.get('descripcion')?.touched) {   
+                    <span class="error-icon">
+                        !
+                        <span class="tooltip">
+                            @if(form.get('descripcion')?.hasError('required')) {
+                                {{ errorMessages.descripcion.requiredValidacion }}
+                            }   
+                            @if(form.get('descripcion')?.hasError('maxLength')) {
+                                {{ errorMessages.descripcion.maxLengthValidacion }}
+                            }
+                        </span>
+                    </span>
+                } 
+                
+            </label>
             <input type="text" formControlName="descripcion" class="input-transparente letra-normal w-100 mb-3" placeholder="descripcion">
         </div>
     </div>
 
+    <!-- ERROR -->
+    @if(form.get('categoria')?.invalid && form.get('categoria')?.touched) {   
+        <span class="error-icon">
+            ! 
+            <span class="tooltip">
+                @if(form.get('categoria')?.hasError('required')) {
+                    {{ errorMessages.categoria.requiredValidacion  }}
+                }  
+            </span>
+        </span>
+    } 
     <!-- CATEGORÍA -->
     <select formControlName="categoria" class="form-label letra-normal letra-normal-bold w-100 input-transparente mb-3">
         <option value="" selected>Selecciona una categoría</option>
@@ -37,13 +99,50 @@
     <div class="row">
         <!-- PRECIO -->
         <div class="col-6">
-            <label for="precio" class="form-label letra-normal letra-normal-bold">Precio</label>
+            <label for="precio" class="form-label letra-normal letra-normal-bold">Precio
+
+                <!-- ERROR -->
+                @if(form.get('precio')?.invalid && form.get('precio')?.touched) {   
+                    <span class="error-icon">
+                        ! 
+                        <span class="tooltip">
+                            @if(form.get('precio')?.hasError('required')) {
+                                {{ errorMessages.precio.requiredValidacion  }}
+                            }  
+                            @if(form.get('precio')?.hasError('min')) {
+                                {{ errorMessages.precio.minValidacion  }}
+                            }  
+                        </span>
+                    </span>
+                } 
+
+            </label>
             <input type="number" formControlName="precio" class="input-transparente letra-normal w-100 mb-3" placeholder="15990">
         </div>
 
         <!-- DESCUENTO -->
         <div class="col-6">
-            <label for="descuento" class="form-label letra-normal letra-normal-bold">Descuento</label>
+            <label for="descuento" class="form-label letra-normal letra-normal-bold">Descuento
+
+                <!-- ERROR -->
+                @if(form.get('descuento')?.invalid && form.get('descuento')?.touched) {   
+                    <span class="error-icon">
+                        ! 
+                        <span class="tooltip">
+                            @if(form.get('descuento')?.hasError('required')) {
+                                {{ errorMessages.descuento.requiredValidacion  }}
+                            }  
+                            @if(form.get('descuento')?.hasError('min')) {
+                                {{ errorMessages.descuento.minValidacion  }}
+                            }  
+                            @if(form.get('descuento')?.hasError('max')) {
+                                {{ errorMessages.descuento.maxValidacion  }}
+                            }  
+                        </span>
+                    </span>
+                } 
+
+            </label>
             <input type="number" formControlName="descuento" class="input-transparente letra-normal w-100 mb-3" placeholder="0.15">
         </div>
     </div>
@@ -52,13 +151,47 @@
 
         <!-- JUGADORES -->
         <div class="col-6">
-            <label for="cantidadJugadores" class="form-label letra-normal letra-normal-bold">Jugadores</label>
+            <label for="cantidadJugadores" class="form-label letra-normal letra-normal-bold">Jugadores
+
+                <!-- ERROR -->
+                @if(form.get('cantidadJugadores')?.invalid && form.get('cantidadJugadores')?.touched) {   
+                    <span class="error-icon">
+                        ! 
+                        <span class="tooltip">
+                            @if(form.get('cantidadJugadores')?.hasError('required')) {
+                                {{ errorMessages.cantidadJugadores.requiredValidacion  }}
+                            }  
+                            @if(form.get('cantidadJugadores')?.hasError('maxLength')) {
+                                {{ errorMessages.cantidadJugadores.maxLengthValidacion  }}
+                            }  
+                        </span>
+                    </span>
+                } 
+
+            </label>
             <input type="text" formControlName="cantidadJugadores" class="input-transparente letra-normal w-100 mb-3" placeholder="2-6">
         </div>
 
         <!-- DURACIÓN -->
         <div class="col-6">
-            <label for="duracion" class="form-label letra-normal letra-normal-bold">Duración</label>
+            <label for="duracion" class="form-label letra-normal letra-normal-bold">Duración
+
+                <!-- ERROR -->
+                @if(form.get('duracion')?.invalid && form.get('duracion')?.touched) {   
+                    <span class="error-icon">
+                        ! 
+                        <span class="tooltip">
+                            @if(form.get('duracion')?.hasError('required')) {
+                                {{ errorMessages.duracion.requiredValidacion  }}
+                            }  
+                            @if(form.get('duracion')?.hasError('maxLength')) {
+                                {{ errorMessages.duracion.maxLengthValidacion  }}
+                            }  
+                        </span>
+                    </span>
+                } 
+
+            </label>
             <input type="text" formControlName="duracion" class="input-transparente letra-normal w-100 mb-3" placeholder="60-120 MIN">
         </div>
 
@@ -68,17 +201,51 @@
         
         <!-- STOCK -->
         <div class="col-6">
-            <label for="stock" class="form-label letra-normal letra-normal-bold">Stock</label>
+            <label for="stock" class="form-label letra-normal letra-normal-bold">Stock
+
+                <!-- ERROR -->
+                @if(form.get('stock')?.invalid && form.get('stock')?.touched) {   
+                    <span class="error-icon">
+                        ! 
+                        <span class="tooltip">
+                            @if(form.get('stock')?.hasError('required')) {
+                                {{ errorMessages.stock.requiredValidacion  }}
+                            }  
+                            
+                            {{ '\n' + errorMessages.stock.stockInvalido  }}
+                         
+                        </span>
+                    </span>
+                } 
+
+            </label>
             <input type="number" formControlName="stock" class="input-transparente letra-normal w-100 mb-3" placeholder="1">
         </div>
 
         <!-- DIFICULTAD -->
         <div class="col-6">
-            <label for="dificultad" class="form-label letra-normal letra-normal-bold">Dificultad</label>
+            <label for="dificultad" class="form-label letra-normal letra-normal-bold">Dificultad
+                
+                <!-- ERROR -->
+                @if(form.get('stock')?.invalid && form.get('stock')?.touched) {   
+                <span class="error-icon">
+                    ! 
+                    <span class="tooltip">
+                        @if(form.get('dificultad')?.hasError('required')) {
+                            {{ errorMessages.dificultad.requiredValidacion  }}
+                        }  
+
+                        {{ '\n' + errorMessages.dificultad.dificultadInvalida  }}
+                
+                    </span>
+                </span>
+                } 
+            </label>
             <input type="number" formControlName="dificultad" class="input-transparente letra-normal w-100 mb-4" placeholder="1">
         </div>
 
     </div>
+
 
     <!-- BOTONES -->
     <div class="row-12 text-center mb-2">

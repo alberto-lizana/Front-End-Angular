@@ -107,7 +107,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  CarritoPage</li>
+  KpiCard</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -134,19 +134,10 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/pages/carrito-page/carrito.ts</code>
+    <code>src/app/components/kpi-card/kpi-card.ts</code>
 </p>
 
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>Componente encargado de organizar la estructura principal de la página,
-integrando el componente de navegación, el carrito y el
-pie de página.</p>
-
-    </p>
 
 
 
@@ -169,7 +160,7 @@ pie de página.</p>
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-carrito-page</code></td>
+                <td class="col-md-9"><code>app-kpi-card</code></td>
             </tr>
 
             <tr>
@@ -177,28 +168,20 @@ pie de página.</p>
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">imports</td>
-                <td class="col-md-9">
-                                <code><a href="../components/Nav.html" target="_self" >Nav</a></code>
-                                <code><a href="../components/Footer.html" target="_self" >Footer</a></code>
-                                <code><a href="../components/Carrito.html" target="_self" >Carrito</a></code>
-                </td>
-            </tr>
 
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./carrito.html</code></td>
+                <td class="col-md-9"><code>./kpi-card.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./carrito.css</code></td>
+                <td class="col-md-9"><code>./kpi-card.css</code></td>
             </tr>
 
 
@@ -209,9 +192,93 @@ pie de página.</p>
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#titulo" >titulo</a>
+                            </li>
+                            <li>
+                                <a href="#valor" >valor</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titulo"></a>
+                        <b>titulo</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Required : </i>&nbsp;<b>true</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/kpi-card/kpi-card.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valor"></a>
+                        <b>valor</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | string</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Required : </i>&nbsp;<b>true</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/kpi-card/kpi-card.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -221,32 +288,32 @@ pie de página.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Footer } from &#x27;../../components/footer/footer&#x27;;
-import { Nav } from &#x27;../../components/nav/nav&#x27;;
-import { Carrito } from &#x27;../../components/carrito/carrito&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, input, Input } from &#x27;@angular/core&#x27;;
 
-/**
- * @description
- * Componente encargado de organizar la estructura principal de la página,
- * integrando el componente de navegación, el carrito y el
- * pie de página.
- */
 @Component({
-  selector: &#x27;app-carrito-page&#x27;,
+  selector: &#x27;app-kpi-card&#x27;,
+  imports: [],
   standalone: true,
-  imports: [Nav, Footer, Carrito],
-  templateUrl: &#x27;./carrito.html&#x27;,
-  styleUrl: &#x27;./carrito.css&#x27;,
+  templateUrl: &#x27;./kpi-card.html&#x27;,
+  styleUrl: &#x27;./kpi-card.css&#x27;,
 })
-export class CarritoPage {}
+export class KpiCard {
+  titulo &#x3D; input.required&lt;string&gt;();
+  valor &#x3D; input.required&lt;number | string&gt;();
+}
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-nav&gt;&lt;/app-nav&gt;
-&lt;app-carrito&gt;&lt;/app-carrito&gt;
-&lt;app-footer&gt;&lt;/app-footer&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;kpi-card letra-normal mb-2 mt-2&quot;&gt;
+  &lt;div class&#x3D;&quot;kpi-title letra-normal-bold&quot;&gt;
+    {{ titulo() }}
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;letra-normal-pequeña kpi-value&quot;&gt;
+    {{ valor() }} 
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
 
@@ -275,10 +342,10 @@ export class CarritoPage {}
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-carrito></app-carrito><app-footer></app-footer></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="kpi-card letra-normal mb-2 mt-2">  <div class="kpi-title letra-normal-bold">    {{ titulo() }}  </div>  <div class="letra-normal-pequeña kpi-value">    {{ valor() }}   </div></div></div>'
     var COMPONENTS = [{'name': 'Acordeon', 'selector': 'app-acordeon'},{'name': 'Admin', 'selector': 'app-admin'},{'name': 'App', 'selector': 'app-root'},{'name': 'Card', 'selector': 'app-card'},{'name': 'Carrito', 'selector': 'app-carrito'},{'name': 'CarritoPage', 'selector': 'app-carrito-page'},{'name': 'Dashboard', 'selector': 'app-dashboard'},{'name': 'Footer', 'selector': 'app-footer'},{'name': 'FormCrearProducto', 'selector': 'app-form-crear-producto'},{'name': 'FormCrearUsuario', 'selector': 'app-form-crear-usuario'},{'name': 'FormModificarProducto', 'selector': 'app-form-modificar-producto'},{'name': 'FormModificarUsuario', 'selector': 'app-form-modificar-usuario'},{'name': 'FormRecuperarContrasena', 'selector': 'app-form-recuperar-usuario'},{'name': 'Home', 'selector': 'app-home'},{'name': 'ImgCategorias', 'selector': 'app-img-categorias'},{'name': 'InicioSesion', 'selector': 'app-inicio-sesion'},{'name': 'KpiCard', 'selector': 'app-kpi-card'},{'name': 'LoginBox', 'selector': 'app-login-box'},{'name': 'Menu', 'selector': 'app-menu'},{'name': 'Modal', 'selector': 'app-modal'},{'name': 'Nav', 'selector': 'app-nav'},{'name': 'Presentacion', 'selector': 'app-presentacion'},{'name': 'TablaProductos', 'selector': 'app-tabla-productos'},{'name': 'TablaUsuarios', 'selector': 'app-tabla-usuarios'},{'name': 'ThemeSwitch', 'selector': 'app-theme-switch'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'CarritoPage'};
+    var ACTUAL_COMPONENT = {'name': 'KpiCard'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -324,7 +391,7 @@ export class CarritoPage {}
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'CarritoPage.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'KpiCard.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

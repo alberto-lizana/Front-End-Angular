@@ -174,6 +174,12 @@
                                 <code><a href="../components/Dashboard.html" target="_self" >Dashboard</a></code>
                                 <code><a href="../components/Nav.html" target="_self" >Nav</a></code>
                                 <code><a href="../components/Footer.html" target="_self" >Footer</a></code>
+                                <code><a href="../components/KpiCard.html" target="_self" >KpiCard</a></code>
+                                <code><a href="../components/TablaUsuarios.html" target="_self" >TablaUsuarios</a></code>
+                                <code><a href="../components/TablaProductos.html" target="_self" >TablaProductos</a></code>
+                                <code><a href="../components/Modal.html" target="_self" >Modal</a></code>
+                                <code><a href="../components/FormCrearProducto.html" target="_self" >FormCrearProducto</a></code>
+                                <code><a href="../components/FormModificarProducto.html" target="_self" >FormModificarProducto</a></code>
                 </td>
             </tr>
 
@@ -200,41 +206,1850 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categoria" >categoria</a>
+                            </li>
+                            <li>
+                                <a href="#divisas" >divisas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#divisaService" >divisaService</a>
+                            </li>
+                            <li>
+                                <a href="#dolar" >dolar</a>
+                            </li>
+                            <li>
+                                <a href="#euro" >euro</a>
+                            </li>
+                            <li>
+                                <a href="#isOpen" >isOpen</a>
+                            </li>
+                            <li>
+                                <a href="#kpis" >kpis</a>
+                            </li>
+                            <li>
+                                <a href="#masVendido" >masVendido</a>
+                            </li>
+                            <li>
+                                <a href="#mejorRating" >mejorRating</a>
+                            </li>
+                            <li>
+                                <a href="#menosVendido" >menosVendido</a>
+                            </li>
+                            <li>
+                                <a href="#modalType" >modalType</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarProductos" >mostrarProductos</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarUsuarios" >mostrarUsuarios</a>
+                            </li>
+                            <li>
+                                <a href="#peorRating" >peorRating</a>
+                            </li>
+                            <li>
+                                <a href="#pesoArgentino" >pesoArgentino</a>
+                            </li>
+                            <li>
+                                <a href="#pesoUruguayo" >pesoUruguayo</a>
+                            </li>
+                            <li>
+                                <a href="#productos" >productos</a>
+                            </li>
+                            <li>
+                                <a href="#productoSeleccionado" >productoSeleccionado</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#productoService" >productoService</a>
+                            </li>
+                            <li>
+                                <a href="#real" >real</a>
+                            </li>
+                            <li>
+                                <a href="#stockAlto" >stockAlto</a>
+                            </li>
+                            <li>
+                                <a href="#stockBajo" >stockBajo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#storageService" >storageService</a>
+                            </li>
+                            <li>
+                                <a href="#usuarios" >usuarios</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#abrirModalCrearProducto" >abrirModalCrearProducto</a>
+                            </li>
+                            <li>
+                                <a href="#abrirModalEditarProducto" >abrirModalEditarProducto</a>
+                            </li>
+                            <li>
+                                <a href="#borradoLogicoProducto" >borradoLogicoProducto</a>
+                            </li>
+                            <li>
+                                <a href="#cerrarCrearProducto" >cerrarCrearProducto</a>
+                            </li>
+                            <li>
+                                <a href="#cerrarModificarProducto" >cerrarModificarProducto</a>
+                            </li>
+                            <li>
+                                <a href="#changeCategoria" >changeCategoria</a>
+                            </li>
+                            <li>
+                                <a href="#crearProducto" >crearProducto</a>
+                            </li>
+                            <li>
+                                <a href="#eliminarProducto" >eliminarProducto</a>
+                            </li>
+                            <li>
+                                <a href="#modificarProducto" >modificarProducto</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarProductosEmit" >mostrarProductosEmit</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarUsuariosEmit" >mostrarUsuariosEmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
 
 
 
 
 
 
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="abrirModalCrearProducto"></a>
+                    <span class="name">
+                        <span ><b>abrirModalCrearProducto</b></span>
+                        <a href="#abrirModalCrearProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>abrirModalCrearProducto()</code>
+                </td>
+            </tr>
 
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="151"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:151</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="abrirModalEditarProducto"></a>
+                    <span class="name">
+                        <span ><b>abrirModalEditarProducto</b></span>
+                        <a href="#abrirModalEditarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>abrirModalEditarProducto(producto: <a href="../interfaces/Producto.html" target="_self">Producto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="156"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:156</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="borradoLogicoProducto"></a>
+                    <span class="name">
+                        <span ><b>borradoLogicoProducto</b></span>
+                        <a href="#borradoLogicoProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>borradoLogicoProducto(producto: <a href="../interfaces/Producto.html" target="_self">Producto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="197"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:197</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cerrarCrearProducto"></a>
+                    <span class="name">
+                        <span ><b>cerrarCrearProducto</b></span>
+                        <a href="#cerrarCrearProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cerrarCrearProducto()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="132"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:132</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cerrarModificarProducto"></a>
+                    <span class="name">
+                        <span ><b>cerrarModificarProducto</b></span>
+                        <a href="#cerrarModificarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cerrarModificarProducto()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:137</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeCategoria"></a>
+                    <span class="name">
+                        <span ><b>changeCategoria</b></span>
+                        <a href="#changeCategoria"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeCategoria(cat: unknown | null)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>cat</td>
+                                            <td>
+                                                        <code>unknown | null</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crearProducto"></a>
+                    <span class="name">
+                        <span ><b>crearProducto</b></span>
+                        <a href="#crearProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>crearProducto(producto: Producto | ProductoRequest)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="165"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:165</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                        <code>Producto | ProductoRequest</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eliminarProducto"></a>
+                    <span class="name">
+                        <span ><b>eliminarProducto</b></span>
+                        <a href="#eliminarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eliminarProducto(producto: <a href="../interfaces/Producto.html" target="_self">Producto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="190"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:190</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Producto.html" target="_self" >Producto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modificarProducto"></a>
+                    <span class="name">
+                        <span ><b>modificarProducto</b></span>
+                        <a href="#modificarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>modificarProducto(productoNuevo: <a href="../interfaces/ModificarProducto.html" target="_self">ModificarProducto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="176"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:176</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>productoNuevo</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ModificarProducto.html" target="_self" >ModificarProducto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarProductosEmit"></a>
+                    <span class="name">
+                        <span ><b>mostrarProductosEmit</b></span>
+                        <a href="#mostrarProductosEmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mostrarProductosEmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarUsuariosEmit"></a>
+                    <span class="name">
+                        <span ><b>mostrarUsuariosEmit</b></span>
+                        <a href="#mostrarUsuariosEmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mostrarUsuariosEmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="143"
+                                    class="link-to-prism">src/app/pages/admin/admin.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categoria"></a>
+                    <span class="name">
+                        <span ><b>categoria</b></span>
+                        <a href="#categoria"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal&lt;keyof ProductosResponse | null&gt;(null)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/pages/admin/admin.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="divisas"></a>
+                    <span class="name">
+                        <span ><b>divisas</b></span>
+                        <a href="#divisas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt; 
+    [
+      {
+        titulo: this.dolar()?.nombre ?? &#x27;-&#x27;,
+        valor: this.dolar()?.venta ?? 0,
+      },
+
+      {
+        titulo: this.euro()?.nombre ?? &#x27;-&#x27;,
+        valor: this.euro()?.venta ?? 0,
+      },
+
+      {
+        titulo: this.real()?.nombre ?? &#x27;-&#x27;,
+        valor: this.real()?.venta ?? 0,
+      },
+
+      {
+        titulo: this.pesoArgentino()?.nombre ?? &#x27;-&#x27;,
+        valor: this.pesoArgentino()?.venta ?? 0,
+      },
+
+      {
+        titulo: this.pesoUruguayo()?.nombre ?? &#x27;-&#x27;,
+        valor: this.pesoUruguayo()?.venta ?? 0,
+      },
+    ]
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/pages/admin/admin.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="divisaService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>divisaService</b></span>
+                        <a href="#divisaService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(DivisaService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/admin/admin.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dolar"></a>
+                    <span class="name">
+                        <span ><b>dolar</b></span>
+                        <a href="#dolar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.divisaService.dolar</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/pages/admin/admin.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="euro"></a>
+                    <span class="name">
+                        <span ><b>euro</b></span>
+                        <a href="#euro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.divisaService.euro</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/admin/admin.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOpen"></a>
+                    <span class="name">
+                        <span ><b>isOpen</b></span>
+                        <a href="#isOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/pages/admin/admin.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="kpis"></a>
+                    <span class="name">
+                        <span ><b>kpis</b></span>
+                        <a href="#kpis"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt; [
+    { titulo: &#x27;Más vendido&#x27;, valor: this.masVendido()?.nombre ?? &#x27;-&#x27; },
+    { titulo: &#x27;Menos vendido&#x27;, valor: this.menosVendido()?.nombre ?? &#x27;-&#x27; },
+    { titulo: &#x27;Menor stock&#x27;, valor: &#x60;${this.stockBajo()?.nombre ?? &#x27;-&#x27;} (${this.stockBajo()?.stock ?? 0})&#x60; },
+    { titulo: &#x27;Mayor stock&#x27;, valor: &#x60;${this.stockAlto()?.nombre ?? &#x27;-&#x27;} (${this.stockAlto()?.stock ?? 0})&#x60; },
+    { titulo: &#x27;Mejor rating&#x27;, valor: this.mejorRating()?.nombre ?? &#x27;-&#x27; },
+    { titulo: &#x27;Peor rating&#x27;, valor: this.peorRating()?.nombre ?? &#x27;-&#x27; },
+  ])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/pages/admin/admin.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="masVendido"></a>
+                    <span class="name">
+                        <span ><b>masVendido</b></span>
+                        <a href="#masVendido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt;
+    getProductoMasVendido(this.productos())
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/pages/admin/admin.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mejorRating"></a>
+                    <span class="name">
+                        <span ><b>mejorRating</b></span>
+                        <a href="#mejorRating"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt;
+    getProductoMejorRatingPromedio(this.productos())
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/pages/admin/admin.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menosVendido"></a>
+                    <span class="name">
+                        <span ><b>menosVendido</b></span>
+                        <a href="#menosVendido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt;
+    getProductoMenosVendido(this.productos())
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/pages/admin/admin.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalType"></a>
+                    <span class="name">
+                        <span ><b>modalType</b></span>
+                        <a href="#modalType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/pages/admin/admin.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarProductos"></a>
+                    <span class="name">
+                        <span ><b>mostrarProductos</b></span>
+                        <a href="#mostrarProductos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/pages/admin/admin.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarUsuarios"></a>
+                    <span class="name">
+                        <span ><b>mostrarUsuarios</b></span>
+                        <a href="#mostrarUsuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/pages/admin/admin.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="peorRating"></a>
+                    <span class="name">
+                        <span ><b>peorRating</b></span>
+                        <a href="#peorRating"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt;
+    getProductoPeorRatingPromedio(this.productos())
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/pages/admin/admin.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pesoArgentino"></a>
+                    <span class="name">
+                        <span ><b>pesoArgentino</b></span>
+                        <a href="#pesoArgentino"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.divisaService.pesoArgentino</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/pages/admin/admin.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pesoUruguayo"></a>
+                    <span class="name">
+                        <span ><b>pesoUruguayo</b></span>
+                        <a href="#pesoUruguayo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.divisaService.pesoUruguayo</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/pages/admin/admin.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productos"></a>
+                    <span class="name">
+                        <span ><b>productos</b></span>
+                        <a href="#productos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt; {
+    const productos &#x3D; this.productoService.productos();
+    if (!productos) return [];
+
+    return getProductos(productos, this.categoria() ?? undefined);
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/pages/admin/admin.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productoSeleccionado"></a>
+                    <span class="name">
+                        <span ><b>productoSeleccionado</b></span>
+                        <a href="#productoSeleccionado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal&lt;Producto | null&gt;(null)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/pages/admin/admin.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="productoService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>productoService</b></span>
+                        <a href="#productoService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ProductoService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/pages/admin/admin.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="real"></a>
+                    <span class="name">
+                        <span ><b>real</b></span>
+                        <a href="#real"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.divisaService.real</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/admin/admin.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stockAlto"></a>
+                    <span class="name">
+                        <span ><b>stockAlto</b></span>
+                        <a href="#stockAlto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt;
+    getProductoMayorStock(this.productos())
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/pages/admin/admin.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stockBajo"></a>
+                    <span class="name">
+                        <span ><b>stockBajo</b></span>
+                        <a href="#stockBajo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt;
+    getProductoMenorStock(this.productos())
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/pages/admin/admin.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="storageService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>storageService</b></span>
+                        <a href="#storageService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(StorageService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/admin/admin.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarios"></a>
+                    <span class="name">
+                        <span ><b>usuarios</b></span>
+                        <a href="#usuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>computed(() &#x3D;&gt; { 
+    const data &#x3D; this.storageService.getUsuarios();
+    if (!data) return [];
+  
+    return data;
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/pages/admin/admin.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, computed, inject, signal } from &#x27;@angular/core&#x27;;
 import { Dashboard } from &#x27;../../components/dashboard/dashboard&#x27;;
 import { Nav } from &#x27;../../components/nav/nav&#x27;;
 import { Footer } from &#x27;../../components/footer/footer&#x27;;
+import { getProductoMasVendido, getProductoMayorStock, getProductoMejorRatingPromedio, getProductoMenorStock, getProductoMenosVendido, getProductoPeorRatingPromedio} from &#x27;../../utils/ventas.utils&#x27;;
+import { KpiCard } from &#x27;../../components/kpi-card/kpi-card&#x27;;
+import { StorageService } from &#x27;../../services/storage.service&#x27;;
+import { DivisaService } from &#x27;../../services/divisa.service&#x27;;
+import { TablaUsuarios } from &#x27;../../components/tabla-usuarios/tabla-usuarios&#x27;;
+import { ProductoService } from &#x27;../../services/producto.service&#x27;;
+import { getProductos } from &#x27;../../utils/productos.utils&#x27;;
+import { ProductosResponse } from &#x27;../../interfaces/productos.response.interface&#x27;;
+import { TablaProductos } from &#x27;../../components/tabla-productos/tabla-productos&#x27;;
+import { Producto } from &#x27;../../interfaces/producto.interface&#x27;;
+import { Modal } from &#x27;../../components/modal-form/modal-form&#x27;;
+import { FormCrearProducto } from &#x27;../../components/form-crear-producto/form-crear-producto&#x27;;
+import { FormModificarProducto } from &#x27;../../components/form-modificar-producto/form-modificar-producto&#x27;;
+import { ModificarProducto } from &#x27;../../interfaces/modificar.producto.interface&#x27;;
+import { ProductoRequest } from &#x27;../../interfaces/producto.request.interface&#x27;;
 
 @Component({
   selector: &#x27;app-admin&#x27;,
   standalone: true,
-  imports: [Dashboard, Nav, Footer],
+  imports: [Dashboard, Nav, Footer, KpiCard, TablaUsuarios, TablaProductos, Modal, FormCrearProducto, FormModificarProducto],
   templateUrl: &#x27;./admin.html&#x27;,
   styleUrl: &#x27;./admin.css&#x27;,
 })
-export class Admin {}
+export class Admin {
+
+  private storageService &#x3D; inject(StorageService);
+  private divisaService &#x3D; inject(DivisaService);
+  private productoService &#x3D; inject(ProductoService)
+
+  dolar &#x3D; this.divisaService.dolar;
+  euro &#x3D; this.divisaService.euro;
+  real &#x3D; this.divisaService.real;
+  pesoArgentino &#x3D; this.divisaService.pesoArgentino;
+  pesoUruguayo &#x3D; this.divisaService.pesoUruguayo;
+
+  categoria &#x3D; signal&lt;keyof ProductosResponse | null&gt;(null);
+  mostrarProductos &#x3D; signal(false);
+  mostrarUsuarios &#x3D; signal(false);
+
+  isOpen &#x3D; signal(false);
+  modalType: string | null &#x3D; null;
+
+  // Producto seleccionado para ser modificado
+  productoSeleccionado &#x3D; signal&lt;Producto | null&gt;(null);
+
+  usuarios &#x3D; computed(() &#x3D;&gt; { 
+    const data &#x3D; this.storageService.getUsuarios();
+    if (!data) return [];
+  
+    return data;
+  });
+
+
+  productos &#x3D; computed(() &#x3D;&gt; {
+    const productos &#x3D; this.productoService.productos();
+    if (!productos) return [];
+
+    return getProductos(productos, this.categoria() ?? undefined);
+  });
+
+
+  masVendido &#x3D; computed(() &#x3D;&gt;
+    getProductoMasVendido(this.productos())
+  );
+
+  menosVendido &#x3D; computed(() &#x3D;&gt;
+    getProductoMenosVendido(this.productos())
+  );
+
+  stockBajo &#x3D; computed(() &#x3D;&gt;
+    getProductoMenorStock(this.productos())
+  );
+
+  stockAlto &#x3D; computed(() &#x3D;&gt;
+    getProductoMayorStock(this.productos())
+  );
+
+  mejorRating &#x3D; computed(() &#x3D;&gt;
+    getProductoMejorRatingPromedio(this.productos())
+  );
+
+  peorRating &#x3D; computed(() &#x3D;&gt;
+    getProductoPeorRatingPromedio(this.productos())
+  );
+
+  kpis &#x3D; computed(() &#x3D;&gt; [
+    { titulo: &#x27;Más vendido&#x27;, valor: this.masVendido()?.nombre ?? &#x27;-&#x27; },
+    { titulo: &#x27;Menos vendido&#x27;, valor: this.menosVendido()?.nombre ?? &#x27;-&#x27; },
+    { titulo: &#x27;Menor stock&#x27;, valor: &#x60;${this.stockBajo()?.nombre ?? &#x27;-&#x27;} (${this.stockBajo()?.stock ?? 0})&#x60; },
+    { titulo: &#x27;Mayor stock&#x27;, valor: &#x60;${this.stockAlto()?.nombre ?? &#x27;-&#x27;} (${this.stockAlto()?.stock ?? 0})&#x60; },
+    { titulo: &#x27;Mejor rating&#x27;, valor: this.mejorRating()?.nombre ?? &#x27;-&#x27; },
+    { titulo: &#x27;Peor rating&#x27;, valor: this.peorRating()?.nombre ?? &#x27;-&#x27; },
+  ]);
+
+  divisas &#x3D; computed(() &#x3D;&gt; 
+    [
+      {
+        titulo: this.dolar()?.nombre ?? &#x27;-&#x27;,
+        valor: this.dolar()?.venta ?? 0,
+      },
+
+      {
+        titulo: this.euro()?.nombre ?? &#x27;-&#x27;,
+        valor: this.euro()?.venta ?? 0,
+      },
+
+      {
+        titulo: this.real()?.nombre ?? &#x27;-&#x27;,
+        valor: this.real()?.venta ?? 0,
+      },
+
+      {
+        titulo: this.pesoArgentino()?.nombre ?? &#x27;-&#x27;,
+        valor: this.pesoArgentino()?.venta ?? 0,
+      },
+
+      {
+        titulo: this.pesoUruguayo()?.nombre ?? &#x27;-&#x27;,
+        valor: this.pesoUruguayo()?.venta ?? 0,
+      },
+    ]
+  );
+
+  changeCategoria(cat: keyof ProductosResponse | null) {
+    this.categoria.set(cat);
+  } 
+
+  cerrarCrearProducto() {
+    this.isOpen.update(v &#x3D;&gt; !v);
+    this.modalType &#x3D; null;
+  }
+
+  cerrarModificarProducto(){
+    this.isOpen.update(v &#x3D;&gt; !v);
+    this.modalType &#x3D; null;
+    this.productoSeleccionado.set(null);
+  }
+    
+  mostrarUsuariosEmit() {
+    this.mostrarUsuarios.update(v &#x3D;&gt; !v);
+  }
+
+  mostrarProductosEmit() {
+    this.mostrarProductos.update(v &#x3D;&gt; !v);
+  }
+
+  abrirModalCrearProducto() {
+    this.modalType &#x3D; &#x27;Crear Producto&#x27;;
+    this.isOpen.update(v &#x3D;&gt; !v);
+  }
+
+  abrirModalEditarProducto(producto: Producto) {
+    this.productoSeleccionado.set(producto);
+
+    console.log(this.productoSeleccionado());
+
+    this.modalType &#x3D; &#x27;Modificar Producto&#x27;;
+    this.isOpen.set(true);
+  }
+
+  crearProducto(producto: Producto | ProductoRequest){
+    if(!this.productoService.productoExiste(producto.nombre)){
+      this.productoService.crearProductoPersistente(producto).subscribe({
+        next: () &#x3D;&gt; {
+          alert(&quot;Producto Creado Con éxito&quot;)
+        },
+        error: err &#x3D;&gt; console.error(err)
+      });
+    }
+  }
+
+  modificarProducto(productoNuevo: ModificarProducto){
+    if (!this.productoSeleccionado()) return;
+
+    const productoViejo &#x3D; this.productoSeleccionado();
+
+    this.productoService.modificarProducto(productoNuevo, productoViejo)
+      .subscribe({
+        next: () &#x3D;&gt; {
+          alert(&#x27;Producto modificado&#x27;);
+        },
+        error: err &#x3D;&gt; console.error(err)
+      });
+  }
+
+  eliminarProducto(producto: Producto) {
+    this.productoService.borradoFisico(producto).subscribe({
+      next: () &#x3D;&gt; alert(&#x27;Borrado Fisico ejecutado correctamente&#x27;),
+      error: err &#x3D;&gt; console.error(err)
+    });
+  }
+
+  borradoLogicoProducto(producto: Producto) {
+    this.productoService.borradoLogico(producto).subscribe({
+      next: () &#x3D;&gt; alert(&#x27;Borrado Logico ejecutado correctamente&#x27;),
+      error: err &#x3D;&gt; console.error(err)
+    });
+  }
+
+}
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-nav&gt;&lt;/app-nav&gt;
 
-&lt;main class&#x3D;&quot;container&quot;&gt;
-    &lt;app-dashboard&gt;&lt;/app-dashboard&gt;
+&lt;div class&#x3D;&quot;container-fluid d-flex justify-content-center mt-4&quot;&gt;
+    &lt;div class&#x3D;&quot;row m-2&quot;&gt;
+        @for (kpi of kpis(); track $index) {
+            &lt;div class&#x3D;&quot;col-12 col-sm-6 col-md-4 col-lg&quot;&gt;
+                &lt;app-kpi-card
+                    [titulo]&#x3D;&quot;kpi.titulo&quot;
+                    [valor]&#x3D;&quot;kpi.valor&quot;&gt;
+                &lt;/app-kpi-card&gt;
+            &lt;/div&gt;
+        }
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;main class&#x3D;&quot;container-fluid&quot;&gt;
+    &lt;app-dashboard
+    [mostrarUsuariosInput]&#x3D;&quot;mostrarUsuarios()&quot;
+    [mostrarProductosInput]&#x3D;&quot;mostrarProductos()&quot;
+    (categoriaChange)&#x3D;&quot;changeCategoria($event)&quot;
+    (mostrarUsuarios)&#x3D;&quot;mostrarUsuariosEmit()&quot;
+    (mostrarProductos)&#x3D;&quot;mostrarProductosEmit()&quot;
+    (crearProductoOutput)&#x3D;&quot;abrirModalCrearProducto()&quot;&gt;
+    &lt;/app-dashboard&gt;
+
+    &lt;app-modal
+    [isOpen]&#x3D;&quot;isOpen()&quot;
+    [titulo]&#x3D;&quot;modalType &#x3D;&#x3D;&#x3D; &#x27;Crear Producto&#x27;
+                ? &#x27;CREAR PRODUCTO&#x27;
+                : &#x27;MODIFICAR PRODUCTO&#x27;&quot;&gt;
+
+    @if (modalType &#x3D;&#x3D;&#x3D; &#x27;Crear Producto&#x27;) {
+        &lt;app-form-crear-producto
+        (isOpen)&#x3D;&quot;cerrarCrearProducto()&quot;
+        (submitEmit)&#x3D;&quot;crearProducto($event)&quot;&gt;
+        &lt;/app-form-crear-producto&gt;
+    }
+
+    @if (modalType &#x3D;&#x3D;&#x3D; &#x27;Modificar Producto&#x27; &amp;&amp; productoSeleccionado()) {
+        &lt;app-form-modificar-producto
+        [producto]&#x3D;&quot;productoSeleccionado()&quot;
+        (isOpen)&#x3D;&quot;cerrarModificarProducto()&quot;
+        (submitEmit)&#x3D;&quot;modificarProducto($event)&quot;&gt;
+        &lt;/app-form-modificar-producto&gt;
+    }
+
+    &lt;/app-modal&gt;
+
+    @if (mostrarUsuarios()) {
+        &lt;app-tabla-usuarios
+        [datosUsuarios]&#x3D;&quot;usuarios()&quot;&gt;
+        &lt;/app-tabla-usuarios&gt;
+    } 
+
+    @if (mostrarProductos()) {
+    &lt;app-tabla-productos
+        [datosProductos]&#x3D;&quot;productos()&quot;
+        (abrirModalEditarProducto)&#x3D;&quot;abrirModalEditarProducto($event)&quot;
+        (eliminarProducto)&#x3D;&quot;eliminarProducto($event)&quot;
+        (borradoLogicoProducto)&#x3D;&quot;borradoLogicoProducto($event)&quot;&gt;
+    &lt;/app-tabla-productos&gt;
+    }
+
 &lt;/main&gt;
+
+    &lt;div class&#x3D;&quot;container-fluid d-flex justify-content-center mt-4&quot;&gt;
+        &lt;div class&#x3D;&quot;row m-2&quot;&gt;
+            @for (div of divisas(); track $index) {
+                &lt;div class&#x3D;&quot;col-12 col-sm-6 col-md-4 col-lg&quot;&gt;
+                    &lt;app-kpi-card
+                        [titulo]&#x3D;&quot;div.titulo&quot;
+                        [valor]&#x3D;&quot;div.valor&quot;&gt;
+                    &lt;/app-kpi-card&gt;
+                &lt;/div&gt;
+            }
+        &lt;/div&gt;
+    &lt;/div&gt;
+
 &lt;hr&gt;
+
 &lt;app-footer&gt;&lt;/app-footer&gt;</code></pre>
     </div>
 
@@ -264,8 +2079,8 @@ export class Admin {}
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><main class="container">    <app-dashboard></app-dashboard></main><hr><app-footer></app-footer></div>'
-    var COMPONENTS = [{'name': 'Acordeon', 'selector': 'app-acordeon'},{'name': 'Admin', 'selector': 'app-admin'},{'name': 'App', 'selector': 'app-root'},{'name': 'Card', 'selector': 'app-card'},{'name': 'Carrito', 'selector': 'app-carrito'},{'name': 'CarritoPage', 'selector': 'app-carrito-page'},{'name': 'Dashboard', 'selector': 'app-dashboard'},{'name': 'Footer', 'selector': 'app-footer'},{'name': 'FormCrearUsuario', 'selector': 'app-form-crear-usuario'},{'name': 'FormModificarUsuario', 'selector': 'app-form-modificar-usuario'},{'name': 'FormRecuperarContrasena', 'selector': 'app-form-recuperar-usuario'},{'name': 'Home', 'selector': 'app-home'},{'name': 'ImgCategorias', 'selector': 'app-img-categorias'},{'name': 'InicioSesion', 'selector': 'app-inicio-sesion'},{'name': 'LoginBox', 'selector': 'app-login-box'},{'name': 'Menu', 'selector': 'app-menu'},{'name': 'Modal', 'selector': 'app-modal'},{'name': 'Nav', 'selector': 'app-nav'},{'name': 'Presentacion', 'selector': 'app-presentacion'},{'name': 'TemplatePlaygroundComponent', 'selector': 'template-playground-root'},{'name': 'ThemeSwitch', 'selector': 'app-theme-switch'}];
+        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><div class="container-fluid d-flex justify-content-center mt-4">    <div class="row m-2">        @for (kpi of kpis(); track $index) {            <div class="col-12 col-sm-6 col-md-4 col-lg">                <app-kpi-card                    [titulo]="kpi.titulo"                    [valor]="kpi.valor">                </app-kpi-card>            </div>        }    </div></div><main class="container-fluid">    <app-dashboard    [mostrarUsuariosInput]="mostrarUsuarios()"    [mostrarProductosInput]="mostrarProductos()"    (categoriaChange)="changeCategoria($event)"    (mostrarUsuarios)="mostrarUsuariosEmit()"    (mostrarProductos)="mostrarProductosEmit()"    (crearProductoOutput)="abrirModalCrearProducto()">    </app-dashboard>    <app-modal    [isOpen]="isOpen()"    [titulo]="modalType === \'Crear Producto\'                ? \'CREAR PRODUCTO\'                : \'MODIFICAR PRODUCTO\'">    @if (modalType === \'Crear Producto\') {        <app-form-crear-producto        (isOpen)="cerrarCrearProducto()"        (submitEmit)="crearProducto($event)">        </app-form-crear-producto>    }    @if (modalType === \'Modificar Producto\' && productoSeleccionado()) {        <app-form-modificar-producto        [producto]="productoSeleccionado()"        (isOpen)="cerrarModificarProducto()"        (submitEmit)="modificarProducto($event)">        </app-form-modificar-producto>    }    </app-modal>    @if (mostrarUsuarios()) {        <app-tabla-usuarios        [datosUsuarios]="usuarios()">        </app-tabla-usuarios>    }     @if (mostrarProductos()) {    <app-tabla-productos        [datosProductos]="productos()"        (abrirModalEditarProducto)="abrirModalEditarProducto($event)"        (eliminarProducto)="eliminarProducto($event)"        (borradoLogicoProducto)="borradoLogicoProducto($event)">    </app-tabla-productos>    }</main>    <div class="container-fluid d-flex justify-content-center mt-4">        <div class="row m-2">            @for (div of divisas(); track $index) {                <div class="col-12 col-sm-6 col-md-4 col-lg">                    <app-kpi-card                        [titulo]="div.titulo"                        [valor]="div.valor">                    </app-kpi-card>                </div>            }        </div>    </div><hr><app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'Acordeon', 'selector': 'app-acordeon'},{'name': 'Admin', 'selector': 'app-admin'},{'name': 'App', 'selector': 'app-root'},{'name': 'Card', 'selector': 'app-card'},{'name': 'Carrito', 'selector': 'app-carrito'},{'name': 'CarritoPage', 'selector': 'app-carrito-page'},{'name': 'Dashboard', 'selector': 'app-dashboard'},{'name': 'Footer', 'selector': 'app-footer'},{'name': 'FormCrearProducto', 'selector': 'app-form-crear-producto'},{'name': 'FormCrearUsuario', 'selector': 'app-form-crear-usuario'},{'name': 'FormModificarProducto', 'selector': 'app-form-modificar-producto'},{'name': 'FormModificarUsuario', 'selector': 'app-form-modificar-usuario'},{'name': 'FormRecuperarContrasena', 'selector': 'app-form-recuperar-usuario'},{'name': 'Home', 'selector': 'app-home'},{'name': 'ImgCategorias', 'selector': 'app-img-categorias'},{'name': 'InicioSesion', 'selector': 'app-inicio-sesion'},{'name': 'KpiCard', 'selector': 'app-kpi-card'},{'name': 'LoginBox', 'selector': 'app-login-box'},{'name': 'Menu', 'selector': 'app-menu'},{'name': 'Modal', 'selector': 'app-modal'},{'name': 'Nav', 'selector': 'app-nav'},{'name': 'Presentacion', 'selector': 'app-presentacion'},{'name': 'TablaProductos', 'selector': 'app-tabla-productos'},{'name': 'TablaUsuarios', 'selector': 'app-tabla-usuarios'},{'name': 'ThemeSwitch', 'selector': 'app-theme-switch'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'Admin'};
 </script>

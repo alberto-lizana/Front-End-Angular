@@ -93,7 +93,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content miscellaneous-typealiases">
                    <div class="content-data">
 
 
@@ -103,199 +103,61 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Components</li>
-  <li class="breadcrumb-item"
-  >
-  CarritoPage</li>
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Type aliases</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-            <a href="#info" class="nav-link active"
-                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li class="nav-item">
-            <a href="#source" class="nav-link"
-                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
-            <a href="#tree" class="nav-link"
-                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
-</ul>
-
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/pages/carrito-page/carrito.ts</code>
-</p>
-
-
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>Componente encargado de organizar la estructura principal de la página,
-integrando el componente de navegación, el carrito y el
-pie de página.</p>
-
-    </p>
-
-
-
-
-<section data-compodoc="block-metadata">
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
         <tbody>
-
-
-
-
-
-
-
-
-
-
-
-
             <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-carrito-page</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">standalone</td>
-                <td class="col-md-9"><code>true</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">imports</td>
-                <td class="col-md-9">
-                                <code><a href="../components/Nav.html" target="_self" >Nav</a></code>
-                                <code><a href="../components/Footer.html" target="_self" >Footer</a></code>
-                                <code><a href="../components/Carrito.html" target="_self" >Carrito</a></code>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#ProductosResponse" title="src/app/interfaces/productos.response.interface.ts" ><b>ProductosResponse</b>&nbsp;&nbsp;&nbsp;(src/.../productos.response.interface.ts)</a>
+                        </li>
+                    </ul>
                 </td>
             </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./carrito.html</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./carrito.css</code></td>
-            </tr>
-
-
-
-
-
         </tbody>
     </table>
 </section>
 
-
-
-
-
-
-
-
-
-</div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Footer } from &#x27;../../components/footer/footer&#x27;;
-import { Nav } from &#x27;../../components/nav/nav&#x27;;
-import { Carrito } from &#x27;../../components/carrito/carrito&#x27;;
-
-/**
- * @description
- * Componente encargado de organizar la estructura principal de la página,
- * integrando el componente de navegación, el carrito y el
- * pie de página.
- */
-@Component({
-  selector: &#x27;app-carrito-page&#x27;,
-  standalone: true,
-  imports: [Nav, Footer, Carrito],
-  templateUrl: &#x27;./carrito.html&#x27;,
-  styleUrl: &#x27;./carrito.css&#x27;,
-})
-export class CarritoPage {}
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-nav&gt;&lt;/app-nav&gt;
-&lt;app-carrito&gt;&lt;/app-carrito&gt;
-&lt;app-footer&gt;&lt;/app-footer&gt;</code></pre>
-    </div>
-
-
-    <div class="tab-pane fade " id="tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
-</div>
-
-<script src="../js/libs/vis-network.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-carrito></app-carrito><app-footer></app-footer></div>'
-    var COMPONENTS = [{'name': 'Acordeon', 'selector': 'app-acordeon'},{'name': 'Admin', 'selector': 'app-admin'},{'name': 'App', 'selector': 'app-root'},{'name': 'Card', 'selector': 'app-card'},{'name': 'Carrito', 'selector': 'app-carrito'},{'name': 'CarritoPage', 'selector': 'app-carrito-page'},{'name': 'Dashboard', 'selector': 'app-dashboard'},{'name': 'Footer', 'selector': 'app-footer'},{'name': 'FormCrearProducto', 'selector': 'app-form-crear-producto'},{'name': 'FormCrearUsuario', 'selector': 'app-form-crear-usuario'},{'name': 'FormModificarProducto', 'selector': 'app-form-modificar-producto'},{'name': 'FormModificarUsuario', 'selector': 'app-form-modificar-usuario'},{'name': 'FormRecuperarContrasena', 'selector': 'app-form-recuperar-usuario'},{'name': 'Home', 'selector': 'app-home'},{'name': 'ImgCategorias', 'selector': 'app-img-categorias'},{'name': 'InicioSesion', 'selector': 'app-inicio-sesion'},{'name': 'KpiCard', 'selector': 'app-kpi-card'},{'name': 'LoginBox', 'selector': 'app-login-box'},{'name': 'Menu', 'selector': 'app-menu'},{'name': 'Modal', 'selector': 'app-modal'},{'name': 'Nav', 'selector': 'app-nav'},{'name': 'Presentacion', 'selector': 'app-presentacion'},{'name': 'TablaProductos', 'selector': 'app-tabla-productos'},{'name': 'TablaUsuarios', 'selector': 'app-tabla-usuarios'},{'name': 'ThemeSwitch', 'selector': 'app-theme-switch'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'CarritoPage'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <h3>src/app/interfaces/productos.response.interface.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ProductosResponse"></a>
+                    <span class="name "><b>ProductosResponse</b><a href="#ProductosResponse"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../interfaces/Producto.html" target="_self" >Record&lt;&quot;ESTRATEGIA&quot; | &quot;COOPERATIVOS&quot; | &quot;ROL&quot; | &quot;CASUAL&quot; | Producto[]&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 
                    </div><div class="search-results">
@@ -323,8 +185,8 @@ export class CarritoPage {}
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'CarritoPage.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-typealiases';
+            var COMPODOC_CURRENT_PAGE_URL = 'typealiases.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -154,16 +154,13 @@
                             <a href="#guestGuard" title="src/app/guards/guest-guard.ts" ><b>guestGuard</b>&nbsp;&nbsp;&nbsp;(src/.../guest-guard.ts)</a>
                         </li>
                         <li>
-                            <a href="#Handlebars" title="documentation/template-playground/hbs-render.service.ts" ><b>Handlebars</b>&nbsp;&nbsp;&nbsp;(documentation/.../hbs-render.service.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#JSZip" title="documentation/template-playground/zip-export.service.ts" ><b>JSZip</b>&nbsp;&nbsp;&nbsp;(documentation/.../zip-export.service.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#monaco" title="documentation/template-playground/template-editor.service.ts" ><b>monaco</b>&nbsp;&nbsp;&nbsp;(documentation/.../template-editor.service.ts)</a>
-                        </li>
-                        <li>
                             <a href="#normalizarCampo" title="src/app/utils/normalizadores.ts" ><b>normalizarCampo</b>&nbsp;&nbsp;&nbsp;(src/.../normalizadores.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#normalizarProducto" title="src/app/utils/normalizadores.ts" ><b>normalizarProducto</b>&nbsp;&nbsp;&nbsp;(src/.../normalizadores.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#normalizarProductoParaModificar" title="src/app/utils/normalizadores.ts" ><b>normalizarProductoParaModificar</b>&nbsp;&nbsp;&nbsp;(src/.../normalizadores.ts)</a>
                         </li>
                         <li>
                             <a href="#normalizarUsuario" title="src/app/utils/normalizadores.ts" ><b>normalizarUsuario</b>&nbsp;&nbsp;&nbsp;(src/.../normalizadores.ts)</a>
@@ -193,10 +190,16 @@
                             <a href="#validarContrasena" title="src/app/utils/validaciones-usuario.ts" ><b>validarContrasena</b>&nbsp;&nbsp;&nbsp;(src/.../validaciones-usuario.ts)</a>
                         </li>
                         <li>
+                            <a href="#validarDificultad" title="src/app/utils/reutilizables.ts" ><b>validarDificultad</b>&nbsp;&nbsp;&nbsp;(src/.../reutilizables.ts)</a>
+                        </li>
+                        <li>
                             <a href="#validarEmail" title="src/app/utils/validaciones-usuario.ts" ><b>validarEmail</b>&nbsp;&nbsp;&nbsp;(src/.../validaciones-usuario.ts)</a>
                         </li>
                         <li>
                             <a href="#validarNombre" title="src/app/utils/validaciones-usuario.ts" ><b>validarNombre</b>&nbsp;&nbsp;&nbsp;(src/.../validaciones-usuario.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validarStock" title="src/app/utils/reutilizables.ts" ><b>validarStock</b>&nbsp;&nbsp;&nbsp;(src/.../reutilizables.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -342,7 +345,9 @@
                         <i>Default value : </i><code>{
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes), provideClientHydration()
+    provideRouter(routes), 
+    provideClientHydration(),
+    provideHttpClient()
   ]
 }</code>
                     </td>
@@ -521,78 +526,6 @@
         </tbody>
     </table>
 </section>
-    <h3>documentation/template-playground/hbs-render.service.ts</h3>
-    <section data-compodoc="block-properties">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="Handlebars"></a>
-                    <span class="name">
-                        <span ><b>Handlebars</b></span>
-                        <a href="#Handlebars"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-</section>
-    <h3>documentation/template-playground/zip-export.service.ts</h3>
-    <section data-compodoc="block-properties">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="JSZip"></a>
-                    <span class="name">
-                        <span ><b>JSZip</b></span>
-                        <a href="#JSZip"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-</section>
-    <h3>documentation/template-playground/template-editor.service.ts</h3>
-    <section data-compodoc="block-properties">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="monaco"></a>
-                    <span class="name">
-                        <span ><b>monaco</b></span>
-                        <a href="#monaco"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-</section>
     <h3>src/app/utils/normalizadores.ts</h3>
     <section data-compodoc="block-properties">
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -616,6 +549,78 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>(value: string | undefined | null) &#x3D;&gt;
   (value ?? &#x27;&#x27;).trim().toLowerCase()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="normalizarProducto"></a>
+                    <span class="name">
+                        <span ><b>normalizarProducto</b></span>
+                        <a href="#normalizarProducto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(producto: Producto | ProductoRequest): Producto | ProductoRequest &#x3D;&gt; {
+  return {
+    ...producto,
+    nombre: producto.nombre?.trim().toLowerCase() ?? &#x27;&#x27;,
+    imagen: producto.imagen?.trim().toLowerCase() ?? &#x27;&#x27;,
+    descripcion: producto.descripcion?.trim().toLowerCase() ?? &#x27;&#x27;,
+    categoria: producto.categoria?.trim().toUpperCase() ?? &#x27;&#x27;,
+    cantidadJugadores: producto.cantidadJugadores?.trim().toLowerCase() ?? &#x27;&#x27;,
+    duracion: producto.duracion?.trim() ?? &#x27;&#x27;
+  };
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="normalizarProductoParaModificar"></a>
+                    <span class="name">
+                        <span ><b>normalizarProductoParaModificar</b></span>
+                        <a href="#normalizarProductoParaModificar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(producto: ModificarProducto): ModificarProducto &#x3D;&gt; {
+  return {
+    ...producto,
+    nombre: producto.nombre?.trim().toLowerCase() ?? &#x27;&#x27;,
+    imagen: producto.imagen?.trim().toLowerCase() ?? &#x27;&#x27;,
+    descripcion: producto.descripcion?.trim().toLowerCase() ?? &#x27;&#x27;,
+    categoria: producto.categoria?.trim().toUpperCase() ?? &#x27;&#x27;,
+    cantidadJugadores: producto.cantidadJugadores?.trim().toLowerCase() ?? &#x27;&#x27;,
+    duracion: producto.duracion?.trim() ?? &#x27;&#x27;
+  };
+}</code>
                     </td>
                 </tr>
 
@@ -970,9 +975,68 @@ contraseña no se está cumpliendo.</p>
                         <i>Default value : </i><code>[
   {
     path: &#x27;**&#x27;,
-    renderMode: RenderMode.Prerender
+    renderMode: RenderMode.Server
   }
 ]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/utils/reutilizables.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validarDificultad"></a>
+                    <span class="name">
+                        <span ><b>validarDificultad</b></span>
+                        <a href="#validarDificultad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(dificultad: number): boolean &#x3D;&gt; {
+  return dificultad &gt; 0 || dificultad &lt;&#x3D; 5
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validarStock"></a>
+                    <span class="name">
+                        <span ><b>validarStock</b></span>
+                        <a href="#validarStock"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>unknown</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(stock: number): boolean &#x3D;&gt; {
+  return stock &gt; 0;
+}</code>
                     </td>
                 </tr>
 
