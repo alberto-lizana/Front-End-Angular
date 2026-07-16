@@ -17,7 +17,7 @@ import { ModificarProducto } from '../interfaces/modificar.producto.interface';
 @Injectable({ providedIn: 'root' })
 export class ProductoService {
 
-  rutaBaseRestAPI= 'https://backend-jumanji-production.up.railway.app';
+  rutaBaseRestAPI= 'https://backend-jumanji-production.up.railway.app/productos';
 
   private readonly http = inject(HttpClient);
   private refresh = signal(0);
