@@ -44,6 +44,8 @@ RUN npm run build
 # Ya no necesitamos Node porque Angular ya fue compilado.
 FROM nginx:1.23.3 AS prod
 
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
 
 # Copiamos únicamente el resultado de la compilación

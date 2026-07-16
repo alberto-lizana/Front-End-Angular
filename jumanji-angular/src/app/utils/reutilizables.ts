@@ -14,7 +14,7 @@ export function emailExiste(email: string, usuarios: Usuario[] | []): boolean {
   }
 
 export const validarDificultad = (dificultad: number): boolean => {
-  return dificultad > 0 || dificultad <= 5
+  return dificultad > 0 && dificultad <= 5
 }
 
 export const validarStock = (stock: number): boolean => {
